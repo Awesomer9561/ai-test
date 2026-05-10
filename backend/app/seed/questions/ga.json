@@ -1,0 +1,877 @@
+[
+  {
+    "topic": "Banking Awareness",
+    "questions": [
+      {
+        "stem": "What is the minimum capital requirement for setting up a new private sector bank in India as per RBI guidelines?",
+        "options": [
+          "Rs 200 crore",
+          "Rs 500 crore",
+          "Rs 1000 crore",
+          "Rs 300 crore"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS PO 2019",
+        "difficulty": 3
+      },
+      {
+        "stem": "CASA ratio in banking refers to the ratio of:",
+        "options": [
+          "Capital to Assets",
+          "Current Account and Savings Account deposits to total deposits",
+          "Cash to Advances",
+          "Credit to Asset ratio"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: SBI PO 2018",
+        "difficulty": 2
+      },
+      {
+        "stem": "The Banking Ombudsman Scheme is introduced under which section of the Banking Regulation Act?",
+        "options": [
+          "Section 35A",
+          "Section 45",
+          "Section 10",
+          "Section 22"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS Clerk 2019",
+        "difficulty": 3
+      },
+      {
+        "stem": "What does NPA stand for in banking?",
+        "options": [
+          "Non-Performing Asset",
+          "Net Profit Analysis",
+          "National Payment Authority",
+          "Non-Profit Association"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS RRB 2019",
+        "difficulty": 1
+      },
+      {
+        "stem": "Which committee recommended the establishment of Regional Rural Banks in India?",
+        "options": [
+          "Narsimham Committee",
+          "Narasimhan Committee",
+          "M. Narasimham Working Group",
+          "Narasimham Committee on Banking Reforms"
+        ],
+        "correct_index": 2,
+        "explanation": "Source: SBI PO 2019",
+        "difficulty": 3
+      },
+      {
+        "stem": "What is the full form of SWIFT in banking?",
+        "options": [
+          "Society for Worldwide Interbank Financial Telecommunication",
+          "Secure Worldwide Interbank Fund Transfer",
+          "Standard Worldwide Internet Financial Transaction",
+          "Society for World Internet Finance Technology"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS PO 2020",
+        "difficulty": 2
+      },
+      {
+        "stem": "KYC norms are mandatory for opening a bank account. What does KYC stand for?",
+        "options": [
+          "Know Your Customer",
+          "Keep Your Cash",
+          "Know Your Credit",
+          "Key Your Code"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS Clerk 2020",
+        "difficulty": 1
+      },
+      {
+        "stem": "What is the maximum deposit insured by DICGC per depositor per bank?",
+        "options": [
+          "Rs 1 lakh",
+          "Rs 5 lakh",
+          "Rs 10 lakh",
+          "Rs 2 lakh"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS RRB 2020",
+        "difficulty": 2
+      },
+      {
+        "stem": "The base rate system for lending was introduced by RBI replacing the BPLR system in which year?",
+        "options": [
+          "2008",
+          "2010",
+          "2012",
+          "2015"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: SBI PO 2020",
+        "difficulty": 3
+      },
+      {
+        "stem": "Priority Sector Lending targets require domestic commercial banks to lend what percentage to the priority sector?",
+        "options": [
+          "30%",
+          "35%",
+          "40%",
+          "45%"
+        ],
+        "correct_index": 2,
+        "explanation": "Source: IBPS PO 2021",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "topic": "RBI & Monetary Policy",
+    "questions": [
+      {
+        "stem": "The Reserve Bank of India was established in which year?",
+        "options": [
+          "1935",
+          "1947",
+          "1949",
+          "1950"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS Clerk 2019",
+        "difficulty": 1
+      },
+      {
+        "stem": "Which of the following is NOT a function of RBI?",
+        "options": [
+          "Issuing currency",
+          "Managing foreign exchange",
+          "Accepting deposits from public",
+          "Banker to the Government"
+        ],
+        "correct_index": 2,
+        "explanation": "Source: IBPS PO 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "The Monetary Policy Committee (MPC) of RBI has how many members?",
+        "options": [
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        "correct_index": 2,
+        "explanation": "Source: SBI PO 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "Repo rate is the rate at which:",
+        "options": [
+          "Banks lend to RBI",
+          "RBI lends to commercial banks",
+          "Banks lend to each other",
+          "Government borrows from RBI"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS RRB 2019",
+        "difficulty": 1
+      },
+      {
+        "stem": "Cash Reserve Ratio (CRR) is the percentage of deposits that banks must maintain with:",
+        "options": [
+          "Government",
+          "RBI",
+          "SEBI",
+          "Other banks"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: SBI PO 2018",
+        "difficulty": 1
+      },
+      {
+        "stem": "The statutory liquidity ratio (SLR) includes which of the following?",
+        "options": [
+          "Only cash",
+          "Cash, gold, and government securities",
+          "Only government bonds",
+          "Foreign currency reserves"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS PO 2020",
+        "difficulty": 2
+      },
+      {
+        "stem": "Open Market Operations (OMO) conducted by RBI involve buying and selling of:",
+        "options": [
+          "Shares",
+          "Government securities",
+          "Foreign currency only",
+          "Corporate bonds"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS Clerk 2020",
+        "difficulty": 2
+      },
+      {
+        "stem": "The inflation target set by the Government of India for RBI is:",
+        "options": [
+          "2%",
+          "4%",
+          "6%",
+          "8%"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS RRB 2020",
+        "difficulty": 2
+      },
+      {
+        "stem": "Who is the ex-officio chairperson of the Monetary Policy Committee?",
+        "options": [
+          "Finance Minister",
+          "RBI Governor",
+          "Chief Economic Advisor",
+          "SEBI Chairman"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: SBI PO 2020",
+        "difficulty": 2
+      },
+      {
+        "stem": "Reverse repo rate is the rate at which:",
+        "options": [
+          "RBI borrows from commercial banks",
+          "RBI lends to banks",
+          "Government borrows from banks",
+          "Banks borrow from each other"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS PO 2021",
+        "difficulty": 1
+      }
+    ]
+  },
+  {
+    "topic": "Financial Schemes & Programmes",
+    "questions": [
+      {
+        "stem": "Pradhan Mantri Jan Dhan Yojana was launched to provide:",
+        "options": [
+          "Free housing",
+          "Universal access to banking facilities",
+          "Free education",
+          "Employment guarantee"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS PO 2019",
+        "difficulty": 1
+      },
+      {
+        "stem": "Under the Atal Pension Yojana, what is the minimum guaranteed pension per month?",
+        "options": [
+          "Rs 500",
+          "Rs 1000",
+          "Rs 2000",
+          "Rs 5000"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: SBI PO 2018",
+        "difficulty": 2
+      },
+      {
+        "stem": "MUDRA stands for:",
+        "options": [
+          "Micro Units Development and Refinance Agency",
+          "Multiple Unified Development and Refinance Authority",
+          "Micro Unified Development Regulatory Agency",
+          "Micro Units Digital Refinance Authority"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS Clerk 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "The maximum loan amount under PMMY Tarun category is:",
+        "options": [
+          "Rs 50,000",
+          "Rs 5 lakh",
+          "Rs 10 lakh",
+          "Rs 1 lakh"
+        ],
+        "correct_index": 2,
+        "explanation": "Source: IBPS RRB 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "Sukanya Samriddhi Yojana is a savings scheme for:",
+        "options": [
+          "Senior citizens",
+          "Girl children",
+          "Farmers",
+          "All women"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: SBI PO 2019",
+        "difficulty": 1
+      },
+      {
+        "stem": "Stand-Up India scheme provides bank loans between Rs 10 lakh and Rs 1 crore to:",
+        "options": [
+          "All entrepreneurs",
+          "SC/ST and women entrepreneurs",
+          "Only government employees",
+          "NRI investors"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS PO 2020",
+        "difficulty": 2
+      },
+      {
+        "stem": "The PM SVANidhi scheme provides working capital loans to:",
+        "options": [
+          "Farmers",
+          "Street vendors",
+          "Small factories",
+          "Students"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS Clerk 2020",
+        "difficulty": 2
+      },
+      {
+        "stem": "Under Pradhan Mantri Suraksha Bima Yojana, the annual premium is:",
+        "options": [
+          "Rs 12",
+          "Rs 20",
+          "Rs 330",
+          "Rs 500"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS RRB 2020",
+        "difficulty": 2
+      },
+      {
+        "stem": "The Digital India programme was launched in which year?",
+        "options": [
+          "2013",
+          "2014",
+          "2015",
+          "2016"
+        ],
+        "correct_index": 2,
+        "explanation": "Source: SBI PO 2020",
+        "difficulty": 1
+      },
+      {
+        "stem": "Sovereign Gold Bond Scheme is issued by:",
+        "options": [
+          "SEBI",
+          "RBI on behalf of Government of India",
+          "State Bank of India",
+          "Finance Ministry directly"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS PO 2021",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "topic": "Economy & Budget",
+    "questions": [
+      {
+        "stem": "GST (Goods and Services Tax) was implemented in India from:",
+        "options": [
+          "1 April 2017",
+          "1 July 2017",
+          "1 January 2018",
+          "1 April 2016"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS PO 2019",
+        "difficulty": 1
+      },
+      {
+        "stem": "Which body decides the GST rates in India?",
+        "options": [
+          "RBI",
+          "Finance Ministry",
+          "GST Council",
+          "NITI Aayog"
+        ],
+        "correct_index": 2,
+        "explanation": "Source: SBI PO 2018",
+        "difficulty": 2
+      },
+      {
+        "stem": "Fiscal deficit is defined as:",
+        "options": [
+          "Total revenue minus total expenditure",
+          "Total expenditure minus total receipts excluding borrowings",
+          "Revenue deficit plus capital expenditure",
+          "Total borrowings minus total revenue"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS Clerk 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "GDP at constant prices is also known as:",
+        "options": [
+          "Nominal GDP",
+          "Real GDP",
+          "Net GDP",
+          "Gross GDP"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS RRB 2019",
+        "difficulty": 1
+      },
+      {
+        "stem": "The Union Budget in India is presented by:",
+        "options": [
+          "Prime Minister",
+          "Finance Minister",
+          "RBI Governor",
+          "President"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: SBI PO 2019",
+        "difficulty": 1
+      },
+      {
+        "stem": "NITI Aayog replaced which institution?",
+        "options": [
+          "Finance Commission",
+          "Planning Commission",
+          "National Development Council",
+          "Election Commission"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS PO 2020",
+        "difficulty": 1
+      },
+      {
+        "stem": "What is the current number of GST slabs in India?",
+        "options": [
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS Clerk 2020",
+        "difficulty": 2
+      },
+      {
+        "stem": "Disinvestment refers to:",
+        "options": [
+          "Investing more in public sector",
+          "Government selling its stake in public enterprises",
+          "Privatisation of all banks",
+          "Increasing government spending"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS RRB 2020",
+        "difficulty": 2
+      },
+      {
+        "stem": "The Sensex is the benchmark index of which stock exchange?",
+        "options": [
+          "NSE",
+          "BSE",
+          "MCX",
+          "NCDEX"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: SBI PO 2020",
+        "difficulty": 1
+      },
+      {
+        "stem": "Which of the following is considered a direct tax?",
+        "options": [
+          "GST",
+          "Customs Duty",
+          "Income Tax",
+          "Excise Duty"
+        ],
+        "correct_index": 2,
+        "explanation": "Source: IBPS PO 2021",
+        "difficulty": 1
+      }
+    ]
+  },
+  {
+    "topic": "Financial Institutions & Regulators",
+    "questions": [
+      {
+        "stem": "SEBI stands for:",
+        "options": [
+          "Securities and Exchange Board of India",
+          "Stock Exchange Bureau of India",
+          "Securities and Equity Board of India",
+          "Standard Exchange Board of India"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS Clerk 2019",
+        "difficulty": 1
+      },
+      {
+        "stem": "IRDAI regulates which sector?",
+        "options": [
+          "Banking",
+          "Insurance",
+          "Telecom",
+          "Agriculture"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS PO 2019",
+        "difficulty": 1
+      },
+      {
+        "stem": "NABARD was established to promote:",
+        "options": [
+          "Industrial development",
+          "Agricultural and rural development",
+          "Urban housing",
+          "Foreign trade"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: SBI PO 2018",
+        "difficulty": 1
+      },
+      {
+        "stem": "SIDBI stands for:",
+        "options": [
+          "Small Industries Development Board of India",
+          "Small Industries Development Bank of India",
+          "Standard Industries Development Bank of India",
+          "Small Investment Development Bank of India"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS RRB 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "The National Payments Corporation of India (NPCI) manages which of the following?",
+        "options": [
+          "Stock trading",
+          "UPI and RuPay",
+          "Income tax collection",
+          "Insurance claims"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: SBI PO 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "PFRDA is the regulator for:",
+        "options": [
+          "Insurance sector",
+          "Pension funds",
+          "Mutual funds",
+          "Stock markets"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS PO 2020",
+        "difficulty": 2
+      },
+      {
+        "stem": "The headquarters of the Asian Development Bank (ADB) is in:",
+        "options": [
+          "Tokyo",
+          "Manila",
+          "Beijing",
+          "New Delhi"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS Clerk 2020",
+        "difficulty": 2
+      },
+      {
+        "stem": "EXIM Bank of India was established to finance:",
+        "options": [
+          "Domestic trade",
+          "Import and export trade",
+          "Agricultural trade",
+          "Real estate"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS RRB 2020",
+        "difficulty": 2
+      },
+      {
+        "stem": "The International Monetary Fund (IMF) is headquartered in:",
+        "options": [
+          "New York",
+          "Geneva",
+          "Washington D.C.",
+          "London"
+        ],
+        "correct_index": 2,
+        "explanation": "Source: SBI PO 2020",
+        "difficulty": 1
+      },
+      {
+        "stem": "NHB (National Housing Bank) is a subsidiary of:",
+        "options": [
+          "SBI",
+          "RBI",
+          "NABARD",
+          "Government of India"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS PO 2021",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "topic": "Digital Banking & Payments",
+    "questions": [
+      {
+        "stem": "UPI was developed by which organisation?",
+        "options": [
+          "RBI",
+          "NPCI",
+          "SBI",
+          "SEBI"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS PO 2019",
+        "difficulty": 1
+      },
+      {
+        "stem": "What is the maximum transaction limit per day on UPI as per NPCI guidelines?",
+        "options": [
+          "Rs 50,000",
+          "Rs 1 lakh",
+          "Rs 2 lakh",
+          "Rs 5 lakh"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: SBI PO 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "RuPay is an Indian domestic card payment network launched by:",
+        "options": [
+          "RBI",
+          "NPCI",
+          "VISA",
+          "MasterCard"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS Clerk 2019",
+        "difficulty": 1
+      },
+      {
+        "stem": "BHIM app stands for:",
+        "options": [
+          "Bharat Interface for Money",
+          "Banking Hub for Indian Money",
+          "Bharat Integrated Money",
+          "Banking Hub Interface Module"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS RRB 2019",
+        "difficulty": 1
+      },
+      {
+        "stem": "NEFT transactions are settled in:",
+        "options": [
+          "Real-time",
+          "Half-hourly batches",
+          "Daily batches",
+          "Weekly batches"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: SBI PO 2018",
+        "difficulty": 2
+      },
+      {
+        "stem": "RTGS is used for transferring funds above:",
+        "options": [
+          "Rs 1 lakh",
+          "Rs 2 lakh",
+          "Rs 5 lakh",
+          "No minimum limit"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS PO 2020",
+        "difficulty": 2
+      },
+      {
+        "stem": "IMPS stands for:",
+        "options": [
+          "Immediate Payment Service",
+          "Indian Mobile Payment System",
+          "Instant Money Payment Service",
+          "Integrated Mobile Payment Solution"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS Clerk 2020",
+        "difficulty": 1
+      },
+      {
+        "stem": "The Central Bank Digital Currency (CBDC) in India is called:",
+        "options": [
+          "Digital Rupee (e-Rupee)",
+          "India Coin",
+          "Bharat Token",
+          "RBI Digital"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS RRB 2020",
+        "difficulty": 2
+      },
+      {
+        "stem": "Which technology does a contactless card payment use?",
+        "options": [
+          "Bluetooth",
+          "NFC (Near Field Communication)",
+          "Wi-Fi",
+          "Infrared"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: SBI PO 2020",
+        "difficulty": 2
+      },
+      {
+        "stem": "FASTag is used for electronic toll collection and operates using which technology?",
+        "options": [
+          "GPS",
+          "Bluetooth",
+          "RFID",
+          "NFC"
+        ],
+        "correct_index": 2,
+        "explanation": "Source: IBPS PO 2021",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "topic": "Current Affairs & Static GK",
+    "questions": [
+      {
+        "stem": "The Tropic of Cancer passes through how many Indian states?",
+        "options": [
+          "6",
+          "7",
+          "8",
+          "9"
+        ],
+        "correct_index": 2,
+        "explanation": "Source: IBPS PO 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "Which Indian state has the longest coastline?",
+        "options": [
+          "Kerala",
+          "Tamil Nadu",
+          "Gujarat",
+          "Maharashtra"
+        ],
+        "correct_index": 2,
+        "explanation": "Source: SBI PO 2018",
+        "difficulty": 1
+      },
+      {
+        "stem": "The Panchayati Raj system in India is based on which constitutional amendment?",
+        "options": [
+          "71st",
+          "73rd",
+          "74th",
+          "76th"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS Clerk 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "Which river is known as the 'Sorrow of Bengal'?",
+        "options": [
+          "Ganga",
+          "Damodar",
+          "Brahmaputra",
+          "Hooghly"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS RRB 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "Article 370 of the Indian Constitution was related to:",
+        "options": [
+          "Fundamental Rights",
+          "Special status of J&K",
+          "Emergency Provisions",
+          "Election Commission"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: SBI PO 2019",
+        "difficulty": 1
+      },
+      {
+        "stem": "The National Green Tribunal (NGT) was established under which act?",
+        "options": [
+          "Environment Protection Act",
+          "National Green Tribunal Act 2010",
+          "Wildlife Protection Act",
+          "Forest Conservation Act"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS PO 2020",
+        "difficulty": 3
+      },
+      {
+        "stem": "Which is the largest freshwater lake in India?",
+        "options": [
+          "Dal Lake",
+          "Wular Lake",
+          "Chilika Lake",
+          "Loktak Lake"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS Clerk 2020",
+        "difficulty": 2
+      },
+      {
+        "stem": "The headquarters of the International Court of Justice is in:",
+        "options": [
+          "Geneva",
+          "New York",
+          "The Hague",
+          "Vienna"
+        ],
+        "correct_index": 2,
+        "explanation": "Source: IBPS RRB 2020",
+        "difficulty": 2
+      },
+      {
+        "stem": "Project Tiger was launched in India in which year?",
+        "options": [
+          "1970",
+          "1973",
+          "1975",
+          "1980"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: SBI PO 2020",
+        "difficulty": 2
+      },
+      {
+        "stem": "Who appoints the Chief Election Commissioner of India?",
+        "options": [
+          "Prime Minister",
+          "Parliament",
+          "President",
+          "Chief Justice of India"
+        ],
+        "correct_index": 2,
+        "explanation": "Source: IBPS PO 2021",
+        "difficulty": 1
+      }
+    ]
+  }
+]

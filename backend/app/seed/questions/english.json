@@ -1,0 +1,1127 @@
+[
+  {
+    "topic": "Reading Comprehension",
+    "questions": [
+      {
+        "stem": "In a passage about digital banking adoption in India, the author mentions that 'the trajectory of fintech growth has been nothing short of meteoric.' What does the author imply?",
+        "options": [
+          "Growth has been slow",
+          "Growth has been extremely rapid",
+          "Growth is uncertain",
+          "Growth has plateaued"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS PO 2020",
+        "difficulty": 2
+      },
+      {
+        "stem": "A passage discusses climate change policies. The author states governments must balance economic growth with environmental protection. What is the tone of the passage?",
+        "options": [
+          "Optimistic",
+          "Pessimistic",
+          "Analytical",
+          "Satirical"
+        ],
+        "correct_index": 2,
+        "explanation": "Source: SBI PO 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "Based on a passage about rural employment schemes, which statement can be inferred? The passage mentions MGNREGA provides 100 days of employment and has reduced rural-urban migration.",
+        "options": [
+          "Urban employment has increased",
+          "Rural workers prefer farming",
+          "MGNREGA has achieved its objective partially",
+          "Migration has completely stopped"
+        ],
+        "correct_index": 2,
+        "explanation": "Source: IBPS Clerk 2019",
+        "difficulty": 3
+      },
+      {
+        "stem": "A passage argues that artificial intelligence will create more jobs than it destroys. Which of the following, if true, would weaken this argument?",
+        "options": [
+          "AI requires human oversight",
+          "Most new AI jobs require advanced degrees unavailable to displaced workers",
+          "Tech companies are hiring more",
+          "Governments are investing in AI"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: SBI PO 2020",
+        "difficulty": 3
+      },
+      {
+        "stem": "In a passage about Indian banking reforms, the word 'recapitalisation' is used. In context, it most nearly means:",
+        "options": [
+          "Closing down banks",
+          "Injecting fresh capital into banks",
+          "Merging banks",
+          "Privatising banks"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS PO 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "A passage discusses the importance of financial literacy. The author's primary purpose is to:",
+        "options": [
+          "Criticise the banking sector",
+          "Advocate for mandatory financial education",
+          "Describe investment strategies",
+          "Compare global economies"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS RRB 2020",
+        "difficulty": 2
+      },
+      {
+        "stem": "According to a passage on renewable energy, what is the main challenge in solar energy adoption in India?",
+        "options": [
+          "Lack of sunlight",
+          "High initial investment and storage costs",
+          "No government support",
+          "Low demand"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS Clerk 2020",
+        "difficulty": 2
+      },
+      {
+        "stem": "The passage states: 'The pharmaceutical industry walks a tightrope between innovation and affordability.' This means:",
+        "options": [
+          "The industry is failing",
+          "Balancing R&D costs with accessible pricing is difficult",
+          "Medicines are too cheap",
+          "Innovation has stopped"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: SBI PO 2018",
+        "difficulty": 2
+      },
+      {
+        "stem": "Based on a passage about e-governance initiatives, which title best suits the passage that discusses how digital platforms reduce corruption and improve service delivery?",
+        "options": [
+          "The Death of Bureaucracy",
+          "Digital Governance: Transparency Through Technology",
+          "Why Computers Replace Humans",
+          "The Internet Revolution"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS PO 2021",
+        "difficulty": 2
+      },
+      {
+        "stem": "A passage discusses microfinance institutions. The antonym of 'proliferation' as used in the passage (meaning rapid spread of MFIs) would be:",
+        "options": [
+          "Decline",
+          "Growth",
+          "Expansion",
+          "Development"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS RRB 2019",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "topic": "Cloze Test",
+    "questions": [
+      {
+        "stem": "The Reserve Bank of India has ___ several measures to boost liquidity in the market during the economic slowdown.",
+        "options": [
+          "announced",
+          "avoided",
+          "neglected",
+          "withdrawn"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS PO 2019",
+        "difficulty": 1
+      },
+      {
+        "stem": "Despite the government's efforts, the ___ between the rich and poor continues to widen in developing nations.",
+        "options": [
+          "bridge",
+          "gap",
+          "link",
+          "bond"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: SBI PO 2018",
+        "difficulty": 1
+      },
+      {
+        "stem": "The new policy aims to ___ a sense of responsibility among citizens regarding waste management.",
+        "options": [
+          "instil",
+          "destroy",
+          "ignore",
+          "reject"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS Clerk 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "The company's decision to downsize was ___ by falling revenues and increasing competition.",
+        "options": [
+          "preceded",
+          "prompted",
+          "prevented",
+          "promoted"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS RRB 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "Access to quality healthcare remains ___ in many rural areas, leading to preventable deaths.",
+        "options": [
+          "abundant",
+          "elusive",
+          "guaranteed",
+          "excessive"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: SBI PO 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "The government is ___ to implement reforms that will attract foreign investment without compromising domestic industries.",
+        "options": [
+          "reluctant",
+          "eager",
+          "striving",
+          "refusing"
+        ],
+        "correct_index": 2,
+        "explanation": "Source: IBPS PO 2020",
+        "difficulty": 2
+      },
+      {
+        "stem": "The pandemic has ___ the need for robust digital infrastructure in educational institutions.",
+        "options": [
+          "undermined",
+          "highlighted",
+          "diminished",
+          "concealed"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS Clerk 2020",
+        "difficulty": 2
+      },
+      {
+        "stem": "Economists have warned that ___ spending without corresponding revenue generation could lead to fiscal deficit.",
+        "options": [
+          "prudent",
+          "unchecked",
+          "minimal",
+          "balanced"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS RRB 2020",
+        "difficulty": 2
+      },
+      {
+        "stem": "The bilateral trade agreement is expected to ___ economic ties between the two nations significantly.",
+        "options": [
+          "sever",
+          "weaken",
+          "strengthen",
+          "complicate"
+        ],
+        "correct_index": 2,
+        "explanation": "Source: SBI PO 2020",
+        "difficulty": 1
+      },
+      {
+        "stem": "The regulatory body has taken a ___ stance on data privacy, imposing heavy fines on violators.",
+        "options": [
+          "lenient",
+          "strict",
+          "casual",
+          "indifferent"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS PO 2021",
+        "difficulty": 1
+      }
+    ]
+  },
+  {
+    "topic": "Error Spotting",
+    "questions": [
+      {
+        "stem": "Find the error: (A) The committee have decided / (B) to postpone the meeting / (C) until further notice / (D) No error",
+        "options": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS PO 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "Find the error: (A) Each of the boys / (B) were given / (C) a prize for their performance / (D) No error",
+        "options": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: SBI PO 2018",
+        "difficulty": 2
+      },
+      {
+        "stem": "Find the error: (A) He is one of those persons / (B) who is always ready / (C) to help others / (D) No error",
+        "options": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS Clerk 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "Find the error: (A) The manager along with his team / (B) are working hard / (C) to meet the deadline / (D) No error",
+        "options": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS RRB 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "Find the error: (A) Neither the teacher / (B) nor the students / (C) was present / (D) in the class / (E) No error",
+        "options": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "correct_index": 2,
+        "explanation": "Source: SBI PO 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "Find the error: (A) I have been living / (B) in this city / (C) since five years / (D) No error",
+        "options": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "correct_index": 2,
+        "explanation": "Source: IBPS PO 2020",
+        "difficulty": 1
+      },
+      {
+        "stem": "Find the error: (A) The news / (B) are not true / (C) according to reliable sources / (D) No error",
+        "options": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS Clerk 2020",
+        "difficulty": 1
+      },
+      {
+        "stem": "Find the error: (A) He insisted / (B) on me to go / (C) to the market / (D) No error",
+        "options": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS RRB 2020",
+        "difficulty": 2
+      },
+      {
+        "stem": "Find the error: (A) Despite of working hard / (B) he could not / (C) pass the examination / (D) No error",
+        "options": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: SBI PO 2020",
+        "difficulty": 1
+      },
+      {
+        "stem": "Find the error: (A) No sooner did he reach the station / (B) when the train / (C) had already left / (D) No error",
+        "options": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS PO 2021",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "topic": "Sentence Rearrangement",
+    "questions": [
+      {
+        "stem": "Rearrange: (P) has been a major (Q) lack of clean drinking water (R) in many rural areas (S) cause of diseases. The correct order is:",
+        "options": [
+          "QPSR",
+          "QRPS",
+          "PRQS",
+          "RQPS"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS PO 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "Rearrange: (P) the government announced (Q) to boost the economy (R) several new initiatives (S) during the budget session. Correct order:",
+        "options": [
+          "PRQS",
+          "PSRQ",
+          "PRQS",
+          "PRSQ"
+        ],
+        "correct_index": 3,
+        "explanation": "Source: SBI PO 2018",
+        "difficulty": 2
+      },
+      {
+        "stem": "Which sentence should come FIRST? (A) This has led to increased urbanisation. (B) India's economy has been growing rapidly. (C) People migrate to cities for better opportunities. (D) Rural infrastructure still needs development.",
+        "options": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS Clerk 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "Rearrange: (P) climate change is (Q) that requires immediate (R) a global challenge (S) attention from all nations. Correct order:",
+        "options": [
+          "PRQS",
+          "PRSQ",
+          "PRQS",
+          "QPRS"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS RRB 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "Which sentence should come LAST? (A) The bank launched a new savings scheme. (B) It offers attractive interest rates. (C) Many customers have enrolled already. (D) The scheme targets young professionals.",
+        "options": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "correct_index": 2,
+        "explanation": "Source: SBI PO 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "Rearrange: (P) education is the key (Q) to reducing poverty (R) and empowering communities (S) in developing nations. Correct order:",
+        "options": [
+          "PQRS",
+          "PRQS",
+          "PSQR",
+          "PQSR"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS PO 2020",
+        "difficulty": 1
+      },
+      {
+        "stem": "Which sentence should come THIRD in the paragraph? (A) Online fraud has increased significantly. (B) Banks have introduced OTP verification. (C) Customers must remain vigilant. (D) Digital banking usage has surged post-pandemic.",
+        "options": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS Clerk 2020",
+        "difficulty": 3
+      },
+      {
+        "stem": "Rearrange: (P) the farmer protests (Q) highlighted the need (R) for comprehensive (S) agricultural reform policies. Correct order:",
+        "options": [
+          "PQRS",
+          "PRQS",
+          "PQSR",
+          "PSQR"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS RRB 2020",
+        "difficulty": 2
+      },
+      {
+        "stem": "Which sentence is the SECOND in logical order? (A) Therefore, exports declined sharply. (B) The rupee depreciated against the dollar. (C) Global demand for Indian goods fell. (D) The government intervened with fiscal stimulus.",
+        "options": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: SBI PO 2020",
+        "difficulty": 3
+      },
+      {
+        "stem": "Rearrange: (P) technological innovation (Q) has transformed (R) the way businesses (S) operate in the modern world. Correct order:",
+        "options": [
+          "PQRS",
+          "PRQS",
+          "QPRS",
+          "PRSQ"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS PO 2021",
+        "difficulty": 1
+      }
+    ]
+  },
+  {
+    "topic": "Fill in the Blanks",
+    "questions": [
+      {
+        "stem": "The government's ___ approach to handling the crisis was appreciated by international observers.",
+        "options": [
+          "haphazard",
+          "proactive",
+          "negligent",
+          "indifferent"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS PO 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "The witness gave a ___ account of the events, leaving no detail unmentioned.",
+        "options": [
+          "vague",
+          "comprehensive",
+          "biased",
+          "brief"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: SBI PO 2018",
+        "difficulty": 1
+      },
+      {
+        "stem": "The new regulation is expected to ___ unfair trade practices in the market.",
+        "options": [
+          "encourage",
+          "curb",
+          "promote",
+          "increase"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS Clerk 2019",
+        "difficulty": 1
+      },
+      {
+        "stem": "His ___ behaviour during the meeting alienated his colleagues and damaged his reputation.",
+        "options": [
+          "amiable",
+          "arrogant",
+          "humble",
+          "cooperative"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS RRB 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "The ___ of evidence against the accused made conviction almost certain.",
+        "options": [
+          "scarcity",
+          "abundance",
+          "lack",
+          "absence"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: SBI PO 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "The two nations signed a ___ agreement to cooperate on counter-terrorism operations.",
+        "options": [
+          "bilateral",
+          "unilateral",
+          "hostile",
+          "temporary"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS PO 2020",
+        "difficulty": 2
+      },
+      {
+        "stem": "The CEO's resignation came as a ___ to the board members who had expected him to continue.",
+        "options": [
+          "relief",
+          "shock",
+          "blessing",
+          "routine"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS Clerk 2020",
+        "difficulty": 1
+      },
+      {
+        "stem": "The ___ nature of the disease makes early detection extremely difficult.",
+        "options": [
+          "obvious",
+          "insidious",
+          "transparent",
+          "apparent"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS RRB 2020",
+        "difficulty": 3
+      },
+      {
+        "stem": "The report ___ that immediate action is required to prevent further environmental degradation.",
+        "options": [
+          "denies",
+          "underscores",
+          "ignores",
+          "contradicts"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: SBI PO 2020",
+        "difficulty": 2
+      },
+      {
+        "stem": "The merger will ___ the company's position as the market leader in the sector.",
+        "options": [
+          "weaken",
+          "consolidate",
+          "diminish",
+          "threaten"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS PO 2021",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "topic": "Synonyms & Antonyms",
+    "questions": [
+      {
+        "stem": "Choose the synonym of 'ARDUOUS':",
+        "options": [
+          "Easy",
+          "Difficult",
+          "Simple",
+          "Pleasant"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS PO 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "Choose the antonym of 'BENEVOLENT':",
+        "options": [
+          "Kind",
+          "Generous",
+          "Malevolent",
+          "Charitable"
+        ],
+        "correct_index": 2,
+        "explanation": "Source: SBI PO 2018",
+        "difficulty": 2
+      },
+      {
+        "stem": "Choose the synonym of 'PRAGMATIC':",
+        "options": [
+          "Idealistic",
+          "Practical",
+          "Theoretical",
+          "Imaginary"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS Clerk 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "Choose the antonym of 'EXACERBATE':",
+        "options": [
+          "Worsen",
+          "Aggravate",
+          "Alleviate",
+          "Intensify"
+        ],
+        "correct_index": 2,
+        "explanation": "Source: IBPS RRB 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "Choose the synonym of 'UBIQUITOUS':",
+        "options": [
+          "Rare",
+          "Omnipresent",
+          "Scarce",
+          "Limited"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: SBI PO 2019",
+        "difficulty": 3
+      },
+      {
+        "stem": "Choose the antonym of 'VERBOSE':",
+        "options": [
+          "Wordy",
+          "Concise",
+          "Lengthy",
+          "Elaborate"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS PO 2020",
+        "difficulty": 2
+      },
+      {
+        "stem": "Choose the synonym of 'IMPEDIMENT':",
+        "options": [
+          "Aid",
+          "Obstacle",
+          "Support",
+          "Advantage"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS Clerk 2020",
+        "difficulty": 2
+      },
+      {
+        "stem": "Choose the antonym of 'EPHEMERAL':",
+        "options": [
+          "Temporary",
+          "Brief",
+          "Permanent",
+          "Fleeting"
+        ],
+        "correct_index": 2,
+        "explanation": "Source: IBPS RRB 2020",
+        "difficulty": 3
+      },
+      {
+        "stem": "Choose the synonym of 'COGNIZANT':",
+        "options": [
+          "Unaware",
+          "Ignorant",
+          "Aware",
+          "Oblivious"
+        ],
+        "correct_index": 2,
+        "explanation": "Source: SBI PO 2020",
+        "difficulty": 2
+      },
+      {
+        "stem": "Choose the antonym of 'FRUGAL':",
+        "options": [
+          "Thrifty",
+          "Economical",
+          "Extravagant",
+          "Careful"
+        ],
+        "correct_index": 2,
+        "explanation": "Source: IBPS PO 2021",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "topic": "Sentence Improvement",
+    "questions": [
+      {
+        "stem": "He has been working here since the past five years. Which part needs improvement?",
+        "options": [
+          "since the past",
+          "for the past",
+          "from the past",
+          "No improvement"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS PO 2019",
+        "difficulty": 1
+      },
+      {
+        "stem": "She is more taller than her sister. The correct form is:",
+        "options": [
+          "She is most taller",
+          "She is taller",
+          "She is very taller",
+          "No improvement"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: SBI PO 2018",
+        "difficulty": 1
+      },
+      {
+        "stem": "The teacher asked the students that why were they late. Correct form:",
+        "options": [
+          "why they were late",
+          "why are they late",
+          "that why they are late",
+          "No improvement"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS Clerk 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "He denied to help me with the project. Correct form:",
+        "options": [
+          "denied helping",
+          "refused to help",
+          "denied for helping",
+          "No improvement"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS RRB 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "I am looking forward to hear from you soon. Correct form:",
+        "options": [
+          "to hearing from you",
+          "to heard from you",
+          "for hearing from you",
+          "No improvement"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: SBI PO 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "The furniture in the office are very old and need replacement. Correct form:",
+        "options": [
+          "is very old and needs",
+          "are very old and needs",
+          "is very old and need",
+          "No improvement"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS PO 2020",
+        "difficulty": 2
+      },
+      {
+        "stem": "He asked me where do I live. Correct form:",
+        "options": [
+          "where I lived",
+          "where did I live",
+          "where I do live",
+          "No improvement"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS Clerk 2020",
+        "difficulty": 2
+      },
+      {
+        "stem": "Unless you do not work hard, you will not succeed. Correct form:",
+        "options": [
+          "Unless you work hard",
+          "If you do not work hard",
+          "Unless you will not work",
+          "No improvement"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS RRB 2020",
+        "difficulty": 2
+      },
+      {
+        "stem": "The sceneries of Kashmir are very beautiful. Correct form:",
+        "options": [
+          "The scenery of Kashmir is",
+          "The sceneries of Kashmir is",
+          "The scene of Kashmir are",
+          "No improvement"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: SBI PO 2020",
+        "difficulty": 1
+      },
+      {
+        "stem": "One should respect his elders and obey them. Correct form:",
+        "options": [
+          "One should respect one's elders",
+          "One should respect their elders",
+          "A person should respect his",
+          "No improvement"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS PO 2021",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "topic": "Para Jumbles",
+    "questions": [
+      {
+        "stem": "1. It aims to provide affordable healthcare. (P) The scheme covers hospitalisation expenses. (Q) Ayushman Bharat was launched in 2018. (R) Over 50 crore citizens are eligible. (S) It is the world's largest health insurance scheme. Which is the correct sequence?",
+        "options": [
+          "QSRP",
+          "QPSR",
+          "SQRP",
+          "QSPR"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS PO 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "Arrange in order: (A) Banks began offering digital services. (B) Internet penetration increased in India. (C) UPI revolutionised payment systems. (D) Demonetisation accelerated cashless transactions.",
+        "options": [
+          "BADC",
+          "BDAC",
+          "DBAC",
+          "ABDC"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: SBI PO 2019",
+        "difficulty": 3
+      },
+      {
+        "stem": "Which sentence starts the paragraph? (A) This led to a sharp fall in oil prices. (B) OPEC nations disagreed on production cuts. (C) Global oil demand fell due to the pandemic. (D) Many oil-dependent economies suffered severely.",
+        "options": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "correct_index": 2,
+        "explanation": "Source: IBPS Clerk 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "Arrange: (P) Consequently, inflation rates rose sharply. (Q) Supply chain disruptions affected global trade. (R) The pandemic shut down manufacturing units worldwide. (S) Central banks raised interest rates to control prices.",
+        "options": [
+          "RQPS",
+          "QRPS",
+          "RPQS",
+          "RQSP"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS RRB 2019",
+        "difficulty": 3
+      },
+      {
+        "stem": "Which sentence comes last? (A) The start-up ecosystem in India is booming. (B) Government initiatives like Start-up India have helped. (C) India now has over 100 unicorn companies. (D) Venture capital funding has increased manifold.",
+        "options": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "correct_index": 2,
+        "explanation": "Source: SBI PO 2020",
+        "difficulty": 2
+      },
+      {
+        "stem": "Arrange: (P) India's GDP growth slowed in 2020. (Q) The lockdown halted economic activities. (R) Recovery began in the third quarter. (S) The government announced stimulus packages.",
+        "options": [
+          "PQSR",
+          "QPSR",
+          "PQRS",
+          "QPRS"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS PO 2020",
+        "difficulty": 2
+      },
+      {
+        "stem": "Which is the opening sentence? (A) Women's participation in the workforce has improved. (B) Several policies promote gender equality. (C) However, the gap remains significant. (D) Education of girls has increased in recent decades.",
+        "options": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "correct_index": 3,
+        "explanation": "Source: IBPS Clerk 2020",
+        "difficulty": 2
+      },
+      {
+        "stem": "Arrange: (P) Electric vehicles are gaining popularity. (Q) Governments offer subsidies for EV purchases. (R) Fossil fuel pollution is a growing concern. (S) Battery technology has improved significantly.",
+        "options": [
+          "RPSQ",
+          "RPQS",
+          "RSQP",
+          "RSPQ"
+        ],
+        "correct_index": 3,
+        "explanation": "Source: IBPS RRB 2020",
+        "difficulty": 3
+      },
+      {
+        "stem": "Which sentence comes second? (A) Consequently, many small businesses shut down. (B) The pandemic severely impacted the economy. (C) Government relief packages provided some respite. (D) Unemployment rates hit record highs.",
+        "options": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "correct_index": 3,
+        "explanation": "Source: SBI PO 2018",
+        "difficulty": 3
+      },
+      {
+        "stem": "Arrange: (P) Cybersecurity threats have increased globally. (Q) Remote work expanded the attack surface. (R) Companies are investing heavily in security solutions. (S) Data breaches cost businesses billions annually.",
+        "options": [
+          "PQSR",
+          "QPSR",
+          "PQRS",
+          "QPRS"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS PO 2021",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "topic": "Idioms & Phrases",
+    "questions": [
+      {
+        "stem": "What does 'to burn the midnight oil' mean?",
+        "options": [
+          "To waste resources",
+          "To work late into the night",
+          "To start a fire",
+          "To cook late at night"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS Clerk 2019",
+        "difficulty": 1
+      },
+      {
+        "stem": "What does 'a shot in the dark' mean?",
+        "options": [
+          "A precise attempt",
+          "A wild guess",
+          "A dangerous action",
+          "A night attack"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: SBI PO 2018",
+        "difficulty": 1
+      },
+      {
+        "stem": "What does 'to turn over a new leaf' mean?",
+        "options": [
+          "To read a book",
+          "To change one's behaviour for the better",
+          "To plant a tree",
+          "To flip a page"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS PO 2019",
+        "difficulty": 1
+      },
+      {
+        "stem": "What does 'once in a blue moon' mean?",
+        "options": [
+          "Every night",
+          "Very rarely",
+          "During full moon",
+          "Never"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS RRB 2019",
+        "difficulty": 1
+      },
+      {
+        "stem": "What does 'to pull strings' mean?",
+        "options": [
+          "To play guitar",
+          "To use influence secretly",
+          "To work hard",
+          "To tie knots"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: SBI PO 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "What does 'the ball is in your court' mean?",
+        "options": [
+          "Playing a game",
+          "It is your turn to take action",
+          "You are in court",
+          "A legal matter"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS PO 2020",
+        "difficulty": 1
+      },
+      {
+        "stem": "What does 'to beat around the bush' mean?",
+        "options": [
+          "To garden",
+          "To avoid the main topic",
+          "To hunt",
+          "To exercise"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS Clerk 2020",
+        "difficulty": 1
+      },
+      {
+        "stem": "What does 'a blessing in disguise' mean?",
+        "options": [
+          "A hidden curse",
+          "Something bad that turns out to be good",
+          "A religious blessing",
+          "A costume party"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS RRB 2020",
+        "difficulty": 1
+      },
+      {
+        "stem": "What does 'to cry over spilt milk' mean?",
+        "options": [
+          "To be upset about wasted milk",
+          "To regret something that cannot be undone",
+          "To clean up a mess",
+          "To complain about food"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: SBI PO 2020",
+        "difficulty": 1
+      },
+      {
+        "stem": "What does 'to let the cat out of the bag' mean?",
+        "options": [
+          "To free a cat",
+          "To reveal a secret accidentally",
+          "To play with animals",
+          "To pack a bag"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS PO 2021",
+        "difficulty": 1
+      }
+    ]
+  }
+]

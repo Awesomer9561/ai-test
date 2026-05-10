@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Quantitative Aptitude",
+    "topics": [
+      "Number Series",
+      "Simplification & Approximation",
+      "Data Interpretation",
+      "Quadratic Equations",
+      "Profit & Loss",
+      "Simple & Compound Interest",
+      "Time Speed Distance",
+      "Ratio & Proportion",
+      "Mixtures & Alligation",
+      "Averages",
+      "Percentages",
+      "Time & Work"
+    ]
+  },
+  {
+    "name": "Reasoning Ability",
+    "topics": [
+      "Puzzles & Seating Arrangement",
+      "Syllogism",
+      "Coding-Decoding",
+      "Blood Relations",
+      "Direction Sense",
+      "Inequalities",
+      "Input-Output",
+      "Data Sufficiency",
+      "Order & Ranking",
+      "Alphanumeric Series",
+      "Critical Reasoning & Assumptions"
+    ]
+  },
+  {
+    "name": "English Language",
+    "topics": [
+      "Reading Comprehension",
+      "Cloze Test",
+      "Error Spotting",
+      "Sentence Rearrangement",
+      "Fill in the Blanks",
+      "Synonyms & Antonyms",
+      "Sentence Improvement",
+      "Para Jumbles",
+      "Idioms & Phrases"
+    ]
+  },
+  {
+    "name": "General & Banking Awareness",
+    "topics": [
+      "Banking Awareness",
+      "RBI & Monetary Policy",
+      "Financial Schemes & Programmes",
+      "Economy & Budget",
+      "Financial Institutions & Regulators",
+      "Digital Banking & Payments",
+      "Current Affairs & Static GK"
+    ]
+  },
+  {
+    "name": "Computer Awareness

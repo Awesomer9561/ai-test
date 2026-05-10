@@ -1,0 +1,116 @@
+[
+  {
+    "topic": "Hardware",
+    "questions": [
+      {
+        "stem": "Which of the following is the brain of the computer?",
+        "options": ["CPU", "RAM", "Hard Disk", "Monitor"],
+        "correct_index": 0,
+        "explanation": "The CPU (Central Processing Unit) is called the brain of the computer as it performs all processing and calculations.",
+        "difficulty": 1
+      },
+      {
+        "stem": "Which type of memory is volatile?",
+        "options": ["RAM", "ROM", "Hard Disk", "CD-ROM"],
+        "correct_index": 0,
+        "explanation": "RAM (Random Access Memory) is volatile memory — it loses its data when the power is turned off. ROM, hard disk, and CD-ROM are non-volatile.",
+        "difficulty": 1
+      }
+    ]
+  },
+  {
+    "topic": "Software",
+    "questions": [
+      {
+        "stem": "Which of the following is an example of an operating system?",
+        "options": ["Windows", "MS Word", "Google Chrome", "Photoshop"],
+        "correct_index": 0,
+        "explanation": "Windows is an operating system. MS Word is a word processor, Chrome is a browser, and Photoshop is image editing software — all are application software.",
+        "difficulty": 1
+      },
+      {
+        "stem": "A compiler is used to:",
+        "options": ["Translate high-level language to machine language", "Execute programs line by line", "Connect to the internet", "Manage files"],
+        "correct_index": 0,
+        "explanation": "A compiler translates the entire high-level language program into machine language at once, creating an executable file.",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "topic": "Networking & Internet",
+    "questions": [
+      {
+        "stem": "What is the full form of HTTP?",
+        "options": ["HyperText Transfer Protocol", "HyperText Transmission Protocol", "High Transfer Text Protocol", "HyperText Technical Protocol"],
+        "correct_index": 0,
+        "explanation": "HTTP stands for HyperText Transfer Protocol, used for transmitting web pages over the internet.",
+        "difficulty": 1
+      },
+      {
+        "stem": "Which protocol is used for sending emails?",
+        "options": ["SMTP", "FTP", "HTTP", "TCP"],
+        "correct_index": 0,
+        "explanation": "SMTP (Simple Mail Transfer Protocol) is the standard protocol for sending emails across the internet.",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "topic": "MS Office",
+    "questions": [
+      {
+        "stem": "In MS Excel, which function is used to find the highest value in a range?",
+        "options": ["MAX", "HIGH", "LARGE", "TOP"],
+        "correct_index": 0,
+        "explanation": "The MAX function returns the largest value in a set of values. E.g., =MAX(A1:A10) returns the highest value in the range.",
+        "difficulty": 1
+      },
+      {
+        "stem": "What is the shortcut key to save a document in MS Word?",
+        "options": ["Ctrl+S", "Ctrl+V", "Ctrl+D", "Ctrl+P"],
+        "correct_index": 0,
+        "explanation": "Ctrl+S is the keyboard shortcut to save a document. Ctrl+V is paste, Ctrl+D is font dialog, Ctrl+P is print.",
+        "difficulty": 1
+      }
+    ]
+  },
+  {
+    "topic": "Cyber Security",
+    "questions": [
+      {
+        "stem": "Phishing is a type of:",
+        "options": ["Cyber attack", "Antivirus software", "Operating system", "Programming language"],
+        "correct_index": 0,
+        "explanation": "Phishing is a cyber attack where attackers disguise themselves as trustworthy entities to steal sensitive information like passwords and credit card numbers.",
+        "difficulty": 1
+      },
+      {
+        "stem": "A firewall is used to:",
+        "options": ["Protect a network from unauthorized access", "Speed up internet connection", "Store data", "Create backups"],
+        "correct_index": 0,
+        "explanation": "A firewall monitors and controls incoming and outgoing network traffic based on security rules, protecting the network from unauthorized access.",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "topic": "DBMS Basics",
+    "questions": [
+      {
+        "stem": "In a relational database, a row is also called a:",
+        "options": ["Record/Tuple", "Field", "Column", "Table"],
+        "correct_index": 0,
+        "explanation": "In RDBMS terminology, a row is called a record or tuple. A column is called a field or attribute.",
+        "difficulty": 1
+      },
+      {
+        "stem": "SQL stands for:",
+        "options": ["Structured Query Language", "Simple Query Language", "Standard Query Logic", "System Query Language"],
+        "correct_index": 0,
+        "explanation": "SQL stands for Structured Query Language, used to manage and manipulate relational databases.",
+        "difficulty": 1
+      }
+    ]
+  }
+]

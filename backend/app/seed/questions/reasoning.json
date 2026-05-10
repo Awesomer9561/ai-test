@@ -1,0 +1,1377 @@
+[
+  {
+    "topic": "Puzzles & Seating Arrangement",
+    "questions": [
+      {
+        "stem": "Eight persons A, B, C, D, E, F, G and H are sitting around a circular table facing the centre. B sits third to the left of D. F sits second to the right of B. C sits between A and B. H sits second to the left of A. E is not an immediate neighbour of D. Who sits between E and D?",
+        "options": [
+          "F",
+          "G",
+          "H",
+          "A"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS PO 2019",
+        "difficulty": 3
+      },
+      {
+        "stem": "Six people P, Q, R, S, T and U are sitting in a row facing north. Q sits at one of the extreme ends. T has only one neighbour. S is not a neighbour of Q. R sits third to the left of U. Who sits between R and T?",
+        "options": [
+          "P",
+          "S",
+          "Q",
+          "U"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS Clerk 2020",
+        "difficulty": 3
+      },
+      {
+        "stem": "Five friends A, B, C, D and E are sitting on a bench. A is sitting next to B. C is sitting next to D. D is not sitting with E. E is on the left end. C is on second position from right. Who is sitting at the centre?",
+        "options": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: SBI PO 2018",
+        "difficulty": 2
+      },
+      {
+        "stem": "Seven persons are sitting in a straight line facing north. C sits fourth from the left end. B sits second to the right of C. Only one person sits between D and B. A sits third to the left of D. E is an immediate neighbour of A. F sits second to the left of E. Who sits at the extreme right end?",
+        "options": [
+          "B",
+          "D",
+          "G",
+          "E"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS RRB 2019",
+        "difficulty": 3
+      },
+      {
+        "stem": "Eight people are sitting around a square table with two on each side. Persons sitting on opposite sides face each other. A sits second to the left of B. C faces A. D is to the immediate right of C. E faces D. F is to the immediate left of E. G and H sit on the same side. Who faces B?",
+        "options": [
+          "F",
+          "G",
+          "H",
+          "D"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS PO 2020",
+        "difficulty": 4
+      },
+      {
+        "stem": "Six persons M, N, O, P, Q and R are sitting in two rows with three persons in each row. Persons in row 1 face south and persons in row 2 face north. M is at one of the extreme ends and faces O. Q is to the immediate right of O. P faces N. R is not at any extreme end. Who is sitting between M and P?",
+        "options": [
+          "N",
+          "R",
+          "Q",
+          "O"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: SBI PO 2019",
+        "difficulty": 3
+      },
+      {
+        "stem": "In a certain arrangement, five boxes are stacked one above another. The red box is above the green but below the blue. The yellow box is just below the green. The white box is at the bottom. Which box is at the top?",
+        "options": [
+          "Red",
+          "Blue",
+          "Green",
+          "Yellow"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS Clerk 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "Eight persons A through H sit around a circular table. Some face centre, some face outside. B sits third to the right of F. C sits opposite to B. A and D are immediate neighbours of C. G sits second to left of A. E is not a neighbour of G. H faces outside. How many persons face outside?",
+        "options": [
+          "3",
+          "4",
+          "5",
+          "2"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS PO 2021",
+        "difficulty": 4
+      },
+      {
+        "stem": "Four couples are sitting in a row. No husband sits adjacent to his wife. A is the husband of B. C is the wife of D. E sits at one extreme end. F sits third from E. G is not adjacent to E or F. B sits adjacent to D. Who sits between C and A?",
+        "options": [
+          "E and F",
+          "D and G",
+          "F and H",
+          "G and H"
+        ],
+        "correct_index": 2,
+        "explanation": "Source: SBI PO 2020",
+        "difficulty": 4
+      },
+      {
+        "stem": "Ten students are sitting in two rows with five in each. Row 1 faces south and row 2 faces north. P sits at one extreme end of row 1 and faces Q. R sits second to the left of Q. T sits opposite to the one who is third from the left in row 1. S sits at an extreme end of row 2. How many students sit between R and S?",
+        "options": [
+          "1",
+          "2",
+          "3",
+          "0"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS RRB 2020",
+        "difficulty": 4
+      }
+    ]
+  },
+  {
+    "topic": "Syllogism",
+    "questions": [
+      {
+        "stem": "Statements: All dogs are cats. Some cats are rats. No rat is a cow. Conclusions: I. Some dogs are rats. II. No cow is a dog. Which conclusion follows?",
+        "options": [
+          "Only I",
+          "Only II",
+          "Both I and II",
+          "Neither I nor II"
+        ],
+        "correct_index": 3,
+        "explanation": "Source: IBPS PO 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "Statements: Some books are pens. All pens are chairs. Some chairs are tables. Conclusions: I. Some books are chairs. II. Some tables are pens. Which conclusion follows?",
+        "options": [
+          "Only I",
+          "Only II",
+          "Both I and II",
+          "Neither I nor II"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: SBI PO 2018",
+        "difficulty": 2
+      },
+      {
+        "stem": "Statements: No flower is a tree. All trees are plants. Some plants are herbs. Conclusions: I. No flower is a plant. II. Some herbs are trees. Which conclusion follows?",
+        "options": [
+          "Only I",
+          "Only II",
+          "Both",
+          "Neither"
+        ],
+        "correct_index": 3,
+        "explanation": "Source: IBPS Clerk 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "Statements: All squares are circles. All circles are triangles. No triangle is a rectangle. Conclusions: I. No square is a rectangle. II. All squares are triangles. Which conclusion follows?",
+        "options": [
+          "Only I",
+          "Only II",
+          "Both I and II",
+          "Neither"
+        ],
+        "correct_index": 2,
+        "explanation": "Source: IBPS RRB 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "Statements: Some rivers are lakes. All lakes are oceans. No ocean is a pond. Conclusions: I. Some rivers are oceans. II. No lake is a pond. Which conclusion follows?",
+        "options": [
+          "Only I",
+          "Only II",
+          "Both I and II",
+          "Neither"
+        ],
+        "correct_index": 2,
+        "explanation": "Source: SBI PO 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "Statements: All mangoes are apples. Some apples are oranges. All oranges are bananas. Conclusions: I. Some mangoes are oranges. II. Some bananas are apples. Which conclusion follows?",
+        "options": [
+          "Only I",
+          "Only II",
+          "Both",
+          "Neither"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS PO 2020",
+        "difficulty": 3
+      },
+      {
+        "stem": "Statements: No car is a bus. Some buses are trains. All trains are planes. Conclusions: I. Some planes are buses. II. No car is a train. Which conclusion follows?",
+        "options": [
+          "Only I",
+          "Only II",
+          "Both",
+          "Neither"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS Clerk 2020",
+        "difficulty": 3
+      },
+      {
+        "stem": "Statements: All metals are liquids. All liquids are gases. No gas is a solid. Conclusions: I. No metal is a solid. II. All metals are gases. III. Some gases are metals. Which conclusions follow?",
+        "options": [
+          "I and II only",
+          "II and III only",
+          "I and III only",
+          "All follow"
+        ],
+        "correct_index": 3,
+        "explanation": "Source: SBI PO 2020",
+        "difficulty": 3
+      },
+      {
+        "stem": "Statements: Some tables are chairs. No chair is a window. All windows are doors. Conclusions: I. Some tables are not windows. II. All doors being chairs is a possibility. Which conclusion follows?",
+        "options": [
+          "Only I",
+          "Only II",
+          "Both I and II",
+          "Neither"
+        ],
+        "correct_index": 2,
+        "explanation": "Source: IBPS PO 2021",
+        "difficulty": 3
+      },
+      {
+        "stem": "Statements: All kings are queens. No queen is a prince. Some princes are knights. Conclusions: I. No king is a prince. II. Some knights are not queens. Which conclusion follows?",
+        "options": [
+          "Only I",
+          "Only II",
+          "Both I and II",
+          "Neither"
+        ],
+        "correct_index": 2,
+        "explanation": "Source: IBPS RRB 2020",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "topic": "Coding-Decoding",
+    "questions": [
+      {
+        "stem": "In a certain code, COMPUTER is written as RFUVQNPC. How will MEDICINE be written in that code?",
+        "options": [
+          "EOJDJEFM",
+          "FDJDJEFM",
+          "EOJDJEFN",
+          "FOJDJEMF"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS PO 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "If TRAIN is coded as 72, and BUS is coded as 38, how is CAR coded?",
+        "options": [
+          "22",
+          "24",
+          "26",
+          "28"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: SBI PO 2018",
+        "difficulty": 2
+      },
+      {
+        "stem": "In a code language, 'sky is blue' is written as 'da pa ta', 'blue is nice' is written as 'ta na da'. What is the code for 'blue'?",
+        "options": [
+          "da",
+          "ta",
+          "pa",
+          "na"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS Clerk 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "In a certain code, MOBILE is written as OMDGNK. How is GALAXY written?",
+        "options": [
+          "ICNCZA",
+          "ICNCZX",
+          "ICNCAY",
+          "ICMCZX"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS RRB 2019",
+        "difficulty": 3
+      },
+      {
+        "stem": "In a code language, 'go for picnic' is written as '5#9 3#6 7#2', 'picnic is fun' is written as '7#2 4#5 2#3'. What is the code for 'picnic'?",
+        "options": [
+          "5#9",
+          "7#2",
+          "3#6",
+          "4#5"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: SBI PO 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "If A=1, B=2... Z=26, and MEAN is coded as 43, what is the code for MODE?",
+        "options": [
+          "40",
+          "42",
+          "44",
+          "38"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS PO 2020",
+        "difficulty": 2
+      },
+      {
+        "stem": "In a certain code, FORGET is written as DPPHCR. How will MEMORY be written?",
+        "options": [
+          "KCKNPW",
+          "KCKOPW",
+          "KCKNQW",
+          "LCKMPW"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS Clerk 2020",
+        "difficulty": 3
+      },
+      {
+        "stem": "In a code language, 'she likes chocolates' means 'tic pic nic', 'he likes games' means 'nic sic vic', 'she plays games' means 'vic tic wic'. What is the code for 'likes'?",
+        "options": [
+          "tic",
+          "nic",
+          "pic",
+          "vic"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS RRB 2020",
+        "difficulty": 2
+      },
+      {
+        "stem": "HOUSE is coded as JQWUG in a certain pattern. How is CHAIR coded in the same pattern?",
+        "options": [
+          "EJCKT",
+          "EJCKR",
+          "EJCKS",
+          "EKCJT"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: SBI PO 2020",
+        "difficulty": 3
+      },
+      {
+        "stem": "In a code language, PENCIL is written as RGPEKN. How is ERASER written?",
+        "options": [
+          "GTCUGT",
+          "GTCUGS",
+          "GSCUGT",
+          "GTBUGT"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS PO 2021",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "topic": "Blood Relations",
+    "questions": [
+      {
+        "stem": "Pointing to a man in a photograph, a woman says 'His mother's son's wife is my mother-in-law.' How is the woman related to the man in the photograph?",
+        "options": [
+          "Daughter-in-law",
+          "Granddaughter",
+          "Daughter",
+          "Niece"
+        ],
+        "correct_index": 2,
+        "explanation": "Source: IBPS PO 2019",
+        "difficulty": 3
+      },
+      {
+        "stem": "A is the father of B. C is the daughter of B. D is the brother of B. E is the son of D. How is C related to E?",
+        "options": [
+          "Sister",
+          "Cousin",
+          "Aunt",
+          "Niece"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: SBI PO 2018",
+        "difficulty": 2
+      },
+      {
+        "stem": "Introducing a girl, Ravi said 'She is the only daughter of the father of my mother.' How is the girl related to Ravi?",
+        "options": [
+          "Sister",
+          "Mother",
+          "Aunt",
+          "Grandmother"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS Clerk 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "P is the brother of Q. R is the daughter of P. S is the sister of R. T is the mother of P. How is Q related to S?",
+        "options": [
+          "Uncle",
+          "Father",
+          "Brother",
+          "Cousin"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS RRB 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "M is married to N. N is the sister of O. O is the father of P. Q is the mother of M. How is P related to M?",
+        "options": [
+          "Nephew/Niece",
+          "Son/Daughter",
+          "Cousin",
+          "Brother/Sister"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: SBI PO 2019",
+        "difficulty": 3
+      },
+      {
+        "stem": "Pointing to a photograph, Rajesh says 'The person in this photo is the brother of the sister of my father's son.' Who is in the photograph?",
+        "options": [
+          "Rajesh himself",
+          "Rajesh's father",
+          "Rajesh's brother",
+          "Rajesh's uncle"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS PO 2020",
+        "difficulty": 3
+      },
+      {
+        "stem": "A woman introduces a man as 'the son of the brother of my mother.' How is the man related to the woman?",
+        "options": [
+          "Nephew",
+          "Son",
+          "Cousin",
+          "Uncle"
+        ],
+        "correct_index": 2,
+        "explanation": "Source: IBPS Clerk 2020",
+        "difficulty": 2
+      },
+      {
+        "stem": "X says to Y, 'Your mother is the only daughter of my mother.' How is X related to Y?",
+        "options": [
+          "Father",
+          "Maternal uncle",
+          "Grandfather",
+          "Brother"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS RRB 2020",
+        "difficulty": 3
+      },
+      {
+        "stem": "A + B means A is the father of B. A - B means A is the wife of B. A x B means A is the brother of B. If P + Q - R x S, how is S related to P?",
+        "options": [
+          "Son",
+          "Grandson",
+          "Daughter-in-law",
+          "Brother-in-law"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: SBI PO 2020",
+        "difficulty": 3
+      },
+      {
+        "stem": "In a family of six persons, F is the sister of D. B is the brother of E. D is the daughter of A. A is the father of B. E is the son of C. How is C related to F?",
+        "options": [
+          "Aunt",
+          "Mother",
+          "Sister",
+          "Grandmother"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS PO 2021",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "topic": "Direction Sense",
+    "questions": [
+      {
+        "stem": "A man walks 5 km south, then turns left and walks 3 km east, then turns left and walks 5 km north. How far is he from the starting point?",
+        "options": [
+          "3 km",
+          "5 km",
+          "8 km",
+          "2 km"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS Clerk 2019",
+        "difficulty": 1
+      },
+      {
+        "stem": "Ravi starts from point A, walks 10 m north, turns right walks 15 m, turns right walks 10 m, turns left walks 5 m. How far and in which direction is he from point A?",
+        "options": [
+          "20 m East",
+          "15 m East",
+          "20 m West",
+          "15 m North"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS PO 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "From his house, Rahul goes 15 km towards North. Then he turns left and goes 10 km. He again turns left and goes 15 km. In which direction is he facing now?",
+        "options": [
+          "North",
+          "South",
+          "East",
+          "West"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: SBI PO 2018",
+        "difficulty": 1
+      },
+      {
+        "stem": "A person walks 4 km towards east, then turns left and walks 6 km, then turns right and walks 4 km. He is in which direction from the starting point?",
+        "options": [
+          "North-East",
+          "North-West",
+          "South-East",
+          "South-West"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS RRB 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "Meena walks 20 m north, then 15 m east, then 20 m south, then 25 m west. How far is she from the starting point and in which direction?",
+        "options": [
+          "10 m West",
+          "10 m East",
+          "15 m West",
+          "5 m West"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: SBI PO 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "Point B is 10 m south of point A. Point C is 5 m east of B. Point D is 3 m north of C. Point E is 7 m west of D. How far is E from A?",
+        "options": [
+          "7 m south-west",
+          "sqrt(53) m south-west",
+          "7 m south",
+          "sqrt(53) m south"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS PO 2020",
+        "difficulty": 3
+      },
+      {
+        "stem": "Suresh walked 6 m facing the rising sun. He turned to his left and walked 4 m. Again he turned left and walked 3 m. How far is he from the starting point?",
+        "options": [
+          "5 m",
+          "7 m",
+          "4 m",
+          "6 m"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS Clerk 2020",
+        "difficulty": 2
+      },
+      {
+        "stem": "A man starts from point O, walks 8 km south, turns left walks 6 km, turns left walks 8 km, and turns right walks 2 km. What is the shortest distance from O?",
+        "options": [
+          "8 km",
+          "6 km",
+          "10 km",
+          "4 km"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS RRB 2020",
+        "difficulty": 3
+      },
+      {
+        "stem": "Rekha starts from her home facing north. She walks 3 km, turns right and walks 4 km, turns right and walks 7 km, turns left and walks 2 km. In which direction is she from home?",
+        "options": [
+          "South-East",
+          "South-West",
+          "North-East",
+          "North-West"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: SBI PO 2020",
+        "difficulty": 3
+      },
+      {
+        "stem": "Starting from point P, Ram walks 12 m towards south. He turns left and walks 8 m. He then turns left and walks 5 m. What is the shortest distance between his final position and point P?",
+        "options": [
+          "sqrt(113) m",
+          "sqrt(89) m",
+          "11 m",
+          "9 m"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS PO 2021",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "topic": "Inequalities",
+    "questions": [
+      {
+        "stem": "Statements: A > B >= C, D < C, E >= A. Conclusions: I. E > D  II. B >= D. Which is true?",
+        "options": [
+          "Only I",
+          "Only II",
+          "Both I and II",
+          "Neither"
+        ],
+        "correct_index": 2,
+        "explanation": "Source: IBPS PO 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "Statements: P <= Q = R > S, T >= R. Conclusions: I. T > S  II. P <= T. Which is true?",
+        "options": [
+          "Only I",
+          "Only II",
+          "Both I and II",
+          "Neither"
+        ],
+        "correct_index": 2,
+        "explanation": "Source: SBI PO 2018",
+        "difficulty": 2
+      },
+      {
+        "stem": "Statements: M > N = O >= P, Q < N. Conclusions: I. M > Q  II. O >= Q. Which conclusion follows?",
+        "options": [
+          "Only I",
+          "Only II",
+          "Both I and II",
+          "Neither"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS Clerk 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "Statements: H = I > J, K >= I, L < J. Conclusions: I. K > L  II. H >= K. Which is true?",
+        "options": [
+          "Only I",
+          "Only II",
+          "Both",
+          "Neither"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS RRB 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "Statements: A >= B > C = D, E < C. Conclusions: I. A > E  II. B > E  III. D >= E. Which is/are true?",
+        "options": [
+          "I and II only",
+          "I and III only",
+          "II and III only",
+          "I and II only"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: SBI PO 2019",
+        "difficulty": 3
+      },
+      {
+        "stem": "Statements: X < Y = Z >= W > V. Conclusions: I. Y > V  II. X < W. Which is true?",
+        "options": [
+          "Only I",
+          "Only II",
+          "Both",
+          "Neither"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS PO 2020",
+        "difficulty": 2
+      },
+      {
+        "stem": "Statements: L > M >= N, O = M, P < N. Conclusions: I. L > P  II. O >= P  III. L > O. Which is/are true?",
+        "options": [
+          "All follow",
+          "I and II only",
+          "I and III only",
+          "II and III only"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS Clerk 2020",
+        "difficulty": 3
+      },
+      {
+        "stem": "Statements: D >= E > F = G, H < F. Conclusions: I. D > H  II. E > H. Which is true?",
+        "options": [
+          "Only I",
+          "Only II",
+          "Both I and II",
+          "Neither"
+        ],
+        "correct_index": 2,
+        "explanation": "Source: IBPS RRB 2020",
+        "difficulty": 2
+      },
+      {
+        "stem": "Statements: J = K > L >= M, N > K. Conclusions: I. N > M  II. J < N  III. N > L. Which is/are true?",
+        "options": [
+          "All follow",
+          "I and III only",
+          "II and III only",
+          "I only"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: SBI PO 2020",
+        "difficulty": 3
+      },
+      {
+        "stem": "Statements: R <= S = T > U >= V, W > T. Conclusions: I. W > V  II. R <= W  III. S < W. Which is/are true?",
+        "options": [
+          "I and II only",
+          "All follow",
+          "I and III only",
+          "II and III only"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS PO 2021",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "topic": "Input-Output",
+    "questions": [
+      {
+        "stem": "A machine rearranges words and numbers in steps. Input: 'go 52 now 17 far 93 his 41'. Step I: 'far go 52 now 17 93 his 41'. Step II: 'far 93 go 52 now 17 his 41'. Following this pattern, what would Step IV be?",
+        "options": [
+          "far 93 go 52 his 41 now 17",
+          "far 93 go 52 his now 41 17",
+          "far 93 go his 52 41 now 17",
+          "far 93 go 52 his 17 now 41"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS PO 2019",
+        "difficulty": 3
+      },
+      {
+        "stem": "Input: 'over 39 cat 27 big 63 run 18'. Step I: 'big over 39 cat 27 63 run 18'. Step II: 'big 63 over 39 cat 27 run 18'. What will Step III be?",
+        "options": [
+          "big 63 cat over 39 27 run 18",
+          "big 63 cat 39 over 27 run 18",
+          "big 63 over cat 39 27 run 18",
+          "big 63 cat 27 over 39 run 18"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: SBI PO 2018",
+        "difficulty": 3
+      },
+      {
+        "stem": "A machine arranges numbers in ascending order from left, one at a time. Input: '45 12 78 34 56 23'. How many steps are needed to get the final arrangement?",
+        "options": [
+          "4",
+          "5",
+          "6",
+          "3"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS Clerk 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "Input: 'win 58 23 top 71 cup 36 pen'. In each step the machine arranges one word alphabetically from left and one number in descending order alternately. What is Step III output?",
+        "options": [
+          "cup 71 pen 58 win 23 top 36",
+          "cup 71 pen win 58 23 top 36",
+          "cup 71 pen 58 23 top win 36",
+          "cup pen 71 58 win 23 top 36"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS RRB 2019",
+        "difficulty": 3
+      },
+      {
+        "stem": "Input: '9 2 5 7 3 6 1 8'. The machine swaps adjacent elements if left > right in each pass (bubble sort). How many complete passes are needed to fully sort this?",
+        "options": [
+          "5",
+          "6",
+          "7",
+          "4"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: SBI PO 2019",
+        "difficulty": 3
+      },
+      {
+        "stem": "Input: 'joy red top aim 67 43 29 85'. Step I: 'aim joy red top 67 43 29 85'. Step II: 'aim 85 joy red top 67 43 29'. What is Step IV?",
+        "options": [
+          "aim 85 joy 67 red 43 top 29",
+          "aim 85 joy 67 red top 43 29",
+          "aim joy 85 67 red top 43 29",
+          "aim 85 joy red 67 43 top 29"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS PO 2020",
+        "difficulty": 3
+      },
+      {
+        "stem": "In a certain machine, each step reverses a progressively larger segment from the left. Input: '1 2 3 4 5'. Step I reverses first 2: '2 1 3 4 5'. Step II reverses first 3: '3 1 2 4 5'. What is Step IV?",
+        "options": [
+          "5 4 2 1 3",
+          "5 2 1 4 3",
+          "5 1 2 4 3",
+          "5 4 1 2 3"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS Clerk 2020",
+        "difficulty": 3
+      },
+      {
+        "stem": "Input: 'max 19 27 cut 41 dog 8 fan'. The machine alternately picks the smallest number and earliest alphabetical word. Step I: '8 max 19 27 cut 41 dog fan'. Step II: '8 cut max 19 27 41 dog fan'. What is Step IV?",
+        "options": [
+          "8 cut 19 dog max 27 41 fan",
+          "8 cut 19 dog 27 max 41 fan",
+          "8 cut 19 dog max 41 27 fan",
+          "8 19 cut dog max 27 41 fan"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS RRB 2020",
+        "difficulty": 4
+      },
+      {
+        "stem": "Input: '14 5 31 8 22 11'. Each step moves the largest unsorted number to the right end. After Step 3, the arrangement is:",
+        "options": [
+          "5 8 11 14 22 31",
+          "5 8 14 11 22 31",
+          "14 5 8 11 22 31",
+          "5 8 11 31 22 14"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: SBI PO 2020",
+        "difficulty": 3
+      },
+      {
+        "stem": "Input: 'sun 45 old 12 new 78 big 33'. Machine logic: even steps pick the highest number to right of last arranged element; odd steps pick next alphabetical word to left. What is Step II?",
+        "options": [
+          "big 78 sun 45 old 12 new 33",
+          "big 78 45 sun old 12 new 33",
+          "big sun 78 45 old 12 new 33",
+          "big 78 old sun 45 12 new 33"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS PO 2021",
+        "difficulty": 4
+      }
+    ]
+  },
+  {
+    "topic": "Data Sufficiency",
+    "questions": [
+      {
+        "stem": "Is X the brother of Y? Statement I: X is the son of Z. Statement II: Y is the daughter of Z.",
+        "options": [
+          "Statement I alone is sufficient",
+          "Statement II alone is sufficient",
+          "Both together are sufficient",
+          "Both together are not sufficient"
+        ],
+        "correct_index": 2,
+        "explanation": "Source: IBPS PO 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "Who among A, B, C, D, E is the tallest? Statement I: B is taller than A and C. Statement II: D is taller than B but shorter than E.",
+        "options": [
+          "Statement I alone",
+          "Statement II alone",
+          "Both together are sufficient",
+          "Both together are not sufficient"
+        ],
+        "correct_index": 2,
+        "explanation": "Source: SBI PO 2018",
+        "difficulty": 2
+      },
+      {
+        "stem": "What is the code for 'sky' in a code language? Statement I: 'sky is blue' is coded as 'pa ta na'. Statement II: 'blue sky high' is coded as 'na da pa'.",
+        "options": [
+          "Statement I alone",
+          "Statement II alone",
+          "Both together are sufficient",
+          "Both together are not sufficient"
+        ],
+        "correct_index": 2,
+        "explanation": "Source: IBPS Clerk 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "In which direction is town B from town A? Statement I: Town C is to the north of A and to the west of B. Statement II: Town D is to the east of A and south of B.",
+        "options": [
+          "I alone",
+          "II alone",
+          "Either alone is sufficient",
+          "Both together are sufficient"
+        ],
+        "correct_index": 2,
+        "explanation": "Source: IBPS RRB 2019",
+        "difficulty": 3
+      },
+      {
+        "stem": "How is P related to Q? Statement I: R is the mother of P. Statement II: Q is the son of R.",
+        "options": [
+          "I alone",
+          "II alone",
+          "Both together are sufficient",
+          "Both together are not sufficient"
+        ],
+        "correct_index": 3,
+        "explanation": "Source: SBI PO 2019",
+        "difficulty": 3
+      },
+      {
+        "stem": "On which day of the week did Mohan visit Delhi? Statement I: Mohan visited Delhi two days before Friday. Statement II: Mohan did not visit Delhi on Monday or Tuesday.",
+        "options": [
+          "Statement I alone",
+          "Statement II alone",
+          "Both together",
+          "Either alone"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS PO 2020",
+        "difficulty": 2
+      },
+      {
+        "stem": "Is A greater than B? Statement I: A is greater than C. Statement II: B is less than C.",
+        "options": [
+          "I alone",
+          "II alone",
+          "Both together",
+          "Either alone"
+        ],
+        "correct_index": 2,
+        "explanation": "Source: IBPS Clerk 2020",
+        "difficulty": 2
+      },
+      {
+        "stem": "What is Ravi's rank from the top in a class of 50? Statement I: Ravi is 5 ranks below Sunil who is 20th from the top. Statement II: Ravi is 26 ranks above the last.",
+        "options": [
+          "I alone",
+          "II alone",
+          "Either alone is sufficient",
+          "Both together needed"
+        ],
+        "correct_index": 2,
+        "explanation": "Source: IBPS RRB 2020",
+        "difficulty": 2
+      },
+      {
+        "stem": "How many daughters does Mr. Sharma have? Statement I: Mrs. Sharma is the mother of two children. Statement II: Ram is the only son of Mr. Sharma.",
+        "options": [
+          "I alone",
+          "II alone",
+          "Both together are sufficient",
+          "Both together are not sufficient"
+        ],
+        "correct_index": 2,
+        "explanation": "Source: SBI PO 2020",
+        "difficulty": 2
+      },
+      {
+        "stem": "Among five persons sitting in a row, who is in the middle? Statement I: A and B are at extreme ends. Statement II: C is between A and D.",
+        "options": [
+          "I alone",
+          "II alone",
+          "Both together",
+          "Both together not sufficient"
+        ],
+        "correct_index": 3,
+        "explanation": "Source: IBPS PO 2021",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "topic": "Order & Ranking",
+    "questions": [
+      {
+        "stem": "In a row of 40 students, Ravi is 7th from the left end. What is his position from the right end?",
+        "options": [
+          "33rd",
+          "34th",
+          "32nd",
+          "35th"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS Clerk 2019",
+        "difficulty": 1
+      },
+      {
+        "stem": "In a class, Mohan's rank from top is 15th and from bottom is 25th. How many students are in the class?",
+        "options": [
+          "39",
+          "40",
+          "38",
+          "41"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: SBI PO 2018",
+        "difficulty": 1
+      },
+      {
+        "stem": "Suresh is 7 ranks ahead of Mohan who ranks 28th from the last. If there are 50 students, what is Suresh's rank from the start?",
+        "options": [
+          "16th",
+          "15th",
+          "17th",
+          "14th"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS PO 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "In a row of children, Nita is 14th from the left and Mita is 7th from the right. If they interchange their positions, Nita becomes 23rd from the left. How many children are there?",
+        "options": [
+          "29",
+          "30",
+          "28",
+          "31"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS RRB 2019",
+        "difficulty": 3
+      },
+      {
+        "stem": "In a class of 60 students, A's rank is 17th from the top. B is 10 ranks below A. What is B's rank from the bottom?",
+        "options": [
+          "34th",
+          "33rd",
+          "35th",
+          "32nd"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: SBI PO 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "Arun is 5th from the top and Sunil is 24th from the bottom in a class. If Arun is 6 ranks above Sunil, how many students are in the class?",
+        "options": [
+          "34",
+          "33",
+          "35",
+          "32"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS PO 2020",
+        "difficulty": 2
+      },
+      {
+        "stem": "In a row of boys, Ramu is 18th from the left end and Somu is 18th from the right end. If they interchange their positions, Ramu becomes 25th from the left. How many boys are in the row?",
+        "options": [
+          "42",
+          "41",
+          "43",
+          "40"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS Clerk 2020",
+        "difficulty": 3
+      },
+      {
+        "stem": "A is 7th from the left and B is 12th from the right. If there are 5 persons between them, what is the minimum number of persons in the row?",
+        "options": [
+          "23",
+          "24",
+          "18",
+          "19"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS RRB 2020",
+        "difficulty": 3
+      },
+      {
+        "stem": "In a queue, Ram is 10th from the front and Shyam is 25th from the end. If Ram is exactly in the middle of the queue, what is Shyam's position from the front?",
+        "options": [
+          "14th",
+          "5th",
+          "6th",
+          "Not determinable"
+        ],
+        "correct_index": 3,
+        "explanation": "Source: SBI PO 2020",
+        "difficulty": 3
+      },
+      {
+        "stem": "In a class of 45 students, Mohan is ranked 20th from the top. Sohan is 5 ranks below Mohan. What is Sohan's rank from the bottom?",
+        "options": [
+          "21st",
+          "20th",
+          "22nd",
+          "19th"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS PO 2021",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "topic": "Alphanumeric Series",
+    "questions": [
+      {
+        "stem": "What comes next in the series: 2, 6, 12, 20, 30, ?",
+        "options": [
+          "40",
+          "42",
+          "44",
+          "38"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS PO 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "Find the missing term: AZ, BY, CX, DW, ?",
+        "options": [
+          "EV",
+          "EU",
+          "FV",
+          "EX"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: SBI PO 2018",
+        "difficulty": 1
+      },
+      {
+        "stem": "What comes next: A2C, E4G, I6K, M8O, ?",
+        "options": [
+          "Q10S",
+          "P10R",
+          "Q10R",
+          "R10S"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS Clerk 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "Find the wrong term: 3, 7, 15, 31, 64, 127",
+        "options": [
+          "7",
+          "15",
+          "31",
+          "64"
+        ],
+        "correct_index": 3,
+        "explanation": "Source: IBPS RRB 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "What comes next in the series: ZA5, YB10, XC15, WD20, ?",
+        "options": [
+          "VE25",
+          "UE25",
+          "VF25",
+          "VE30"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: SBI PO 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "Find the next term: B2E, D4H, F6K, H8N, ?",
+        "options": [
+          "J10Q",
+          "I10P",
+          "J10P",
+          "K10Q"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS PO 2020",
+        "difficulty": 2
+      },
+      {
+        "stem": "What is wrong in the series: 1, 4, 9, 16, 24, 36?",
+        "options": [
+          "4",
+          "9",
+          "24",
+          "36"
+        ],
+        "correct_index": 2,
+        "explanation": "Source: IBPS Clerk 2020",
+        "difficulty": 1
+      },
+      {
+        "stem": "Complete the series: AC3, CE5, EG7, GI9, ?",
+        "options": [
+          "IK11",
+          "HJ11",
+          "IK10",
+          "IJ11"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS RRB 2020",
+        "difficulty": 2
+      },
+      {
+        "stem": "Find the next term: 2A, 4D, 8G, 16J, ?",
+        "options": [
+          "32M",
+          "32N",
+          "24M",
+          "32L"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: SBI PO 2020",
+        "difficulty": 2
+      },
+      {
+        "stem": "What replaces the question mark: Z1A, X2C, V3E, T4G, ?",
+        "options": [
+          "R5I",
+          "S5I",
+          "R5H",
+          "R6I"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS PO 2021",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "topic": "Critical Reasoning & Assumptions",
+    "questions": [
+      {
+        "stem": "Statement: The government has decided to levy a heavy penalty on industries polluting rivers. Assumption I: Industries may stop polluting rivers. Assumption II: The government has the authority to penalise industries.",
+        "options": [
+          "Only I is implicit",
+          "Only II is implicit",
+          "Both are implicit",
+          "Neither is implicit"
+        ],
+        "correct_index": 2,
+        "explanation": "Source: IBPS PO 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "Statement: 'Apply immediately for the post of manager. Only graduates need apply.' Assumption I: Only graduates are capable of handling managerial work. Assumption II: There will be enough graduate applicants.",
+        "options": [
+          "Only I",
+          "Only II",
+          "Both",
+          "Neither"
+        ],
+        "correct_index": 3,
+        "explanation": "Source: SBI PO 2018",
+        "difficulty": 3
+      },
+      {
+        "stem": "Statement: The school has decided to increase the academic hours by 30 minutes. Which of the following strengthens this decision?",
+        "options": [
+          "Students need more rest",
+          "Longer hours improve test scores in similar schools",
+          "Teachers prefer shorter days",
+          "Parents want shorter school hours"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS Clerk 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "Statement: Despite being costly, people prefer branded clothes over local ones. Assumption: Branded clothes are of better quality than local clothes.",
+        "options": [
+          "Assumption is implicit",
+          "Assumption is not implicit",
+          "Data inadequate",
+          "Cannot be determined"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS RRB 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "Statement: The company decided to hire contract workers for the project. Course of action I: The company should abolish permanent positions. Course of action II: The company should review work quality periodically.",
+        "options": [
+          "Only I follows",
+          "Only II follows",
+          "Both follow",
+          "Neither follows"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: SBI PO 2019",
+        "difficulty": 2
+      },
+      {
+        "stem": "Statement: 'No ticket without ID proof' \u2013 notice at railway counter. Assumption I: People usually have ID proof. Assumption II: Only those with tickets should enter the train.",
+        "options": [
+          "Only I",
+          "Only II",
+          "Both",
+          "Neither"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS PO 2020",
+        "difficulty": 2
+      },
+      {
+        "stem": "Statement: Country X has banned the import of electronic toys from Country Y. Which weakens this decision?",
+        "options": [
+          "Country Y makes high-quality toys",
+          "Country X has no domestic toy manufacturers",
+          "Country X has sufficient domestic production",
+          "Country Y has trade surplus"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS Clerk 2020",
+        "difficulty": 3
+      },
+      {
+        "stem": "Statement: Many people in the city have shifted to cycling to commute. Conclusion I: Cycling is healthier than driving. Conclusion II: The city infrastructure supports cycling.",
+        "options": [
+          "Only I follows",
+          "Only II follows",
+          "Both follow",
+          "Neither follows"
+        ],
+        "correct_index": 1,
+        "explanation": "Source: IBPS RRB 2020",
+        "difficulty": 3
+      },
+      {
+        "stem": "Statement: The airline has announced a 50% discount on fares for the next month. Assumption: People will book more flights due to the discount.",
+        "options": [
+          "Assumption is implicit",
+          "Assumption is not implicit",
+          "Data inadequate",
+          "Partially implicit"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: SBI PO 2020",
+        "difficulty": 2
+      },
+      {
+        "stem": "Statement: The municipality has decided to demolish all illegal constructions. Which assumption is implicit? I. The municipality has identified illegal constructions. II. Citizens will not resist the demolition drive.",
+        "options": [
+          "Only I",
+          "Only II",
+          "Both",
+          "Neither"
+        ],
+        "correct_index": 0,
+        "explanation": "Source: IBPS PO 2021",
+        "difficulty": 3
+      }
+    ]
+  }
+]
