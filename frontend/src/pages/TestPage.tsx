@@ -1,37 +1,8 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
-import { useNavigate, useLocation, useParams, useBlocker } from 'react-router-dom'
+import { useNavigate, useLocation, useParams } from 'react-router-dom'
 import { useMutation } from '@tanstack/react-query'
 import { submitTest, fetchTestById, type TestSession } from '@/api/client'
 import { useTestStore } from '@/store/testStore'
-
-// ── Leave-test confirmation modal ─────────────────────────────────────────────
-function LeaveModal({ onStay, onLeave }: { onStay: () => void; onLeave: () => void }) {
-  return (
-    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50">
-      <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-sm mx-4 text-center">
-        <div className="text-4xl mb-4">⚠️</div>
-        <h2 className="text-xl font-bold text-gray-900 mb-2">Leave the test?</h2>
-        <p className="text-sm text-gray-500 mb-6 leading-relaxed">
-          Your progress is saved automatically. You can resume this test from the Dashboard at any time.
-        </p>
-        <div className="flex gap-3">
-          <button
-            onClick={onStay}
-            className="flex-1 py-2.5 rounded-lg bg-brand-600 text-white font-semibold hover:bg-brand-700 transition"
-          >
-            Stay on Test
-          </button>
-          <button
-            onClick={onLeave}
-            className="flex-1 py-2.5 rounded-lg border border-gray-300 text-gray-700 font-medium hover:bg-gray-50 transition"
-          >
-            Leave
-          </button>
-        </div>
-      </div>
-    </div>
-  )
-}
 
 export default function TestPage() {
   const { testId } = useParams<{ testId: string }>()
@@ -49,28 +20,7 @@ export default function TestPage() {
   const [selectedOption, setSelectedOption] = useState<number | null>(null)
   const [recovering, setRecovering] = useState(!location.state?.test)
   const [resumedToast, setResumedToast] = useState(false)
-  const [testActive, setTestActive] = useState(true)  // flipped off on successful submit
   const submitCalledRef = useRef(false)
-
-  // ── Block in-app navigation while test is active ──────────────────────────
-  const blocker = useBlocker(
-    ({ currentLocation, nextLocation }) =>
-      testActive &&
-      !!test &&
-      !recovering &&
-      currentLocation.pathname !== nextLocation.pathname,
-  )
-
-  // ── Block browser close / refresh / direct URL change ────────────────────
-  useEffect(() => {
-    const handler = (e: BeforeUnloadEvent) => {
-      if (!testActive || !test || recovering) return
-      e.preventDefault()
-      e.returnValue = ''   // triggers the browser's native "Leave site?" dialog
-    }
-    window.addEventListener('beforeunload', handler)
-    return () => window.removeEventListener('beforeunload', handler)
-  }, [testActive, test, recovering])
 
   // ── Session recovery: fetch test from DB if we have no location.state ──────
   useEffect(() => {
@@ -80,7 +30,6 @@ export default function TestPage() {
       .then(recovered => {
         if (recovered.remaining_ms !== undefined && recovered.remaining_ms !== null) {
           if (recovered.remaining_ms <= 0) {
-            setTestActive(false)
             submitTest(Number(testId), []).then(result => {
               navigate(`/result/${testId}`, { state: { result } })
             }).catch(() => navigate('/'))
@@ -113,9 +62,7 @@ export default function TestPage() {
   useEffect(() => {
     if (!test || !testId) return
     scheduleAutoSave(Number(testId))
-    return () => {
-      cancelAutoSave()
-    }
+    return () => { cancelAutoSave() }
   }, [test?.id])  // eslint-disable-line react-hooks/exhaustive-deps
 
   // ── Timer countdown ───────────────────────────────────────────────────────
@@ -143,7 +90,6 @@ export default function TestPage() {
   const submitMutation = useMutation({
     mutationFn: () => submitTest(Number(testId), getAllAnswers()),
     onSuccess: (result) => {
-      setTestActive(false)
       cancelAutoSave()
       navigate(`/result/${testId}`, { state: { result } })
     },
@@ -197,17 +143,6 @@ export default function TestPage() {
 
   return (
     <div className="flex gap-6">
-      {/* ── Leave-test confirmation modal (in-app navigation) ── */}
-      {blocker.state === 'blocked' && (
-        <LeaveModal
-          onStay={() => blocker.reset()}
-          onLeave={() => {
-            triggerSave()  // fire-and-forget final save
-            blocker.proceed()
-          }}
-        />
-      )}
-
       {/* Resume toast */}
       {resumedToast && (
         <div className="fixed top-4 right-4 z-50 bg-indigo-600 text-white px-4 py-2.5 rounded-lg shadow-lg text-sm font-medium">
