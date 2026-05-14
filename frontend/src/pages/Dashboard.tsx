@@ -204,8 +204,8 @@ export default function Dashboard() {
                       : `AI analyses your ${weakTopics.length > 0 ? weakTopics.length + ' weak area(s)' : 'skills'} and generates a personalised 10-question test.`}
                 </p>
 
-                {/* Manual toggle — only shown for non-HP users who have skill data */}
-                {!isHighPerformer && skills && skills.length > 0 && (
+                {/* Manual toggle — shown for all non-HP users */}
+                {!isHighPerformer && (
                   <label className="flex items-center gap-2 mt-2.5 cursor-pointer w-fit">
                     <div
                       onClick={() => setManualChallenge(v => !v)}
