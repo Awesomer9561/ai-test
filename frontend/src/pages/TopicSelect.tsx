@@ -27,6 +27,7 @@ export default function TopicSelect() {
   const preselected = (location.state as { topicIds?: number[]; mode?: string } | null)
   const [selectedTopics, setSelectedTopics] = useState<number[]>(preselected?.topicIds ?? [])
   const [mode, setMode] = useState(preselected?.mode ?? 'quick')
+  const [challengeMode, setChallengeMode] = useState(false)
 
   // Fetch only subjects that match the user's exam category
   const { data: subjects, isLoading } = useQuery({
@@ -65,9 +66,10 @@ export default function TopicSelect() {
     startMutation.mutate({
       user_id: user.id,
       topic_ids: selectedTopics,
-      mode,
+      mode: challengeMode ? 'adaptive' : mode,
       num_questions: selectedMode.questions,
       duration_seconds: selectedMode.seconds,
+      force_challenge: challengeMode,
     })
   }
 
@@ -105,21 +107,42 @@ export default function TopicSelect() {
       {/* Mode selector */}
       <div className="mb-8">
         <h2 className="text-sm font-semibold text-gray-500 uppercase mb-3">Test Mode</h2>
-        <div className="flex gap-3 flex-wrap">
+        <div className="flex gap-3 flex-wrap items-center">
           {MODES.map(m => (
             <button
               key={m.key}
-              onClick={() => setMode(m.key)}
+              onClick={() => { setMode(m.key); setChallengeMode(false) }}
               className={`px-4 py-2 rounded-lg border text-sm font-medium transition ${
-                mode === m.key
+                mode === m.key && !challengeMode
                   ? 'bg-brand-600 text-white border-brand-600'
                   : 'bg-white text-gray-700 border-gray-300 hover:border-brand-500'
-              }`}
+              } ${challengeMode ? 'opacity-40' : ''}`}
             >
               {m.label}
             </button>
           ))}
+
+          {/* Divider */}
+          <span className="text-gray-300 select-none">|</span>
+
+          {/* Challenge Mode toggle */}
+          <label className="flex items-center gap-2 cursor-pointer">
+            <div
+              onClick={() => setChallengeMode(v => !v)}
+              className={`relative w-9 h-5 rounded-full transition-colors ${challengeMode ? 'bg-orange-500' : 'bg-gray-300'}`}
+            >
+              <span className={`absolute top-0.5 left-0.5 w-4 h-4 bg-white rounded-full shadow transition-transform ${challengeMode ? 'translate-x-4' : 'translate-x-0'}`} />
+            </div>
+            <span className={`text-sm font-medium transition ${challengeMode ? 'text-orange-700' : 'text-gray-600'}`}>
+              🔥 Challenge Mode
+            </span>
+          </label>
         </div>
+        {challengeMode && (
+          <p className="mt-2 text-xs text-orange-600">
+            AI will generate hard questions (difficulty 4–5) targeting your strongest topics.
+          </p>
+        )}
       </div>
 
       {/* Subject/topic tree — shows only subjects for the user's exam category */}
@@ -184,14 +207,18 @@ export default function TopicSelect() {
         onClick={handleStart}
         disabled={selectedTopics.length === 0 || startMutation.isPending}
         className={`w-full py-3 rounded-lg text-white font-semibold text-lg disabled:opacity-50 disabled:cursor-not-allowed transition ${
-          examCategory === 'ug_entrance'
-            ? 'bg-emerald-600 hover:bg-emerald-700'
-            : 'bg-brand-600 hover:bg-brand-700'
+          challengeMode
+            ? 'bg-orange-600 hover:bg-orange-700'
+            : examCategory === 'ug_entrance'
+              ? 'bg-emerald-600 hover:bg-emerald-700'
+              : 'bg-brand-600 hover:bg-brand-700'
         }`}
       >
         {startMutation.isPending
           ? 'Starting…'
-          : `Start Test (${selectedMode.questions} questions, ${selectedMode.seconds / 60} min)`}
+          : challengeMode
+            ? `Start Challenge Test (${selectedMode.questions} questions, ${selectedMode.seconds / 60} min)`
+            : `Start Test (${selectedMode.questions} questions, ${selectedMode.seconds / 60} min)`}
       </button>
 
       {startMutation.isError && (
