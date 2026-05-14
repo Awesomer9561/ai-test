@@ -1,4 +1,5 @@
 import { create } from 'zustand'
+import { persist } from 'zustand/middleware'
 
 export interface UserProfile {
   id: number
@@ -13,8 +14,16 @@ interface UserState {
   logout: () => void
 }
 
-export const useUserStore = create<UserState>((set) => ({
-  user: null,
-  setUser: (user) => set({ user }),
-  logout: () => set({ user: null }),
-}))
+export const useUserStore = create<UserState>()(
+  persist(
+    (set) => ({
+      user: null,
+      setUser: (user) => set({ user }),
+      logout: () => set({ user: null }),
+    }),
+    {
+      name: 'adaptive-test-user',   // localStorage key
+      partialize: (state) => ({ user: state.user }),  // only persist user, not functions
+    },
+  ),
+)
