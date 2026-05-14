@@ -113,6 +113,8 @@ async def _build_questions_for_explicit_topics(
     Generate questions for a user-supplied list of topic IDs.
 
     Challenge: difficulty ≥ 4, AI-generate at difficulty 5 if DB is short.
+               If hard questions still can't be obtained, falls back to any
+               difficulty within the SAME topic — never crosses topic boundaries.
     Normal:    any difficulty, AI-generate at mastery-adjusted difficulty.
     Questions are distributed as evenly as possible across the selected topics.
     """
@@ -141,6 +143,20 @@ async def _build_questions_for_explicit_topics(
                 target_ai_difficulty=5,
                 generate_if_short=True,
             )
+            # Safety net: if AI gen failed and no hard questions exist,
+            # fall back to any-difficulty questions for the SAME topic
+            if not qs:
+                logger.warning(
+                    f"No hard questions obtained for '{topic.name}' — "
+                    "falling back to any difficulty within same topic."
+                )
+                qs = await _fetch_or_generate_questions(
+                    db, skill, topic, subject_name,
+                    slots=slots_per_topic,
+                    min_difficulty=1,
+                    max_difficulty=5,
+                    generate_if_short=False,
+                )
         else:
             ai_diff = min(5, max(1, round(skill.mastery_score * 5) + 1))
             qs = await _fetch_or_generate_questions(
@@ -151,6 +167,7 @@ async def _build_questions_for_explicit_topics(
                 target_ai_difficulty=ai_diff,
                 generate_if_short=True,
             )
+
         collected.extend(qs)
         logger.info(f"Collected {len(qs)} questions for explicit topic '{topic.name}' (challenge={force_challenge})")
 

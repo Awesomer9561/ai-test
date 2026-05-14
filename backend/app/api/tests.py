@@ -142,14 +142,24 @@ async def _start_adaptive_test(req: TestStartRequest, db: AsyncSession) -> TestO
         topic_ids=req.topic_ids if req.topic_ids else None,
     )
 
-    # Fall back to random DB questions if no skill data yet
+    # Fall back if build returned nothing (no skill data, or all AI gen failed)
     if not questions:
-        logger.info(f"No skill data for user {req.user_id} — using random questions for adaptive test.")
-        stmt = (
-            select(Question)
-            .order_by(func.random())
-            .limit(req.num_questions)
-        )
+        if req.topic_ids:
+            # Always respect the user's topic selection — never pull from other topics
+            logger.info(f"Adaptive gen empty for user {req.user_id} — falling back within selected topics {req.topic_ids}.")
+            stmt = (
+                select(Question)
+                .where(Question.topic_id.in_(req.topic_ids))
+                .order_by(func.random())
+                .limit(req.num_questions)
+            )
+        else:
+            logger.info(f"No skill data for user {req.user_id} — using random questions for adaptive test.")
+            stmt = (
+                select(Question)
+                .order_by(func.random())
+                .limit(req.num_questions)
+            )
         result = await db.execute(stmt)
         questions = list(result.scalars().all())
 
