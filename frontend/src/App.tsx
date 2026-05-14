@@ -19,7 +19,7 @@ export default function App() {
       {/* Nav */}
       <nav className="bg-white border-b border-gray-200 px-6 py-3 flex items-center gap-6">
         <Link to="/" className="text-xl font-bold text-blue-700">
-          IBPS Adaptive
+          Adaptive Test
         </Link>
         <Link to="/" className="text-sm text-gray-600 hover:text-blue-600">
           New Test

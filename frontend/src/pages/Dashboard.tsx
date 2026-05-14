@@ -1,6 +1,6 @@
 import { useQuery, useQueryClient } from '@tanstack/react-query'
 import { useNavigate } from 'react-router-dom'
-import { fetchHealth, pingOllama, fetchSkills, fetchNextAdaptive, type UserSkill } from '@/api/client'
+import { fetchHealth, pingOllama, fetchSkills, startTest, type UserSkill } from '@/api/client'
 import { useTestStore } from '@/store/testStore'
 import { useUserStore } from '@/store/userStore'
 import { useState } from 'react'
@@ -12,6 +12,8 @@ export default function Dashboard() {
   const user = useUserStore(s => s.user)
   const [ollamaResult, setOllamaResult] = useState<string | null>(null)
   const [refreshing, setRefreshing] = useState(false)
+  const [adaptiveLoading, setAdaptiveLoading] = useState(false)
+  const [adaptiveError, setAdaptiveError] = useState('')
 
   const { data: health, isLoading: healthLoading } = useQuery({
     queryKey: ['health'],
@@ -24,18 +26,11 @@ export default function Dashboard() {
     enabled: !!user,
   })
 
-  const { data: adaptive } = useQuery({
-    queryKey: ['next-adaptive', user?.id],
-    queryFn: () => fetchNextAdaptive(user!.id),
-    enabled: !!user,
-  })
-
   const handleRefreshAll = async () => {
     setRefreshing(true)
     await Promise.all([
       queryClient.invalidateQueries({ queryKey: ['health'] }),
       queryClient.invalidateQueries({ queryKey: ['skills'] }),
-      queryClient.invalidateQueries({ queryKey: ['next-adaptive'] }),
     ])
     setRefreshing(false)
   }
@@ -50,19 +45,32 @@ export default function Dashboard() {
     }
   }
 
-  const handleStartAdaptive = () => {
-    if (adaptive?.test) {
-      initTest(adaptive.test.id)
-      navigate(`/test/${adaptive.test.id}`, { state: { test: adaptive.test } })
+  const handleStartAdaptive = async () => {
+    if (!user) return
+    setAdaptiveError('')
+    setAdaptiveLoading(true)
+    try {
+      const test = await startTest({
+        user_id: user.id,
+        topic_ids: [],       // backend auto-selects based on weak areas
+        mode: 'adaptive',
+        num_questions: 10,
+        duration_seconds: 600,
+      })
+      initTest(test.id)
+      navigate(`/test/${test.id}`, { state: { test } })
+    } catch {
+      setAdaptiveError('Failed to generate adaptive test. Make sure Ollama is running.')
+    } finally {
+      setAdaptiveLoading(false)
     }
   }
 
   // Derive insights from skills
   const weakTopics = skills?.filter(s => s.mastery_score < 0.4) ?? []
-  const slowTopics = skills?.filter(s => s.avg_time_ms > 45_000) ?? [] // >45s avg
+  const slowTopics = skills?.filter(s => s.avg_time_ms > 45_000) ?? []
   const lowAccuracyTopics = skills?.filter(s => s.accuracy < 0.5) ?? []
 
-  // Study-next: prioritize by worst mastery, then lowest accuracy
   const studyNext = skills
     ? [...skills]
         .sort((a, b) => a.mastery_score - b.mastery_score || a.accuracy - b.accuracy)
@@ -71,6 +79,23 @@ export default function Dashboard() {
 
   return (
     <div>
+      {/* ── Full-page loading overlay while adaptive test is being generated ── */}
+      {adaptiveLoading && (
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50">
+          <div className="bg-white rounded-2xl shadow-2xl p-10 text-center max-w-sm mx-4">
+            <div className="flex justify-center mb-6">
+              <div className="w-14 h-14 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin" />
+            </div>
+            <h2 className="text-xl font-bold text-gray-900 mb-2">Building your adaptive test…</h2>
+            <p className="text-sm text-gray-500 leading-relaxed">
+              Analysing your weak areas and generating custom questions with AI.
+              <br />
+              This usually takes <strong>30–60 seconds</strong>.
+            </p>
+          </div>
+        </div>
+      )}
+
       <div className="flex items-center justify-between mb-6">
         <h1 className="text-2xl font-bold">Dashboard</h1>
         <button
@@ -79,29 +104,31 @@ export default function Dashboard() {
           className="px-4 py-2 text-sm rounded-lg border border-gray-300 text-gray-600 hover:bg-gray-50 disabled:opacity-50 flex items-center gap-2"
         >
           <span className={refreshing ? 'animate-spin inline-block' : ''}>&#8635;</span>
-          {refreshing ? 'Refreshing...' : 'Refresh'}
+          {refreshing ? 'Refreshing…' : 'Refresh'}
         </button>
       </div>
 
-      {/* Adaptive test ready banner */}
-      {adaptive?.ready && (
-        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-lg p-5 mb-6">
-          <div className="flex items-center justify-between">
-            <div>
-              <h2 className="text-lg font-semibold text-blue-700">Your next adaptive test is ready!</h2>
-              <p className="text-sm text-gray-600 mt-1">
-                Tailored to your weak areas — {adaptive.test?.questions.length} questions focused on where you need practice.
-              </p>
-            </div>
-            <button
-              onClick={handleStartAdaptive}
-              className="px-5 py-2.5 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 transition"
-            >
-              Start Adaptive Test
-            </button>
+      {/* ── Adaptive test CTA ── */}
+      <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-xl p-5 mb-6">
+        <div className="flex items-center justify-between gap-4 flex-wrap">
+          <div>
+            <h2 className="text-lg font-semibold text-blue-800">Adaptive Test</h2>
+            <p className="text-sm text-gray-600 mt-0.5">
+              {skills && skills.length > 0
+                ? `AI analyses your ${weakTopics.length > 0 ? weakTopics.length + ' weak area(s)' : 'skills'} and generates a personalised 10-question test.`
+                : 'Complete a regular test first to unlock personalised generation.'}
+            </p>
+            {adaptiveError && <p className="text-sm text-red-600 mt-1">{adaptiveError}</p>}
           </div>
+          <button
+            onClick={handleStartAdaptive}
+            disabled={adaptiveLoading}
+            className="shrink-0 px-5 py-2.5 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 disabled:opacity-50 transition"
+          >
+            {adaptiveLoading ? 'Generating…' : 'Start Adaptive Test'}
+          </button>
         </div>
-      )}
+      </div>
 
       {/* Skill heatmap */}
       {skills && skills.length > 0 && (
@@ -141,7 +168,6 @@ export default function Dashboard() {
         </div>
       )}
 
-      {/* No skills yet placeholder */}
       {(!skills || skills.length === 0) && (
         <div className="bg-white rounded-lg border p-6 mb-6">
           <h2 className="text-lg font-semibold mb-2">Skill Mastery</h2>
@@ -160,7 +186,6 @@ export default function Dashboard() {
                 <p className="text-red-700">
                   <strong>Low mastery:</strong>{' '}
                   {weakTopics.map(t => `${t.topic_name} (${Math.round(t.mastery_score * 100)}%)`).join(', ')}
-                  — these topics need focused practice.
                 </p>
               </div>
             )}
@@ -170,7 +195,6 @@ export default function Dashboard() {
                 <p className="text-orange-700">
                   <strong>Low accuracy:</strong>{' '}
                   {lowAccuracyTopics.map(t => `${t.topic_name} (${Math.round(t.accuracy * 100)}%)`).join(', ')}
-                  — you're getting less than half right. Review fundamentals.
                 </p>
               </div>
             )}
@@ -180,7 +204,7 @@ export default function Dashboard() {
                 <p className="text-yellow-800">
                   <strong>Slow response:</strong>{' '}
                   {slowTopics.map(t => `${t.topic_name} (avg ${Math.round(t.avg_time_ms / 1000)}s)`).join(', ')}
-                  — aim for under 45s per question to stay on pace.
+                  — aim for under 45s per question.
                 </p>
               </div>
             )}
@@ -219,7 +243,7 @@ export default function Dashboard() {
             onClick={() => navigate('/', { state: { topicIds: studyNext.map(t => t.topic_id), mode: 'quick' } })}
             className="mt-4 px-4 py-2 text-sm rounded-lg bg-indigo-600 text-white hover:bg-indigo-700"
           >
-            Start Practice Test
+            Start Practice Test on These Topics
           </button>
         </div>
       )}
@@ -228,7 +252,7 @@ export default function Dashboard() {
       <div className="bg-white rounded-lg border p-6 mb-6">
         <h2 className="text-lg font-semibold mb-4">System Status</h2>
         {healthLoading ? (
-          <p className="text-gray-500">Checking...</p>
+          <p className="text-gray-500">Checking…</p>
         ) : health ? (
           <div className="space-y-3">
             <StatusRow label="Overall" value={health.status} ok={health.status === 'ok'} />

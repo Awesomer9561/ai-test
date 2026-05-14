@@ -26,6 +26,8 @@ class Subject(Base):
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     name = Column(String(100), nullable=False, unique=True)
+    exam_category = Column(String(20), nullable=False, server_default="banking", default="banking")
+    # "banking" → IBPS/SBI exams | "ug_entrance" → JEE/WBJEE/CUET
 
     topics = relationship("Topic", back_populates="subject")
 

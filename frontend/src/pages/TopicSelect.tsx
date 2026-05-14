@@ -11,20 +11,27 @@ const MODES = [
   { key: 'custom', label: 'Custom', questions: 10, seconds: 600 },
 ]
 
+const CATEGORY_BADGE: Record<string, { bg: string; text: string; label: string }> = {
+  banking: { bg: 'bg-blue-100', text: 'text-blue-700', label: '🏦 Banking' },
+  ug_entrance: { bg: 'bg-emerald-100', text: 'text-emerald-700', label: '🎓 UG Entrance' },
+}
+
 export default function TopicSelect() {
   const navigate = useNavigate()
   const location = useLocation()
   const initTest = useTestStore(s => s.initTest)
   const user = useUserStore(s => s.user)
 
-  // Accept pre-selected topics from Dashboard "Start Practice Test"
+  const examCategory = user?.exam_category ?? 'banking'
+
   const preselected = (location.state as { topicIds?: number[]; mode?: string } | null)
   const [selectedTopics, setSelectedTopics] = useState<number[]>(preselected?.topicIds ?? [])
   const [mode, setMode] = useState(preselected?.mode ?? 'quick')
 
+  // Fetch only subjects that match the user's exam category
   const { data: subjects, isLoading } = useQuery({
-    queryKey: ['subjects'],
-    queryFn: fetchSubjects,
+    queryKey: ['subjects', examCategory],
+    queryFn: () => fetchSubjects(examCategory),
   })
 
   const startMutation = useMutation({
@@ -51,6 +58,7 @@ export default function TopicSelect() {
   }
 
   const selectedMode = MODES.find(m => m.key === mode)!
+  const badge = CATEGORY_BADGE[examCategory] ?? CATEGORY_BADGE.banking
 
   const handleStart = () => {
     if (selectedTopics.length === 0 || !user) return
@@ -69,7 +77,15 @@ export default function TopicSelect() {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold mb-6">Start a New Test</h1>
+      <div className="flex items-center gap-3 mb-6">
+        <h1 className="text-2xl font-bold">Start a New Test</h1>
+        <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${badge.bg} ${badge.text}`}>
+          {badge.label}
+        </span>
+        {user && (
+          <span className="text-sm text-gray-400 ml-auto">{user.exam_target}</span>
+        )}
+      </div>
 
       {/* Pre-selected banner */}
       {preselected?.topicIds && preselected.topicIds.length > 0 && (
@@ -106,11 +122,16 @@ export default function TopicSelect() {
         </div>
       </div>
 
-      {/* Subject/topic tree */}
+      {/* Subject/topic tree — shows only subjects for the user's exam category */}
       <div className="mb-8">
         <h2 className="text-sm font-semibold text-gray-500 uppercase mb-3">
           Select Topics ({selectedTopics.length} selected)
         </h2>
+        {subjects && subjects.length === 0 && (
+          <p className="text-gray-400 text-sm">
+            No subjects found for your exam category. Please check the backend is running and database is seeded.
+          </p>
+        )}
         <div className="space-y-4">
           {subjects?.map(subject => {
             const topicIds = subject.topics.map(t => t.id)
@@ -136,7 +157,9 @@ export default function TopicSelect() {
                       key={topic.id}
                       className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-sm cursor-pointer border transition ${
                         selectedTopics.includes(topic.id)
-                          ? 'bg-brand-50 border-brand-500 text-brand-700'
+                          ? examCategory === 'ug_entrance'
+                            ? 'bg-emerald-50 border-emerald-500 text-emerald-700'
+                            : 'bg-brand-50 border-brand-500 text-brand-700'
                           : 'bg-gray-50 border-gray-200 text-gray-600 hover:border-gray-400'
                       }`}
                     >
@@ -160,10 +183,14 @@ export default function TopicSelect() {
       <button
         onClick={handleStart}
         disabled={selectedTopics.length === 0 || startMutation.isPending}
-        className="w-full py-3 rounded-lg bg-brand-600 text-white font-semibold text-lg hover:bg-brand-700 disabled:opacity-50 disabled:cursor-not-allowed transition"
+        className={`w-full py-3 rounded-lg text-white font-semibold text-lg disabled:opacity-50 disabled:cursor-not-allowed transition ${
+          examCategory === 'ug_entrance'
+            ? 'bg-emerald-600 hover:bg-emerald-700'
+            : 'bg-brand-600 hover:bg-brand-700'
+        }`}
       >
         {startMutation.isPending
-          ? 'Generating questions with AI... (may take 30-60s)'
+          ? 'Starting…'
           : `Start Test (${selectedMode.questions} questions, ${selectedMode.seconds / 60} min)`}
       </button>
 

@@ -18,6 +18,7 @@ export interface Topic {
 export interface Subject {
   id: number
   name: string
+  exam_category: string  // "banking" | "ug_entrance"
   topics: Topic[]
 }
 
@@ -89,8 +90,10 @@ export interface HealthStatus {
 
 // ── API calls ──
 
-export const fetchSubjects = () =>
-  api.get<Subject[]>('/api/topics/').then(r => r.data)
+export const fetchSubjects = (examCategory?: string) => {
+  const params = examCategory ? { exam_category: examCategory } : {}
+  return api.get<Subject[]>('/api/topics/', { params }).then(r => r.data)
+}
 
 export const startTest = (data: {
   user_id: number
@@ -126,21 +129,22 @@ export interface UserSkill {
 export const fetchSkills = (userId: number) =>
   api.get<UserSkill[]>(`/api/results/skills/${userId}`).then(r => r.data)
 
-export interface AdaptiveTestResponse {
-  ready: boolean
-  test?: TestSession
-}
-
-export const fetchNextAdaptive = (userId: number) =>
-  api.get<AdaptiveTestResponse>(`/api/tests/next-adaptive?user_id=${userId}`).then(r => r.data)
-
 // ── Profile ──
 
 export interface UserProfile {
   id: number
   name: string
   exam_target: string
+  exam_category: string  // "banking" | "ug_entrance"
 }
+
+export interface ExamList {
+  banking: string[]
+  ug_entrance: string[]
+}
+
+export const fetchExamList = () =>
+  api.get<ExamList>('/api/profile/exams').then(r => r.data)
 
 export const loginOrCreate = (name: string, examTarget: string = 'IBPS PO') =>
   api.post<UserProfile>('/api/profile/login', { name, exam_target: examTarget }).then(r => r.data)

@@ -14,7 +14,7 @@ from app.api import health, topics, tests, results, questions, profile
 async def lifespan(app: FastAPI):
     """Startup: init DB, seed data, warm Ollama. Shutdown: close clients."""
     # Startup
-    print("🚀 Starting IBPS Adaptive Test App...")
+    print("🚀 Starting Adaptive Test App (Banking + UG Entrance)...")
     await init_db()
 
     async with async_session() as db:
@@ -36,9 +36,9 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(
-    title="IBPS Adaptive Test App",
-    description="AI-powered adaptive test platform for IBPS banking exams",
-    version="0.1.0",
+    title="Adaptive Test App",
+    description="AI-powered adaptive test platform for Banking (IBPS/SBI) and UG Entrance (JEE/WBJEE/CUET) exams",
+    version="0.2.0",
     lifespan=lifespan,
 )
 

@@ -1,0 +1,252 @@
+[
+  {
+    "topic": "Atomic Structure & Chemical Bonding",
+    "questions": [
+      {
+        "stem": "The number of electrons that can be accommodated in an orbital with quantum numbers n=3, l=2 is:",
+        "options": ["6", "10", "2", "14"],
+        "correct_index": 2,
+        "explanation": "Any single atomic orbital can hold a maximum of 2 electrons (with opposite spins). The quantum numbers n=3, l=2 describe a 3d orbital — each such orbital holds 2 electrons.",
+        "difficulty": 2
+      },
+      {
+        "stem": "The geometry of a water (H₂O) molecule according to VSEPR theory is:",
+        "options": ["Linear", "Trigonal planar", "Bent (V-shaped)", "Tetrahedral"],
+        "correct_index": 2,
+        "explanation": "Water has 4 electron pairs around oxygen (2 bonding pairs + 2 lone pairs). The shape is bent/V-shaped with bond angle ~104.5°. The lone pairs repel bonding pairs, reducing the angle from tetrahedral.",
+        "difficulty": 2
+      },
+      {
+        "stem": "Which of the following has the highest first ionisation energy?",
+        "options": ["Na", "Mg", "Al", "Ne"],
+        "correct_index": 3,
+        "explanation": "Ionisation energy increases across a period and up a group. Noble gases have completely filled shells and highest ionisation energies in their period. Ne has the highest first ionisation energy among the options.",
+        "difficulty": 2
+      },
+      {
+        "stem": "The hybridisation of carbon in acetylene (C₂H₂) is:",
+        "options": ["sp³", "sp²", "sp", "sp³d"],
+        "correct_index": 2,
+        "explanation": "In acetylene (HC≡CH), each carbon forms a triple bond (one σ + two π). Each carbon has 2 σ bonds, requiring sp hybridisation (linear geometry, 180° bond angle).",
+        "difficulty": 2
+      },
+      {
+        "stem": "The quantum number that determines the shape of an orbital is:",
+        "options": ["Principal quantum number (n)", "Azimuthal quantum number (l)", "Magnetic quantum number (ml)", "Spin quantum number (ms)"],
+        "correct_index": 1,
+        "explanation": "The azimuthal (angular momentum) quantum number l determines the shape of the orbital: l=0 → s (spherical), l=1 → p (dumbbell), l=2 → d, l=3 → f.",
+        "difficulty": 1
+      },
+      {
+        "stem": "Which of the following bonds is the strongest?",
+        "options": ["C−C", "C=C", "C≡C", "C−H"],
+        "correct_index": 2,
+        "explanation": "Bond strength increases with bond order. C≡C (triple bond, ~835 kJ/mol) > C=C (double bond, ~614 kJ/mol) > C−C (single bond, ~347 kJ/mol). C≡C is the strongest.",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "topic": "States of Matter & Thermodynamics",
+    "questions": [
+      {
+        "stem": "For a reaction with ΔH = −100 kJ/mol and ΔS = −200 J/mol·K, the reaction is spontaneous at:",
+        "options": ["All temperatures", "No temperature", "Low temperatures only", "High temperatures only"],
+        "correct_index": 2,
+        "explanation": "ΔG = ΔH − TΔS. With ΔH < 0 and ΔS < 0: ΔG = −100000 − T×(−200) = −100000 + 200T. For spontaneity ΔG < 0: −100000 + 200T < 0 → T < 500 K. Spontaneous only at low temperatures.",
+        "difficulty": 4
+      },
+      {
+        "stem": "At constant temperature, the relationship between pressure P and volume V of an ideal gas is given by Boyle's law as:",
+        "options": ["PV = constant", "P/V = constant", "P + V = constant", "P/T = constant"],
+        "correct_index": 0,
+        "explanation": "Boyle's law states that at constant temperature, pressure and volume of a fixed amount of gas are inversely proportional: PV = constant (or P₁V₁ = P₂V₂).",
+        "difficulty": 1
+      },
+      {
+        "stem": "The van der Waals equation for a real gas is (P + a/V²)(V − b) = RT. The term 'a/V²' corrects for:",
+        "options": ["Volume of gas molecules", "Intermolecular attractions", "Kinetic energy of molecules", "Mean free path"],
+        "correct_index": 1,
+        "explanation": "The term a/V² accounts for intermolecular attractive forces (cohesion) that reduce the effective pressure. The term 'b' corrects for the finite volume of gas molecules.",
+        "difficulty": 3
+      },
+      {
+        "stem": "Which law states that the entropy of a perfect crystal is zero at absolute zero temperature?",
+        "options": ["First law of thermodynamics", "Second law of thermodynamics", "Third law of thermodynamics", "Hess's law"],
+        "correct_index": 2,
+        "explanation": "The third law of thermodynamics (Nernst's heat theorem) states that the entropy of a perfect crystal approaches zero as temperature approaches absolute zero (0 K).",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "topic": "Chemical Equilibrium & Ionic Equilibrium",
+    "questions": [
+      {
+        "stem": "For the reaction N₂(g) + 3H₂(g) ⇌ 2NH₃(g), if pressure is increased at constant temperature, the equilibrium will shift:",
+        "options": ["Towards reactants", "Towards products", "No shift", "Cannot be determined"],
+        "correct_index": 1,
+        "explanation": "Le Chatelier's principle: increasing pressure favours the side with fewer moles of gas. Left side has 1+3=4 moles, right side has 2 moles. Equilibrium shifts right (towards products/NH₃).",
+        "difficulty": 2
+      },
+      {
+        "stem": "The pH of a 0.01 M HCl solution is:",
+        "options": ["1", "2", "7", "12"],
+        "correct_index": 1,
+        "explanation": "HCl is a strong acid, fully dissociated. [H⁺] = 0.01 M = 10⁻² M. pH = −log[H⁺] = −log(10⁻²) = 2.",
+        "difficulty": 1
+      },
+      {
+        "stem": "The relationship between Kp and Kc for the reaction aA(g) ⇌ bB(g) is:",
+        "options": ["Kp = Kc(RT)^Δn", "Kp = Kc/(RT)^Δn", "Kp = Kc + Δn·RT", "Kp = Kc"],
+        "correct_index": 0,
+        "explanation": "Kp = Kc(RT)^Δn, where Δn = (moles of gaseous products) − (moles of gaseous reactants) = b − a, R is gas constant and T is temperature in Kelvin.",
+        "difficulty": 3
+      },
+      {
+        "stem": "A buffer solution resists change in pH when:",
+        "options": ["Only a base is added", "Only an acid is added", "Small amounts of acid or base are added", "Large amounts of acid are added"],
+        "correct_index": 2,
+        "explanation": "A buffer solution (typically a weak acid + its conjugate base, or weak base + its conjugate acid) resists significant pH change upon addition of small amounts of strong acid or strong base.",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "topic": "Electrochemistry & Redox",
+    "questions": [
+      {
+        "stem": "In the electrolysis of water, the gas produced at the anode is:",
+        "options": ["Hydrogen", "Oxygen", "Both H₂ and O₂ equally", "No gas is produced"],
+        "correct_index": 1,
+        "explanation": "At the anode (oxidation): 2H₂O → O₂ + 4H⁺ + 4e⁻. At the cathode (reduction): 4H₂O + 4e⁻ → 2H₂ + 4OH⁻. Oxygen is produced at the anode.",
+        "difficulty": 2
+      },
+      {
+        "stem": "The Nernst equation relates the electrode potential E to the standard potential E°. At 298 K, for Zn²⁺/Zn electrode with [Zn²⁺] = 0.1 M, if E° = −0.76 V and n = 2:",
+        "options": ["E = −0.76 V", "E = −0.79 V", "E = −0.73 V", "E = −0.82 V"],
+        "correct_index": 1,
+        "explanation": "Nernst equation: E = E° − (0.0592/n)log[1/Mn+] = E° − (0.0592/2)log(1/0.1) = −0.76 − 0.0296×1 = −0.76 − 0.0296 ≈ −0.79 V.",
+        "difficulty": 4
+      },
+      {
+        "stem": "In the reaction MnO₄⁻ + Fe²⁺ → Mn²⁺ + Fe³⁺ in acidic medium, the oxidation state of Mn changes from:",
+        "options": ["+2 to +7", "+7 to +2", "+4 to +2", "+7 to +4"],
+        "correct_index": 1,
+        "explanation": "In MnO₄⁻ (permanganate), Mn is in +7 oxidation state. In Mn²⁺, Mn is in +2 state. Mn is reduced from +7 to +2. Fe is oxidised from +2 to +3.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "topic": "Organic Chemistry Basics",
+    "questions": [
+      {
+        "stem": "Which type of isomerism is exhibited by ethanol (CH₃CH₂OH) and dimethyl ether (CH₃OCH₃)?",
+        "options": ["Chain isomerism", "Position isomerism", "Functional group isomerism", "Geometrical isomerism"],
+        "correct_index": 2,
+        "explanation": "Ethanol and dimethyl ether have the same molecular formula (C₂H₆O) but different functional groups (−OH vs −O−). This is functional group isomerism.",
+        "difficulty": 2
+      },
+      {
+        "stem": "The IUPAC name of CH₃−CH(CH₃)−CH₂−CH₃ is:",
+        "options": ["2-methylbutane", "3-methylbutane", "2-methylpropane", "Isopentane"],
+        "correct_index": 0,
+        "explanation": "The longest carbon chain has 4 carbons (butane). A methyl group is attached at C-2. The IUPAC name is 2-methylbutane.",
+        "difficulty": 2
+      },
+      {
+        "stem": "Which reagent converts a primary alcohol to a carboxylic acid?",
+        "options": ["NaBH₄", "LiAlH₄", "K₂Cr₂O₇/H₂SO₄", "Fehling's solution"],
+        "correct_index": 2,
+        "explanation": "Acidified potassium dichromate (K₂Cr₂O₇/H₂SO₄) is a strong oxidising agent that oxidises primary alcohols first to aldehydes and then further to carboxylic acids.",
+        "difficulty": 3
+      },
+      {
+        "stem": "The reaction of benzene with Cl₂ in the presence of AlCl₃ is an example of:",
+        "options": ["Electrophilic addition", "Nucleophilic substitution", "Electrophilic aromatic substitution", "Free radical substitution"],
+        "correct_index": 2,
+        "explanation": "AlCl₃ acts as a Lewis acid catalyst to generate Cl⁺ electrophile from Cl₂. Cl⁺ attacks benzene ring via electrophilic aromatic substitution (EAS), replacing H with Cl.",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "topic": "Hydrocarbons & Reactions",
+    "questions": [
+      {
+        "stem": "The Markovnikov's rule states that in the addition of HX to an alkene, the hydrogen adds to the carbon that:",
+        "options": ["Has more hydrogen atoms", "Has fewer hydrogen atoms", "Is more electronegative", "Is at the end of chain"],
+        "correct_index": 0,
+        "explanation": "Markovnikov's rule: in electrophilic addition of HX to an unsymmetrical alkene, H adds to the carbon bearing the greater number of hydrogen atoms (or equivalently, X adds to the more substituted carbon, forming the more stable carbocation).",
+        "difficulty": 2
+      },
+      {
+        "stem": "Which of the following hydrocarbons gives a white precipitate with ammoniacal silver nitrate (Tollens' reagent for alkynes)?",
+        "options": ["Ethylene (CH₂=CH₂)", "Acetylene (CH≡CH)", "Propene (CH₃CH=CH₂)", "Butane"],
+        "correct_index": 1,
+        "explanation": "Terminal alkynes (like acetylene HC≡CH) have acidic terminal H and react with ammoniacal AgNO₃ to form silver acetylide (Ag−C≡C−Ag), a white precipitate. Internal alkynes do not react.",
+        "difficulty": 3
+      },
+      {
+        "stem": "Ozonolysis of 2-butene (CH₃CH=CHCH₃) followed by reductive workup gives:",
+        "options": ["Acetaldehyde only (CH₃CHO)", "Formaldehyde and acetaldehyde", "Acetone only", "Acetic acid"],
+        "correct_index": 0,
+        "explanation": "Ozonolysis cleaves the C=C double bond. 2-butene CH₃CH=CHCH₃ gives CH₃CHO + CH₃CHO (two molecules of acetaldehyde/ethanal) on reductive workup.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "topic": "p-Block Elements",
+    "questions": [
+      {
+        "stem": "Nitrogen forms N₂O₃, N₂O₄, and N₂O₅. The oxidation states of nitrogen in these compounds are:",
+        "options": ["+3, +4, +5", "+2, +3, +4", "+1, +2, +3", "+3, +5, +4"],
+        "correct_index": 0,
+        "explanation": "In N₂O₃: 2x + 3(−2) = 0 → x = +3. In N₂O₄: 2x + 4(−2) = 0 → x = +4. In N₂O₅: 2x + 5(−2) = 0 → x = +5.",
+        "difficulty": 3
+      },
+      {
+        "stem": "The anomalous behaviour of fluorine compared to other halogens is due to:",
+        "options": ["Its large size", "Its high electron affinity only", "Absence of d-orbitals and its small size with high electronegativity", "Its ability to form hypervalent compounds"],
+        "correct_index": 2,
+        "explanation": "Fluorine is anomalous due to: small atomic size, highest electronegativity, absence of d-orbitals (cannot expand octet), highest bond dissociation energy among H-X bonds for H₂ dissociation. It cannot form hypervalent compounds unlike Cl, Br, I.",
+        "difficulty": 3
+      },
+      {
+        "stem": "Which of the following is NOT a property of noble gases?",
+        "options": ["They have very low boiling points", "They form stable compounds with most metals", "They have completely filled outermost shells", "They are monoatomic gases"],
+        "correct_index": 1,
+        "explanation": "Noble gases have completely filled electron shells, making them chemically inert and non-reactive. They do not readily form compounds with metals. Only Kr, Xe, and Rn form some compounds under special conditions.",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "topic": "Coordination Chemistry & d-Block",
+    "questions": [
+      {
+        "stem": "The IUPAC name of [Fe(CN)₆]⁴⁻ is:",
+        "options": ["Hexacyanoferrate(II)", "Hexacyanoferrate(III)", "Ferrocyanide", "Hexacyanoiron(II)"],
+        "correct_index": 0,
+        "explanation": "The complex [Fe(CN)₆]⁴⁻ has 6 cyanide ligands (CN⁻ each −1) around iron. Total charge: Fe + 6(−1) = −4, so Fe is +2. IUPAC name: hexacyanoferrate(II) ion.",
+        "difficulty": 3
+      },
+      {
+        "stem": "Which of the following d-block elements shows the highest number of oxidation states?",
+        "options": ["Sc", "Mn", "Zn", "Cu"],
+        "correct_index": 1,
+        "explanation": "Manganese (Mn, [Ar]3d⁵4s²) shows the widest range of oxidation states from +2 to +7 (e.g., +2 in MnSO₄, +4 in MnO₂, +6 in MnO₄²⁻, +7 in MnO₄⁻) because it has 5 unpaired 3d electrons available.",
+        "difficulty": 3
+      },
+      {
+        "stem": "The chelate effect results in greater stability of complexes formed with polydentate ligands compared to monodentate ligands. This is primarily due to:",
+        "options": ["Stronger metal-ligand bond strength", "Increased entropy of the system", "Decreased enthalpy of formation", "Increased steric effects"],
+        "correct_index": 1,
+        "explanation": "The chelate effect is mainly an entropy effect. When a polydentate ligand replaces several monodentate ligands, the total number of particles in solution increases, increasing entropy (ΔS > 0), which makes ΔG more negative and the complex more stable.",
+        "difficulty": 4
+      }
+    ]
+  }
+]

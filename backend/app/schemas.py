@@ -17,6 +17,7 @@ class TopicOut(BaseModel):
 class SubjectOut(BaseModel):
     id: int
     name: str
+    exam_category: str = "banking"
     topics: list[TopicOut] = []
 
     model_config = {"from_attributes": True}

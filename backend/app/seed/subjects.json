@@ -1,6 +1,7 @@
 [
   {
     "name": "Quantitative Aptitude",
+    "exam_category": "banking",
     "topics": [
       "Number Series",
       "Simplification & Approximation",
@@ -18,6 +19,7 @@
   },
   {
     "name": "Reasoning Ability",
+    "exam_category": "banking",
     "topics": [
       "Puzzles & Seating Arrangement",
       "Syllogism",
@@ -34,6 +36,7 @@
   },
   {
     "name": "English Language",
+    "exam_category": "banking",
     "topics": [
       "Reading Comprehension",
       "Cloze Test",
@@ -48,6 +51,7 @@
   },
   {
     "name": "General & Banking Awareness",
+    "exam_category": "banking",
     "topics": [
       "Banking Awareness",
       "RBI & Monetary Policy",
@@ -60,6 +64,7 @@
   },
   {
     "name": "Computer Awareness",
+    "exam_category": "banking",
     "topics": [
       "Hardware",
       "Software",
@@ -67,6 +72,70 @@
       "MS Office",
       "Cyber Security",
       "DBMS Basics"
+    ]
+  },
+  {
+    "name": "Physics",
+    "exam_category": "ug_entrance",
+    "topics": [
+      "Mechanics",
+      "Thermodynamics",
+      "Electrostatics",
+      "Current Electricity & Magnetism",
+      "Optics",
+      "Modern Physics",
+      "Waves & Sound",
+      "Semiconductors & Logic Gates"
+    ]
+  },
+  {
+    "name": "Chemistry",
+    "exam_category": "ug_entrance",
+    "topics": [
+      "Atomic Structure & Chemical Bonding",
+      "States of Matter & Thermodynamics",
+      "Chemical Equilibrium & Ionic Equilibrium",
+      "Electrochemistry & Redox",
+      "Organic Chemistry Basics",
+      "Hydrocarbons & Reactions",
+      "p-Block Elements",
+      "Coordination Chemistry & d-Block"
+    ]
+  },
+  {
+    "name": "Mathematics",
+    "exam_category": "ug_entrance",
+    "topics": [
+      "Limits, Continuity & Differentiability",
+      "Applications of Derivatives",
+      "Integral Calculus",
+      "Differential Equations",
+      "Complex Numbers & Quadratic Equations",
+      "Matrices & Determinants",
+      "Probability & Statistics",
+      "Coordinate Geometry - Conics",
+      "Vectors & 3D Geometry",
+      "Sequences, Series & Binomial Theorem"
+    ]
+  },
+  {
+    "name": "CUET English",
+    "exam_category": "ug_entrance",
+    "topics": [
+      "Reading Comprehension (UG)",
+      "Vocabulary & Word Power",
+      "Grammar & Error Detection",
+      "Verbal Reasoning & Sentence Completion"
+    ]
+  },
+  {
+    "name": "CUET General Test",
+    "exam_category": "ug_entrance",
+    "topics": [
+      "Quantitative Reasoning",
+      "Logical & Analytical Reasoning",
+      "General Knowledge & Current Affairs",
+      "Data Interpretation & Sufficiency"
     ]
   }
 ]

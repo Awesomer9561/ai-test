@@ -1,0 +1,329 @@
+[
+  {
+    "topic": "Mechanics",
+    "questions": [
+      {
+        "stem": "A ball is thrown vertically upward with a velocity of 20 m/s. The maximum height reached by the ball is (g = 10 m/s²):",
+        "options": ["10 m", "20 m", "40 m", "5 m"],
+        "correct_index": 1,
+        "explanation": "Using v² = u² − 2gh, at max height v = 0. So h = u²/(2g) = (20)²/(2×10) = 400/20 = 20 m.",
+        "difficulty": 2
+      },
+      {
+        "stem": "A body of mass 2 kg is moving with velocity 10 m/s. A force of 4 N acts on it for 5 seconds. The final velocity of the body is:",
+        "options": ["20 m/s", "25 m/s", "30 m/s", "15 m/s"],
+        "correct_index": 0,
+        "explanation": "Acceleration a = F/m = 4/2 = 2 m/s². Using v = u + at = 10 + 2×5 = 20 m/s. The final velocity is 20 m/s.",
+        "difficulty": 2
+      },
+      {
+        "stem": "Two bodies of masses 3 kg and 4 kg moving in opposite directions with velocities 4 m/s and 3 m/s respectively collide head-on. If the collision is perfectly inelastic, the velocity of the combined mass after collision is:",
+        "options": ["0 m/s", "1 m/s to the left", "1 m/s to the right", "7 m/s"],
+        "correct_index": 0,
+        "explanation": "Using conservation of momentum: m₁u₁ + m₂u₂ = (m₁+m₂)v. Taking right as positive: 3×4 + 4×(−3) = (3+4)v → 12 − 12 = 7v → v = 0. The combined mass comes to rest.",
+        "difficulty": 3
+      },
+      {
+        "stem": "A projectile is launched at 45° to the horizontal with speed u. The horizontal range R is:",
+        "options": ["u²/g", "u²/(2g)", "2u²/g", "u²/(4g)"],
+        "correct_index": 0,
+        "explanation": "Range R = u² sin(2θ)/g. At θ = 45°, sin(90°) = 1, so R = u²/g.",
+        "difficulty": 2
+      },
+      {
+        "stem": "A particle moves in a circle of radius r with uniform speed v. The centripetal acceleration is:",
+        "options": ["v²r", "v/r²", "v²/r", "v/r"],
+        "correct_index": 2,
+        "explanation": "Centripetal acceleration ac = v²/r, directed towards the centre of the circle.",
+        "difficulty": 1
+      },
+      {
+        "stem": "A block of mass m is placed on a rough inclined plane of angle θ. The minimum coefficient of static friction to prevent sliding is:",
+        "options": ["cos θ", "tan θ", "sin θ", "1/tan θ"],
+        "correct_index": 1,
+        "explanation": "For equilibrium on the incline: friction force f = mg sin θ and normal force N = mg cos θ. Minimum μ = f/N = tan θ.",
+        "difficulty": 2
+      },
+      {
+        "stem": "The escape velocity from Earth's surface (radius R, mass M) is:",
+        "options": ["√(gR)", "√(2gR)", "√(gR/2)", "2√(gR)"],
+        "correct_index": 1,
+        "explanation": "Escape velocity ve = √(2GM/R) = √(2gR) since g = GM/R².",
+        "difficulty": 2
+      },
+      {
+        "stem": "A spring of spring constant k is compressed by x. The potential energy stored in the spring is:",
+        "options": ["kx", "kx²", "kx²/2", "2kx²"],
+        "correct_index": 2,
+        "explanation": "Elastic potential energy = ½kx².",
+        "difficulty": 1
+      }
+    ]
+  },
+  {
+    "topic": "Thermodynamics",
+    "questions": [
+      {
+        "stem": "For an ideal gas undergoing an isothermal process, which of the following is constant?",
+        "options": ["Pressure", "Volume", "Temperature", "Internal energy"],
+        "correct_index": 2,
+        "explanation": "In an isothermal process, temperature remains constant. For an ideal gas, internal energy depends only on temperature, so internal energy also remains constant, but the defining feature is constant temperature.",
+        "difficulty": 1
+      },
+      {
+        "stem": "The efficiency of a Carnot engine operating between temperatures T₁ (source) and T₂ (sink) where T₁ > T₂ is:",
+        "options": ["1 − T₁/T₂", "T₂/T₁", "1 − T₂/T₁", "T₁/T₂ − 1"],
+        "correct_index": 2,
+        "explanation": "Carnot efficiency η = 1 − T₂/T₁, where T₂ is the sink temperature and T₁ is the source temperature (both in Kelvin).",
+        "difficulty": 2
+      },
+      {
+        "stem": "In an adiabatic process, which of the following holds true?",
+        "options": ["Q = 0", "W = 0", "ΔU = 0", "ΔT = 0"],
+        "correct_index": 0,
+        "explanation": "An adiabatic process occurs with no heat exchange between the system and surroundings, so Q = 0. By the first law ΔU = −W.",
+        "difficulty": 1
+      },
+      {
+        "stem": "The work done by 2 moles of an ideal gas in expanding isothermally at 300 K from volume V to 2V is (R = 8.314 J/mol·K):",
+        "options": ["2R × 300 × ln 2", "R × 300 × ln 2", "2R × 300", "R × 300"],
+        "correct_index": 0,
+        "explanation": "Work in isothermal expansion = nRT ln(V₂/V₁) = 2 × 8.314 × 300 × ln(2) ≈ 3456 J = 2R × 300 × ln 2.",
+        "difficulty": 3
+      },
+      {
+        "stem": "According to the second law of thermodynamics, the entropy of an isolated system during a spontaneous process:",
+        "options": ["Decreases", "Remains constant", "Increases", "First increases then decreases"],
+        "correct_index": 2,
+        "explanation": "The second law states that the total entropy of an isolated system always increases during any spontaneous (irreversible) process (ΔS > 0). For reversible processes ΔS = 0.",
+        "difficulty": 2
+      },
+      {
+        "stem": "For a monoatomic ideal gas, the ratio of specific heats Cp/Cv (γ) is:",
+        "options": ["4/3", "5/3", "7/5", "3/2"],
+        "correct_index": 1,
+        "explanation": "For a monoatomic ideal gas, Cv = (3/2)R and Cp = (5/2)R. Therefore γ = Cp/Cv = 5/3.",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "topic": "Electrostatics",
+    "questions": [
+      {
+        "stem": "Two point charges +q and −q are placed at a distance d apart. The electric potential at the midpoint of the line joining them is:",
+        "options": ["q/(4πε₀d)", "Zero", "2q/(4πε₀d)", "−q/(4πε₀d)"],
+        "correct_index": 1,
+        "explanation": "Electric potential is a scalar. Potential due to +q at midpoint = +q/(4πε₀·d/2), and due to −q = −q/(4πε₀·d/2). Total = 0. The potentials cancel.",
+        "difficulty": 2
+      },
+      {
+        "stem": "A parallel plate capacitor has plate area A and separation d. If the separation is doubled and area is halved, the capacitance:",
+        "options": ["Doubles", "Halves", "Becomes one-fourth", "Remains the same"],
+        "correct_index": 2,
+        "explanation": "C = ε₀A/d. New C' = ε₀(A/2)/(2d) = ε₀A/(4d) = C/4. The capacitance becomes one-fourth.",
+        "difficulty": 3
+      },
+      {
+        "stem": "The electric field inside a uniformly charged spherical shell at any point inside is:",
+        "options": ["Maximum", "kQ/r²", "kQ/R²", "Zero"],
+        "correct_index": 3,
+        "explanation": "By Gauss's law, the electric field inside a uniformly charged spherical shell is zero because the enclosed charge for any Gaussian surface inside the shell is zero.",
+        "difficulty": 2
+      },
+      {
+        "stem": "The energy stored in a capacitor of capacitance C charged to potential V is:",
+        "options": ["CV", "CV²", "CV²/2", "2CV²"],
+        "correct_index": 2,
+        "explanation": "Energy stored U = ½CV². This can also be written as Q²/(2C) or QV/2.",
+        "difficulty": 1
+      },
+      {
+        "stem": "Coulomb's law gives the force between two charges q₁ and q₂ separated by distance r. If the distance is tripled and each charge is doubled, the force becomes:",
+        "options": ["4/9 of original", "4/3 of original", "9/4 of original", "Same as original"],
+        "correct_index": 0,
+        "explanation": "F = kq₁q₂/r². New force F' = k(2q₁)(2q₂)/(3r)² = 4kq₁q₂/9r² = (4/9)F.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "topic": "Current Electricity & Magnetism",
+    "questions": [
+      {
+        "stem": "Three resistors of 2 Ω, 3 Ω and 6 Ω are connected in parallel. The equivalent resistance is:",
+        "options": ["11 Ω", "1 Ω", "2 Ω", "3 Ω"],
+        "correct_index": 1,
+        "explanation": "1/R = 1/2 + 1/3 + 1/6 = 3/6 + 2/6 + 1/6 = 6/6 = 1. So R = 1 Ω.",
+        "difficulty": 2
+      },
+      {
+        "stem": "The magnetic force on a charged particle moving parallel to a magnetic field is:",
+        "options": ["Maximum", "Zero", "qvB", "qvB sin 45°"],
+        "correct_index": 1,
+        "explanation": "Magnetic force F = qv × B = qvB sin θ. When velocity is parallel to B, θ = 0°, so sin 0° = 0 and F = 0.",
+        "difficulty": 1
+      },
+      {
+        "stem": "A proton and an alpha particle are accelerated through the same potential difference. The ratio of their de Broglie wavelengths λp/λα is:",
+        "options": ["√2", "2√2", "1/√2", "2"],
+        "correct_index": 1,
+        "explanation": "λ = h/√(2mqV). So λ ∝ 1/√(mq). For proton: mass = mp, charge = e. For alpha: mass = 4mp, charge = 2e. λp/λα = √(mα·qα)/√(mp·qp) = √(4mp × 2e)/√(mp × e) = √8 = 2√2.",
+        "difficulty": 4
+      },
+      {
+        "stem": "A wire of resistance R is stretched to double its length. The new resistance is:",
+        "options": ["R/2", "2R", "4R", "R/4"],
+        "correct_index": 2,
+        "explanation": "R = ρL/A. When stretched to 2L, volume is conserved: A·L = A'·2L, so A' = A/2. New resistance = ρ(2L)/(A/2) = 4ρL/A = 4R.",
+        "difficulty": 3
+      },
+      {
+        "stem": "In a circuit with EMF ε and internal resistance r connected to external resistance R, maximum power is delivered to the external resistance when:",
+        "options": ["R = 2r", "R = r/2", "R = r", "R → ∞"],
+        "correct_index": 2,
+        "explanation": "Maximum power transfer theorem: maximum power is delivered to external resistance when R = r (external resistance equals internal resistance).",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "topic": "Optics",
+    "questions": [
+      {
+        "stem": "A convex lens has focal length 20 cm. An object is placed 30 cm from the lens. The image distance is:",
+        "options": ["60 cm", "−60 cm", "12 cm", "−12 cm"],
+        "correct_index": 0,
+        "explanation": "Using lens formula: 1/v − 1/u = 1/f. Here u = −30 cm, f = +20 cm. 1/v = 1/20 − 1/30 = 3/60 − 2/60 = 1/60. So v = +60 cm (real image on other side).",
+        "difficulty": 2
+      },
+      {
+        "stem": "Light travels from water (n = 4/3) to glass (n = 3/2). The critical angle for total internal reflection is:",
+        "options": ["sin⁻¹(8/9)", "sin⁻¹(9/8)", "sin⁻¹(2/3)", "sin⁻¹(3/4)"],
+        "correct_index": 0,
+        "explanation": "At critical angle: n_water × sin C = n_glass × sin 90°. sin C = n_glass/n_water = (3/2)/(4/3) = 9/8. But sin C cannot exceed 1. Critical angle: sin C = n₂/n₁ = (4/3)/(3/2) = 8/9. So C = sin⁻¹(8/9).",
+        "difficulty": 3
+      },
+      {
+        "stem": "In Young's double slit experiment, the fringe width β is given by (D = distance to screen, d = slit separation, λ = wavelength):",
+        "options": ["λD/d", "λd/D", "dD/λ", "λ/(dD)"],
+        "correct_index": 0,
+        "explanation": "Fringe width β = λD/d, where λ is wavelength, D is the distance from slits to screen, and d is the slit separation.",
+        "difficulty": 2
+      },
+      {
+        "stem": "The power of a lens is −4 D. The focal length of the lens is:",
+        "options": ["25 cm concave", "25 cm convex", "−25 cm convex", "4 cm concave"],
+        "correct_index": 0,
+        "explanation": "Power P = 1/f (in metres). So f = 1/P = 1/(−4) = −0.25 m = −25 cm. A negative focal length means a concave (diverging) lens.",
+        "difficulty": 1
+      }
+    ]
+  },
+  {
+    "topic": "Modern Physics",
+    "questions": [
+      {
+        "stem": "The photoelectric effect demonstrates that light has:",
+        "options": ["Wave nature only", "Particle nature only", "Neither wave nor particle nature", "Both wave and particle nature"],
+        "correct_index": 1,
+        "explanation": "The photoelectric effect (Einstein, 1905) demonstrates the particle (photon) nature of light. The effect cannot be explained by wave theory alone, as maximum KE depends on frequency, not intensity.",
+        "difficulty": 2
+      },
+      {
+        "stem": "The de Broglie wavelength of a particle of mass m moving with velocity v is:",
+        "options": ["mv/h", "h/mv", "hmv", "h²/mv"],
+        "correct_index": 1,
+        "explanation": "de Broglie wavelength λ = h/p = h/(mv), where h is Planck's constant and p is the momentum.",
+        "difficulty": 1
+      },
+      {
+        "stem": "In radioactive decay, the half-life of a substance is 5 years. After 15 years, the fraction of the original substance remaining is:",
+        "options": ["1/8", "1/4", "1/16", "1/6"],
+        "correct_index": 0,
+        "explanation": "Number of half-lives = 15/5 = 3. Fraction remaining = (1/2)³ = 1/8.",
+        "difficulty": 2
+      },
+      {
+        "stem": "The energy of a photon of frequency ν is:",
+        "options": ["hν²", "hν", "h/ν", "hν/c"],
+        "correct_index": 1,
+        "explanation": "Energy of a photon E = hν, where h is Planck's constant (6.626 × 10⁻³⁴ J·s) and ν is frequency.",
+        "difficulty": 1
+      },
+      {
+        "stem": "In the Bohr model of hydrogen, the radius of the nth orbit is proportional to:",
+        "options": ["n", "n²", "1/n", "1/n²"],
+        "correct_index": 1,
+        "explanation": "In Bohr's model, the radius rn = n²a₀ where a₀ = 0.529 Å is the Bohr radius. The radius is proportional to n².",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "topic": "Waves & Sound",
+    "questions": [
+      {
+        "stem": "The velocity of sound in air at temperature T (in Kelvin) is proportional to:",
+        "options": ["T", "T²", "√T", "1/√T"],
+        "correct_index": 2,
+        "explanation": "Velocity of sound v = √(γRT/M). Since γ, R, and M are constants for a given gas, v ∝ √T.",
+        "difficulty": 2
+      },
+      {
+        "stem": "Two sound waves of frequencies 256 Hz and 260 Hz are sounded together. The number of beats heard per second is:",
+        "options": ["516", "4", "256", "2"],
+        "correct_index": 1,
+        "explanation": "Number of beats per second = |f₁ − f₂| = |260 − 256| = 4 beats per second.",
+        "difficulty": 1
+      },
+      {
+        "stem": "A string of length L fixed at both ends vibrates in its fundamental mode. The wavelength of the standing wave is:",
+        "options": ["L/2", "L", "2L", "4L"],
+        "correct_index": 2,
+        "explanation": "For a string fixed at both ends, the fundamental mode has a node at each end and an antinode in the middle. The length L = λ/2, so λ = 2L.",
+        "difficulty": 2
+      },
+      {
+        "stem": "The Doppler effect for sound: when a source of frequency f₀ moves towards a stationary observer with speed vₛ in a medium of sound speed v, the observed frequency is:",
+        "options": ["f₀(v − vₛ)/v", "f₀·v/(v + vₛ)", "f₀·v/(v − vₛ)", "f₀(v + vₛ)/v"],
+        "correct_index": 2,
+        "explanation": "When the source moves towards the observer, the observed frequency f = f₀·v/(v − vₛ). The denominator decreases so observed frequency is higher than the source frequency.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "topic": "Semiconductors & Logic Gates",
+    "questions": [
+      {
+        "stem": "In an n-type semiconductor, the majority charge carriers are:",
+        "options": ["Holes", "Electrons", "Protons", "Ions"],
+        "correct_index": 1,
+        "explanation": "n-type semiconductors are doped with pentavalent impurities (like phosphorus or arsenic), which donate extra electrons. Electrons are the majority carriers.",
+        "difficulty": 1
+      },
+      {
+        "stem": "The output of a NAND gate is LOW (0) only when:",
+        "options": ["Both inputs are LOW", "Both inputs are HIGH", "One input is HIGH and other is LOW", "Any one input is HIGH"],
+        "correct_index": 1,
+        "explanation": "NAND gate output = NOT(A AND B). The output is 0 only when A = 1 AND B = 1 (i.e., both inputs are HIGH). Otherwise the output is 1.",
+        "difficulty": 2
+      },
+      {
+        "stem": "A p-n junction diode in forward bias:",
+        "options": ["Does not allow current to flow", "Has a very high resistance", "Allows current to flow easily", "Acts as an open circuit"],
+        "correct_index": 2,
+        "explanation": "In forward bias, the p-side is connected to positive terminal and n-side to negative. The barrier potential decreases, allowing majority carriers to cross and current to flow easily.",
+        "difficulty": 1
+      },
+      {
+        "stem": "The Boolean expression for an XOR gate is:",
+        "options": ["A + B", "A · B", "A'B + AB'", "A' + B'"],
+        "correct_index": 2,
+        "explanation": "XOR (exclusive OR) gate output Y = A ⊕ B = A'B + AB'. The output is 1 when inputs are different (one high, one low).",
+        "difficulty": 3
+      }
+    ]
+  }
+]

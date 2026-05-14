@@ -4,6 +4,7 @@ export interface UserProfile {
   id: number
   name: string
   exam_target: string
+  exam_category: string  // "banking" | "ug_entrance"
 }
 
 interface UserState {

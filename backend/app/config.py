@@ -29,8 +29,9 @@ class Settings(BaseSettings):
     model_config = {"env_file": ".env", "env_file_encoding": "utf-8"}
 
     def get_model_for_subject(self, subject: str) -> str:
-        """Route to the math-specialist model for Quant, general 7B for everything else."""
-        if subject.lower() in ("quantitative aptitude", "quant"):
+        """Route to the math-specialist model for quantitative/science subjects, 7B for others."""
+        math_science = {"quantitative aptitude", "quant", "mathematics", "physics", "chemistry"}
+        if subject.lower() in math_science:
             return self.model_math
         return self.model_bg
 

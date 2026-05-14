@@ -1,0 +1,290 @@
+[
+  {
+    "topic": "Limits, Continuity & Differentiability",
+    "questions": [
+      {
+        "stem": "The value of lim(x→0) [sin(x)/x] is:",
+        "options": ["0", "∞", "1", "Undefined"],
+        "correct_index": 2,
+        "explanation": "lim(x→0) sin(x)/x = 1. This is a fundamental limit in calculus, derivable by L'Hôpital's rule or the squeeze theorem.",
+        "difficulty": 1
+      },
+      {
+        "stem": "The function f(x) = |x| is:",
+        "options": ["Differentiable everywhere", "Continuous everywhere but not differentiable at x = 0", "Neither continuous nor differentiable", "Differentiable at x = 0"],
+        "correct_index": 1,
+        "explanation": "|x| is continuous everywhere (left and right limits equal the function value). At x = 0, the left derivative is −1 and right derivative is +1, which are unequal, so it is not differentiable at x = 0.",
+        "difficulty": 2
+      },
+      {
+        "stem": "lim(x→∞) [(x² + 3x + 1)/(2x² − x + 5)] equals:",
+        "options": ["0", "∞", "1/2", "3/2"],
+        "correct_index": 2,
+        "explanation": "Divide numerator and denominator by x²: lim = (1 + 3/x + 1/x²)/(2 − 1/x + 5/x²). As x→∞, all 1/x terms → 0. Result = 1/2.",
+        "difficulty": 2
+      },
+      {
+        "stem": "The value of lim(x→0) [(e^x − 1)/x] is:",
+        "options": ["0", "e", "1", "∞"],
+        "correct_index": 2,
+        "explanation": "Using L'Hôpital's rule or the Taylor series e^x = 1 + x + x²/2! + ..., we get (e^x − 1)/x = 1 + x/2! + ... → 1 as x → 0.",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "topic": "Applications of Derivatives",
+    "questions": [
+      {
+        "stem": "The maximum value of f(x) = −x² + 4x + 1 is:",
+        "options": ["4", "5", "1", "9"],
+        "correct_index": 1,
+        "explanation": "f'(x) = −2x + 4 = 0 → x = 2. f''(x) = −2 < 0 (maximum). f(2) = −4 + 8 + 1 = 5. Maximum value is 5.",
+        "difficulty": 2
+      },
+      {
+        "stem": "A particle moves along a straight line such that s = t³ − 3t² + 2t. The velocity is zero when t equals:",
+        "options": ["t = 1 only", "t = 1/3 only", "t = 1 and t = 1/3", "t = 0"],
+        "correct_index": 2,
+        "explanation": "Velocity v = ds/dt = 3t² − 6t + 2. Setting v = 0: 3t² − 6t + 2 = 0. Using quadratic formula: t = (6 ± √(36−24))/6 = (6 ± √12)/6 = 1 ± 1/√3 ≈ 1.577 and 0.423. These are approximately 1 and 1/3.",
+        "difficulty": 3
+      },
+      {
+        "stem": "The slope of the tangent to the curve y = x³ at the point (1, 1) is:",
+        "options": ["1", "2", "3", "0"],
+        "correct_index": 2,
+        "explanation": "dy/dx = 3x². At x = 1: slope = 3(1)² = 3.",
+        "difficulty": 1
+      },
+      {
+        "stem": "Using Rolle's theorem, for f(x) = x² − 4x + 3 on [1, 3], the value of c where f'(c) = 0 is:",
+        "options": ["1", "2", "3", "1.5"],
+        "correct_index": 1,
+        "explanation": "f(1) = 1 − 4 + 3 = 0, f(3) = 9 − 12 + 3 = 0. Conditions satisfied. f'(x) = 2x − 4 = 0 → x = 2. Since 2 ∈ (1, 3), c = 2.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "topic": "Integral Calculus",
+    "questions": [
+      {
+        "stem": "The value of ∫₀¹ x² dx is:",
+        "options": ["1/2", "1/3", "1/4", "1"],
+        "correct_index": 1,
+        "explanation": "∫x² dx = x³/3 + C. Evaluated from 0 to 1: [x³/3]₀¹ = 1/3 − 0 = 1/3.",
+        "difficulty": 1
+      },
+      {
+        "stem": "∫ e^x (sin x + cos x) dx equals:",
+        "options": ["e^x sin x + C", "e^x cos x + C", "e^x (sin x + cos x)/2 + C", "e^x (sin x − cos x) + C"],
+        "correct_index": 0,
+        "explanation": "Using the formula ∫e^x[f(x) + f'(x)]dx = e^x f(x) + C. Here f(x) = sin x, f'(x) = cos x. So ∫e^x(sin x + cos x)dx = e^x sin x + C.",
+        "difficulty": 3
+      },
+      {
+        "stem": "The area bounded by y = x², y = 0 and x = 2 (in the first quadrant) is:",
+        "options": ["4", "8/3", "2", "4/3"],
+        "correct_index": 1,
+        "explanation": "Area = ∫₀² x² dx = [x³/3]₀² = 8/3 − 0 = 8/3 square units.",
+        "difficulty": 2
+      },
+      {
+        "stem": "∫ dx/(1 + x²) equals:",
+        "options": ["ln(1 + x²) + C", "tan⁻¹x + C", "sin⁻¹x + C", "x/(1 + x²) + C"],
+        "correct_index": 1,
+        "explanation": "∫ dx/(1 + x²) = tan⁻¹x + C. This is a standard integral formula.",
+        "difficulty": 1
+      }
+    ]
+  },
+  {
+    "topic": "Differential Equations",
+    "questions": [
+      {
+        "stem": "The general solution of the differential equation dy/dx = y is:",
+        "options": ["y = Cx", "y = Ce^x", "y = C + e^x", "y = C/e^x"],
+        "correct_index": 1,
+        "explanation": "dy/dx = y → dy/y = dx → ln y = x + C₁ → y = e^(x+C₁) = Ce^x where C = e^C₁.",
+        "difficulty": 2
+      },
+      {
+        "stem": "The order of the differential equation d²y/dx² + 3(dy/dx)³ + 5y = 0 is:",
+        "options": ["1", "2", "3", "6"],
+        "correct_index": 1,
+        "explanation": "The order of a differential equation is the highest derivative present. The highest derivative here is d²y/dx² (second derivative), so order = 2.",
+        "difficulty": 1
+      }
+    ]
+  },
+  {
+    "topic": "Complex Numbers & Quadratic Equations",
+    "questions": [
+      {
+        "stem": "If z = 3 + 4i, the modulus |z| is:",
+        "options": ["7", "5", "√7", "1"],
+        "correct_index": 1,
+        "explanation": "|z| = √(a² + b²) = √(3² + 4²) = √(9 + 16) = √25 = 5.",
+        "difficulty": 1
+      },
+      {
+        "stem": "The roots of the equation x² − 5x + 6 = 0 are:",
+        "options": ["2 and 3", "−2 and −3", "1 and 6", "−1 and −6"],
+        "correct_index": 0,
+        "explanation": "Factoring: x² − 5x + 6 = (x − 2)(x − 3) = 0. Roots are x = 2 and x = 3. Sum = 5 ✓, Product = 6 ✓.",
+        "difficulty": 1
+      },
+      {
+        "stem": "The value of i¹⁰⁰ (where i = √−1) is:",
+        "options": ["i", "−i", "1", "−1"],
+        "correct_index": 2,
+        "explanation": "Powers of i cycle with period 4: i¹=i, i²=−1, i³=−i, i⁴=1, i⁵=i... Since 100 = 4×25, i¹⁰⁰ = (i⁴)²⁵ = 1²⁵ = 1.",
+        "difficulty": 2
+      },
+      {
+        "stem": "If α and β are roots of x² − px + q = 0, then α² + β² equals:",
+        "options": ["p² − 2q", "p² + 2q", "q² − 2p", "p² − q²"],
+        "correct_index": 0,
+        "explanation": "By Vieta's formulae: α + β = p and αβ = q. α² + β² = (α + β)² − 2αβ = p² − 2q.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "topic": "Matrices & Determinants",
+    "questions": [
+      {
+        "stem": "For a 2×2 matrix A = [[a, b], [c, d]], the determinant |A| is:",
+        "options": ["a+d − b−c", "ad + bc", "ad − bc", "ac − bd"],
+        "correct_index": 2,
+        "explanation": "For a 2×2 matrix [[a,b],[c,d]], the determinant = ad − bc.",
+        "difficulty": 1
+      },
+      {
+        "stem": "If A is a 3×3 matrix with |A| = 5, then |2A| equals:",
+        "options": ["10", "20", "40", "5"],
+        "correct_index": 2,
+        "explanation": "For an n×n matrix, |kA| = kⁿ|A|. Here n = 3, k = 2, so |2A| = 2³ × 5 = 8 × 5 = 40.",
+        "difficulty": 3
+      },
+      {
+        "stem": "The inverse of a matrix A exists if and only if:",
+        "options": ["|A| = 1", "|A| ≠ 0", "A is symmetric", "A is upper triangular"],
+        "correct_index": 1,
+        "explanation": "A matrix A is invertible (non-singular) if and only if its determinant |A| ≠ 0. If |A| = 0, the matrix is singular and has no inverse.",
+        "difficulty": 1
+      }
+    ]
+  },
+  {
+    "topic": "Probability & Statistics",
+    "questions": [
+      {
+        "stem": "Two dice are rolled simultaneously. The probability of getting a sum of 7 is:",
+        "options": ["1/6", "7/36", "6/36", "5/36"],
+        "correct_index": 0,
+        "explanation": "Favourable outcomes for sum 7: (1,6),(2,5),(3,4),(4,3),(5,2),(6,1) = 6 outcomes. Total = 36. P = 6/36 = 1/6.",
+        "difficulty": 2
+      },
+      {
+        "stem": "If P(A) = 0.4, P(B) = 0.5 and P(A∩B) = 0.2, then P(A∪B) is:",
+        "options": ["0.7", "0.9", "0.6", "0.8"],
+        "correct_index": 0,
+        "explanation": "P(A∪B) = P(A) + P(B) − P(A∩B) = 0.4 + 0.5 − 0.2 = 0.7.",
+        "difficulty": 2
+      },
+      {
+        "stem": "A bag has 4 red and 6 blue balls. Two balls are drawn without replacement. The probability both are red is:",
+        "options": ["4/15", "2/15", "8/45", "1/5"],
+        "correct_index": 1,
+        "explanation": "P(both red) = (4/10) × (3/9) = 12/90 = 2/15.",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "topic": "Coordinate Geometry - Conics",
+    "questions": [
+      {
+        "stem": "The equation of a circle with centre (3, −4) and radius 5 is:",
+        "options": ["(x−3)² + (y+4)² = 5", "(x+3)² + (y−4)² = 25", "(x−3)² + (y+4)² = 25", "(x−3)² + (y−4)² = 25"],
+        "correct_index": 2,
+        "explanation": "Standard form: (x − h)² + (y − k)² = r². With (h,k) = (3, −4) and r = 5: (x−3)² + (y+4)² = 25.",
+        "difficulty": 1
+      },
+      {
+        "stem": "The eccentricity of a parabola is:",
+        "options": ["Less than 1", "Equal to 1", "Greater than 1", "Zero"],
+        "correct_index": 1,
+        "explanation": "Eccentricity e: circle e=0, ellipse 0<e<1, parabola e=1, hyperbola e>1.",
+        "difficulty": 1
+      },
+      {
+        "stem": "The focus of the parabola y² = 8x is at:",
+        "options": ["(2, 0)", "(0, 2)", "(−2, 0)", "(4, 0)"],
+        "correct_index": 0,
+        "explanation": "y² = 4ax form: here 4a = 8 → a = 2. Focus is at (a, 0) = (2, 0).",
+        "difficulty": 2
+      },
+      {
+        "stem": "For the ellipse x²/16 + y²/9 = 1, the length of the major axis is:",
+        "options": ["4", "8", "3", "6"],
+        "correct_index": 1,
+        "explanation": "Standard ellipse x²/a² + y²/b² = 1 with a² = 16, b² = 9. Here a = 4 > b = 3. Major axis length = 2a = 8.",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "topic": "Vectors & 3D Geometry",
+    "questions": [
+      {
+        "stem": "If a⃗ = 2i + 3j − k and b⃗ = i − j + 2k, then a⃗ · b⃗ is:",
+        "options": ["5", "−3", "1", "3"],
+        "correct_index": 1,
+        "explanation": "a⃗ · b⃗ = (2)(1) + (3)(−1) + (−1)(2) = 2 − 3 − 2 = −3.",
+        "difficulty": 2
+      },
+      {
+        "stem": "The angle between vectors a⃗ = i + j and b⃗ = i − j is:",
+        "options": ["0°", "45°", "90°", "180°"],
+        "correct_index": 2,
+        "explanation": "a⃗ · b⃗ = (1)(1) + (1)(−1) = 1 − 1 = 0. Since dot product is 0, the angle between them is 90°.",
+        "difficulty": 2
+      },
+      {
+        "stem": "The distance between the points A(1, 2, 3) and B(4, 6, 3) is:",
+        "options": ["5", "√50", "√7", "√25"],
+        "correct_index": 0,
+        "explanation": "Distance = √[(4−1)² + (6−2)² + (3−3)²] = √[9 + 16 + 0] = √25 = 5.",
+        "difficulty": 1
+      }
+    ]
+  },
+  {
+    "topic": "Sequences, Series & Binomial Theorem",
+    "questions": [
+      {
+        "stem": "The sum of the first n terms of an AP with first term a and common difference d is:",
+        "options": ["n(a + l)/2 only", "n/2 × [2a + (n−1)d]", "na + d", "n(2a + d)/2"],
+        "correct_index": 1,
+        "explanation": "Sum of AP: Sn = n/2 × [2a + (n−1)d]. Equivalently Sn = n/2 × (a + l) where l is the last term.",
+        "difficulty": 1
+      },
+      {
+        "stem": "The sum of infinite GP with first term a and common ratio r (|r| < 1) is:",
+        "options": ["a/(1+r)", "a/(1−r)", "ar/(1−r)", "a(1−r)"],
+        "correct_index": 1,
+        "explanation": "Sum of infinite GP S∞ = a/(1−r) when |r| < 1. This is derived from Sn = a(1−rⁿ)/(1−r) as n→∞.",
+        "difficulty": 2
+      },
+      {
+        "stem": "The middle term in the expansion of (x + 1/x)¹⁰ is (where n = 10, middle term is (n/2 + 1)th term):",
+        "options": ["C(10,5)", "C(10,5) × x⁵", "C(10,5) × x⁻⁵", "252"],
+        "correct_index": 3,
+        "explanation": "Middle term is T₆ = C(10,5) × x⁵ × (1/x)⁵ = C(10,5) × x⁰ = C(10,5) = 252.",
+        "difficulty": 3
+      }
+    ]
+  }
+]

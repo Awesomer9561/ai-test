@@ -1,0 +1,113 @@
+[
+  {
+    "topic": "Reading Comprehension (UG)",
+    "questions": [
+      {
+        "stem": "Read the passage: 'The Industrial Revolution transformed agrarian societies into industrial ones. It began in Britain in the late 18th century and spread across Europe and North America. The mechanisation of production led to urbanisation, as workers migrated from rural areas to cities seeking employment in factories.' The primary effect of the Industrial Revolution mentioned in the passage is:",
+        "options": ["Decline in agricultural production", "Transformation from agrarian to industrial society", "Spread of democracy in Europe", "Reduction in urban population"],
+        "correct_index": 1,
+        "explanation": "The passage explicitly states that the Industrial Revolution 'transformed agrarian societies into industrial ones.' All other options are either not mentioned or contradict the passage.",
+        "difficulty": 1
+      },
+      {
+        "stem": "Read: 'Biodiversity refers to the variety of life on Earth at all its levels, from genes to ecosystems. It encompasses the evolutionary, ecological, and cultural processes that sustain life. Human activities such as deforestation, pollution, and over-exploitation have caused unprecedented rates of species extinction.' According to the passage, which of the following is NOT a cause of species extinction?",
+        "options": ["Deforestation", "Pollution", "Evolution", "Over-exploitation"],
+        "correct_index": 2,
+        "explanation": "The passage mentions deforestation, pollution, and over-exploitation as human activities causing extinction. Evolution is a natural process mentioned as sustaining life, not causing extinction.",
+        "difficulty": 2
+      },
+      {
+        "stem": "The word 'unprecedented' in the passage about biodiversity most nearly means:",
+        "options": ["Well-documented", "Never seen before", "Predicted long ago", "Relatively minor"],
+        "correct_index": 1,
+        "explanation": "'Unprecedented' means having no precedent or never having happened before. In context, it describes extinction rates that are higher than anything previously recorded.",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "topic": "Vocabulary & Word Power",
+    "questions": [
+      {
+        "stem": "Choose the word most similar in meaning to 'EPHEMERAL':",
+        "options": ["Eternal", "Transient", "Substantial", "Recurring"],
+        "correct_index": 1,
+        "explanation": "'Ephemeral' means lasting for a very short time (from Greek 'ephemeros' = daily). 'Transient' means passing quickly and not permanent — both are synonyms. 'Eternal' is the antonym.",
+        "difficulty": 2
+      },
+      {
+        "stem": "Choose the word OPPOSITE in meaning to 'LACONIC':",
+        "options": ["Concise", "Verbose", "Taciturn", "Reserved"],
+        "correct_index": 1,
+        "explanation": "'Laconic' means using few words; brief and concise. Its antonym is 'verbose' (using more words than needed, long-winded). 'Taciturn' is a near-synonym of laconic.",
+        "difficulty": 3
+      },
+      {
+        "stem": "Select the correct meaning of the phrase 'to beat around the bush':",
+        "options": ["To search in the forest", "To avoid the main topic", "To work very hard", "To be very excited"],
+        "correct_index": 1,
+        "explanation": "'To beat around the bush' is an idiom meaning to avoid coming to the main point — to speak indirectly or talk about peripheral things instead of the central issue.",
+        "difficulty": 2
+      },
+      {
+        "stem": "The word 'AMELIORATE' means:",
+        "options": ["To make worse", "To make better or improve", "To destroy completely", "To measure accurately"],
+        "correct_index": 1,
+        "explanation": "'Ameliorate' means to make something bad or unsatisfactory better — to improve. Example: 'Measures were taken to ameliorate the living conditions of the poor.'",
+        "difficulty": 3
+      }
+    ]
+  },
+  {
+    "topic": "Grammar & Error Detection",
+    "questions": [
+      {
+        "stem": "Identify the sentence with a grammatical error: (A) She has been working here since 2010. (B) Neither the manager nor the employees was present. (C) He suggested that we leave early. (D) The committee has made its decision.",
+        "options": ["A", "B", "C", "D"],
+        "correct_index": 1,
+        "explanation": "In sentence B, 'Neither...nor' follows proximity rule — the verb agrees with the nearest subject. 'Employees' is plural, so it should be 'were present', not 'was present'. Correct: 'Neither the manager nor the employees were present.'",
+        "difficulty": 3
+      },
+      {
+        "stem": "Choose the correct form to fill the blank: 'If I _____ you, I would apologise immediately.'",
+        "options": ["am", "was", "were", "be"],
+        "correct_index": 2,
+        "explanation": "This is a second conditional (hypothetical/unreal condition in present). The correct form uses 'were' (subjunctive mood): 'If I were you, I would apologise.' 'Were' is used for all persons in the subjunctive.",
+        "difficulty": 2
+      },
+      {
+        "stem": "The sentence 'The news are shocking' is incorrect because:",
+        "options": ["'shocking' is the wrong adjective", "'news' is a collective noun that takes a singular verb", "'are' should be replaced by 'is' because news refers to many items", "Both (B) and (C) are correct explanations"],
+        "correct_index": 3,
+        "explanation": "'News' is treated as an uncountable (singular) noun in English even though it ends in 's'. It always takes a singular verb: 'The news is shocking.' Options B and C both correctly explain why 'are' is wrong.",
+        "difficulty": 3
+      },
+      {
+        "stem": "Select the correctly punctuated sentence:",
+        "options": ["Its a beautiful day isnt it?", "It's a beautiful day, isn't it?", "Its a beautiful day, isn't it?", "It's a beautiful day isn't it?"],
+        "correct_index": 1,
+        "explanation": "'It's' (with apostrophe) is the contraction of 'it is'. A comma precedes a question tag. 'isn't' requires an apostrophe. The correct sentence: 'It's a beautiful day, isn't it?'",
+        "difficulty": 2
+      }
+    ]
+  },
+  {
+    "topic": "Verbal Reasoning & Sentence Completion",
+    "questions": [
+      {
+        "stem": "Choose the best word to fill the blank: 'Despite the _____ evidence against him, the jury found the defendant not guilty.'",
+        "options": ["Scarce", "Overwhelming", "Minimal", "Doubtful"],
+        "correct_index": 1,
+        "explanation": "'Despite' signals a contrast. If there was overwhelming evidence against him, a 'not guilty' verdict would be surprising — which is what 'despite' implies. The context calls for a strong word like 'overwhelming'.",
+        "difficulty": 2
+      },
+      {
+        "stem": "Rearrange the sentences to form a coherent paragraph: (P) He finally arrived after a long journey. (Q) Everyone had been waiting anxiously. (R) The celebration began immediately. (S) It was a joyous reunion for the whole family. The correct order is:",
+        "options": ["P-Q-R-S", "Q-P-R-S", "S-Q-P-R", "Q-S-P-R"],
+        "correct_index": 1,
+        "explanation": "Logical order: Q (people were waiting) → P (he arrived) → R (celebration began) → S (it was joyous). The sequence follows the natural timeline of events.",
+        "difficulty": 2
+      }
+    ]
+  }
+]

@@ -6,7 +6,7 @@ from tenacity import retry, stop_after_attempt, wait_fixed
 
 from app.config import settings
 from app.ai.ollama_client import ollama
-from app.ai.prompts import SYSTEM_QGEN, PROMPT_QGEN, PROMPT_EXPLANATION
+from app.ai.prompts import SYSTEM_QGEN_BANKING, SYSTEM_QGEN_UG, PROMPT_QGEN, PROMPT_EXPLANATION
 from app.schemas import GeneratedQuestion
 
 logger = logging.getLogger(__name__)
@@ -14,6 +14,8 @@ logger = logging.getLogger(__name__)
 
 class QuestionGenerator:
     """Generates IBPS-style MCQs via local Ollama models."""
+
+    UG_SUBJECTS = {"physics", "chemistry", "mathematics", "cuet english", "cuet general test"}
 
     @retry(stop=stop_after_attempt(3), wait=wait_fixed(1))
     async def generate_questions(
@@ -26,14 +28,18 @@ class QuestionGenerator:
     ) -> list[GeneratedQuestion]:
         """
         Generate MCQs for a given topic.
-        Routes to math model for Quant, general 7B for everything else.
+        Routes to math model for Quant/Physics/Chemistry/Maths, general 7B for everything else.
         Validates each question against the Pydantic schema.
         """
+        is_ug = subject.lower() in self.UG_SUBJECTS
+        system_prompt = SYSTEM_QGEN_UG if is_ug else SYSTEM_QGEN_BANKING
+        exam_type = "JEE/WBJEE/CUET" if is_ug else "IBPS/SBI Banking"
         model = settings.get_model_for_subject(subject)
         avoid_text = "\n".join(f"- {s[:80]}" for s in (avoid_stems or [])[:10]) or "None"
 
         prompt = PROMPT_QGEN.format(
             count=count,
+            exam_type=exam_type,
             subject=subject,
             topic=topic,
             difficulty=difficulty,
@@ -45,7 +51,7 @@ class QuestionGenerator:
         response = await ollama.generate(
             prompt=prompt,
             model=model,
-            system=SYSTEM_QGEN,
+            system=system_prompt,
             temperature=0.7,
             format_json=True,
         )
@@ -97,6 +103,7 @@ class QuestionGenerator:
         options: list[str],
         correct_index: int,
         user_answer_index: int | None,
+        subject: str = "",
     ) -> str:
         """Generate a personalized explanation for a question."""
         letters = ["A", "B", "C", "D"]
@@ -110,7 +117,11 @@ class QuestionGenerator:
             user_option = "N/A (correct or skipped)"
             user_letter = "-"
 
+        is_ug = subject.lower() in self.UG_SUBJECTS
+        exam_type = "JEE/WBJEE/CUET" if is_ug else "IBPS/SBI Banking"
+
         prompt = PROMPT_EXPLANATION.format(
+            exam_type=exam_type,
             stem=stem,
             options="\n".join(f"  {letters[i]}. {opt}" for i, opt in enumerate(options)),
             correct_option=correct_option,
