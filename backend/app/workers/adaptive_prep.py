@@ -105,12 +105,15 @@ async def build_adaptive_questions(
     user_id: int,
     num_questions: int,
     db: AsyncSession,
+    *,
+    force_challenge: bool = False,
 ) -> list[Question]:
     """
     Build a personalised question list for an adaptive test.
 
     Standard mode:  60% weak, 25% medium, 15% strong (easy maintenance).
     Challenge mode: 20% weak, 30% medium, 50% strong at difficulty ≥4.
+                    Activated automatically for HP users OR via force_challenge=True.
 
     For weak topics AI questions are always generated for the shortfall.
     For strong topics in challenge mode, AI questions at difficulty 5 are also generated.
@@ -127,7 +130,7 @@ async def build_adaptive_questions(
         logger.info(f"No skill data for user {user_id} — falling back to random questions.")
         return []
 
-    hp = is_high_performer(list(skills))
+    hp = force_challenge or is_high_performer(list(skills))
 
     weak = [s for s in skills if s.mastery_score < WEAK_THRESHOLD]
     medium = [s for s in skills if WEAK_THRESHOLD <= s.mastery_score < STRONG_THRESHOLD]

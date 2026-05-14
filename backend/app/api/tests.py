@@ -128,16 +128,17 @@ async def _start_adaptive_test(req: TestStartRequest, db: AsyncSession) -> TestO
     from app.workers.adaptive_prep import build_adaptive_questions, is_high_performer
     from app.models import UserSkill
 
-    # Determine if user is a high performer (needed for mode label + composition)
+    # Challenge mode: HP auto-detected OR manually opted in via force_challenge
     skills_stmt = select(UserSkill).where(UserSkill.user_id == req.user_id)
     skills_result = await db.execute(skills_stmt)
     skills = skills_result.scalars().all()
-    challenge = is_high_performer(list(skills))
+    challenge = req.force_challenge or is_high_performer(list(skills))
 
     questions = await build_adaptive_questions(
         user_id=req.user_id,
         num_questions=req.num_questions,
         db=db,
+        force_challenge=challenge,
     )
 
     # Fall back to random DB questions if no skill data yet

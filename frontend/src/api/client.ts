@@ -115,6 +115,7 @@ export const startTest = (data: {
   mode?: string
   num_questions?: number
   duration_seconds?: number
+  force_challenge?: boolean
 }) =>
   api.post<TestSession>('/api/tests/start', data).then(r => r.data)
 

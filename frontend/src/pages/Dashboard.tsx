@@ -14,6 +14,7 @@ export default function Dashboard() {
   const [refreshing, setRefreshing] = useState(false)
   const [adaptiveLoading, setAdaptiveLoading] = useState(false)
   const [adaptiveError, setAdaptiveError] = useState('')
+  const [manualChallenge, setManualChallenge] = useState(false)
 
   const { data: health, isLoading: healthLoading } = useQuery({
     queryKey: ['health'],
@@ -81,6 +82,7 @@ export default function Dashboard() {
         mode: 'adaptive',
         num_questions: 10,
         duration_seconds: 600,
+        force_challenge: isHighPerformer || manualChallenge,
       })
       initTest(test.id)
       navigate(`/test/${test.id}`, { state: { test } })
@@ -176,39 +178,62 @@ export default function Dashboard() {
       </div>
 
       {/* ── Adaptive test CTA ── */}
-      <div className={`bg-gradient-to-r ${isHighPerformer ? 'from-orange-50 to-amber-50 border-orange-200' : 'from-blue-50 to-indigo-50 border-blue-200'} border rounded-xl p-5 mb-6`}>
-        <div className="flex items-center justify-between gap-4 flex-wrap">
-          <div>
-            <div className="flex items-center gap-2">
-              <h2 className={`text-lg font-semibold ${isHighPerformer ? 'text-orange-800' : 'text-blue-800'}`}>
-                Adaptive Test
-              </h2>
-              {isHighPerformer && (
-                <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-orange-100 text-orange-700 border border-orange-300">
-                  🔥 Challenge Mode
-                </span>
-              )}
+      {(() => {
+        const effectiveChallenge = isHighPerformer || manualChallenge
+        return (
+          <div className={`bg-gradient-to-r ${effectiveChallenge ? 'from-orange-50 to-amber-50 border-orange-200' : 'from-blue-50 to-indigo-50 border-blue-200'} border rounded-xl p-5 mb-6`}>
+            <div className="flex items-center justify-between gap-4 flex-wrap">
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-2">
+                  <h2 className={`text-lg font-semibold ${effectiveChallenge ? 'text-orange-800' : 'text-blue-800'}`}>
+                    Adaptive Test
+                  </h2>
+                  {effectiveChallenge && (
+                    <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-orange-100 text-orange-700 border border-orange-300">
+                      🔥 Challenge Mode
+                    </span>
+                  )}
+                </div>
+                <p className="text-sm text-gray-600 mt-0.5">
+                  {!skills || skills.length === 0
+                    ? 'Complete a regular test first to unlock personalised generation.'
+                    : effectiveChallenge
+                      ? isHighPerformer
+                        ? "You're performing at an advanced level. Your test will focus on pushing your strongest topics harder with difficulty 4–5 questions."
+                        : "Challenge mode on — you'll get hard questions (difficulty 4–5) on your strongest topics. Expect a tough test."
+                      : `AI analyses your ${weakTopics.length > 0 ? weakTopics.length + ' weak area(s)' : 'skills'} and generates a personalised 10-question test.`}
+                </p>
+
+                {/* Manual toggle — only shown for non-HP users who have skill data */}
+                {!isHighPerformer && skills && skills.length > 0 && (
+                  <label className="flex items-center gap-2 mt-2.5 cursor-pointer w-fit">
+                    <div
+                      onClick={() => setManualChallenge(v => !v)}
+                      className={`relative w-9 h-5 rounded-full transition-colors ${manualChallenge ? 'bg-orange-500' : 'bg-gray-300'}`}
+                    >
+                      <span className={`absolute top-0.5 left-0.5 w-4 h-4 bg-white rounded-full shadow transition-transform ${manualChallenge ? 'translate-x-4' : 'translate-x-0'}`} />
+                    </div>
+                    <span className="text-xs text-gray-600 select-none">
+                      Challenge Mode <span className="text-gray-400">(hard questions on strong topics)</span>
+                    </span>
+                  </label>
+                )}
+
+                {adaptiveError && <p className="text-sm text-red-600 mt-1">{adaptiveError}</p>}
+              </div>
+              <button
+                onClick={handleStartAdaptive}
+                disabled={adaptiveLoading}
+                className={`shrink-0 px-5 py-2.5 rounded-lg text-white font-semibold disabled:opacity-50 transition ${
+                  effectiveChallenge ? 'bg-orange-600 hover:bg-orange-700' : 'bg-blue-600 hover:bg-blue-700'
+                }`}
+              >
+                {adaptiveLoading ? 'Generating…' : effectiveChallenge ? 'Start Challenge Test' : 'Start Adaptive Test'}
+              </button>
             </div>
-            <p className="text-sm text-gray-600 mt-0.5">
-              {!skills || skills.length === 0
-                ? 'Complete a regular test first to unlock personalised generation.'
-                : isHighPerformer
-                  ? "You're performing at an advanced level. Your test will focus on pushing your strongest topics harder with difficulty 4–5 questions."
-                  : `AI analyses your ${weakTopics.length > 0 ? weakTopics.length + ' weak area(s)' : 'skills'} and generates a personalised 10-question test.`}
-            </p>
-            {adaptiveError && <p className="text-sm text-red-600 mt-1">{adaptiveError}</p>}
           </div>
-          <button
-            onClick={handleStartAdaptive}
-            disabled={adaptiveLoading}
-            className={`shrink-0 px-5 py-2.5 rounded-lg text-white font-semibold disabled:opacity-50 transition ${
-              isHighPerformer ? 'bg-orange-600 hover:bg-orange-700' : 'bg-blue-600 hover:bg-blue-700'
-            }`}
-          >
-            {adaptiveLoading ? 'Generating…' : isHighPerformer ? 'Start Challenge Test' : 'Start Adaptive Test'}
-          </button>
-        </div>
-      </div>
+        )
+      })()}
 
       {/* Skill heatmap */}
       {skills && skills.length > 0 && (

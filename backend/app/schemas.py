@@ -50,6 +50,7 @@ class TestStartRequest(BaseModel):
     mode: str = "custom"       # custom / adaptive / mock
     num_questions: int = 10
     duration_seconds: int = 600
+    force_challenge: bool = False  # manual opt-in to challenge mode
 
 
 class TestQuestionOut(BaseModel):
