@@ -101,31 +101,107 @@ async def _fetch_or_generate_questions(
     return existing
 
 
+async def _build_questions_for_explicit_topics(
+    db: AsyncSession,
+    topic_ids: list[int],
+    skills_by_topic: dict[int, UserSkill],
+    num_questions: int,
+    *,
+    force_challenge: bool,
+) -> list[Question]:
+    """
+    Generate questions for a user-supplied list of topic IDs.
+
+    Challenge: difficulty ≥ 4, AI-generate at difficulty 5 if DB is short.
+    Normal:    any difficulty, AI-generate at mastery-adjusted difficulty.
+    Questions are distributed as evenly as possible across the selected topics.
+    """
+    collected: list[Question] = []
+    slots_per_topic = max(1, -(-num_questions // max(len(topic_ids), 1)))  # ceiling division
+
+    for tid in topic_ids:
+        topic = await db.get(Topic, tid)
+        if not topic:
+            logger.warning(f"Topic {tid} not found — skipping.")
+            continue
+        subject = await db.get(Subject, topic.subject_id)
+        subject_name = subject.name if subject else ""
+
+        # Use real skill data if available; otherwise synthesise a neutral one
+        skill = skills_by_topic.get(tid)
+        if skill is None:
+            skill = UserSkill(topic_id=tid, mastery_score=0.7 if force_challenge else 0.5)
+
+        if force_challenge:
+            qs = await _fetch_or_generate_questions(
+                db, skill, topic, subject_name,
+                slots=slots_per_topic,
+                min_difficulty=4,
+                max_difficulty=5,
+                target_ai_difficulty=5,
+                generate_if_short=True,
+            )
+        else:
+            ai_diff = min(5, max(1, round(skill.mastery_score * 5) + 1))
+            qs = await _fetch_or_generate_questions(
+                db, skill, topic, subject_name,
+                slots=slots_per_topic,
+                min_difficulty=1,
+                max_difficulty=5,
+                target_ai_difficulty=ai_diff,
+                generate_if_short=True,
+            )
+        collected.extend(qs)
+        logger.info(f"Collected {len(qs)} questions for explicit topic '{topic.name}' (challenge={force_challenge})")
+
+    random.shuffle(collected)
+    return collected[:num_questions]
+
+
 async def build_adaptive_questions(
     user_id: int,
     num_questions: int,
     db: AsyncSession,
     *,
     force_challenge: bool = False,
+    topic_ids: list[int] | None = None,
 ) -> list[Question]:
     """
     Build a personalised question list for an adaptive test.
 
-    Standard mode:  60% weak, 25% medium, 15% strong (easy maintenance).
-    Challenge mode: 20% weak, 30% medium, 50% strong at difficulty ≥4.
-                    Activated automatically for HP users OR via force_challenge=True.
+    When topic_ids is provided (non-empty):
+      → Generate questions ONLY for those topics.
+      → Challenge: difficulty ≥4, AI-generate shortfall at difficulty 5.
+      → Normal:    any difficulty, AI-generate shortfall.
+      → Questions distributed evenly across selected topics.
 
-    For weak topics AI questions are always generated for the shortfall.
-    For strong topics in challenge mode, AI questions at difficulty 5 are also generated.
+    When topic_ids is empty/None (dashboard path):
+      Standard mode:  60% weak / 25% medium / 15% strong.
+      Challenge mode: 20% weak / 30% medium / 50% strong at difficulty ≥4.
+      Topics auto-selected from skill data.
+
     Generated questions are saved to DB and enter the normal seed rotation.
-
     Returns up to num_questions Question ORM objects (already flushed to DB).
-    Returns empty list if the user has no skill data yet.
+    Returns empty list when topic_ids path is used but no topics resolve.
+    Returns empty list (no topic_ids path) when user has no skill data yet.
     """
+    # Load skill data for the user
     stmt = select(UserSkill).where(UserSkill.user_id == user_id).order_by(UserSkill.mastery_score)
     result = await db.execute(stmt)
     skills = result.scalars().all()
+    skills_by_topic: dict[int, UserSkill] = {s.topic_id: s for s in skills}
 
+    # ── Explicit topic selection path ─────────────────────────────────────────
+    if topic_ids:
+        return await _build_questions_for_explicit_topics(
+            db=db,
+            topic_ids=topic_ids,
+            skills_by_topic=skills_by_topic,
+            num_questions=num_questions,
+            force_challenge=force_challenge,
+        )
+
+    # ── Auto-select from skill data ───────────────────────────────────────────
     if not skills:
         logger.info(f"No skill data for user {user_id} — falling back to random questions.")
         return []

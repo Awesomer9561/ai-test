@@ -139,6 +139,7 @@ async def _start_adaptive_test(req: TestStartRequest, db: AsyncSession) -> TestO
         num_questions=req.num_questions,
         db=db,
         force_challenge=challenge,
+        topic_ids=req.topic_ids if req.topic_ids else None,
     )
 
     # Fall back to random DB questions if no skill data yet

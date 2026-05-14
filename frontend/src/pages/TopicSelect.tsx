@@ -79,6 +79,23 @@ export default function TopicSelect() {
 
   return (
     <div>
+      {/* ── Full-page overlay while AI generates challenge questions ── */}
+      {startMutation.isPending && challengeMode && (
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50">
+          <div className="bg-white rounded-2xl shadow-2xl p-10 text-center max-w-sm mx-4">
+            <div className="flex justify-center mb-6">
+              <div className="w-14 h-14 border-4 border-orange-200 border-t-orange-600 rounded-full animate-spin" />
+            </div>
+            <h2 className="text-xl font-bold text-gray-900 mb-2">Building your challenge test…</h2>
+            <p className="text-sm text-gray-500 leading-relaxed">
+              Generating hard questions for your selected topics with AI.
+              <br />
+              This usually takes <strong>30–60 seconds</strong>.
+            </p>
+          </div>
+        </div>
+      )}
+
       <div className="flex items-center gap-3 mb-6">
         <h1 className="text-2xl font-bold">Start a New Test</h1>
         <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${badge.bg} ${badge.text}`}>
