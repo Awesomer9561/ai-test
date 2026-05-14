@@ -2,8 +2,8 @@
 
 import asyncio
 import logging
-from datetime import datetime
-from fastapi import APIRouter, Depends, HTTPException
+from datetime import datetime, timezone
+from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy import select, func
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
@@ -14,6 +14,7 @@ from app.schemas import (
     TestStartRequest, TestOut, TestQuestionOut, QuestionOut,
     TestSubmitRequest, TestResultOut, QuestionResult,
     QuestionWithAnswer, TopicBreakdown,
+    SaveProgressRequest, InProgressTestResponse,
 )
 from app.workers.skill_update import update_skills_after_test
 
@@ -35,16 +36,28 @@ async def _build_topic_name_map(questions: list[Question], db: AsyncSession) -> 
     return cache
 
 
-def _make_test_out(test: Test, questions: list[Question], test_questions: list[TestQuestion],
-                   topic_name_map: dict[int, tuple[str, str]]) -> TestOut:
+def _make_test_out(
+    test: Test,
+    questions: list[Question],
+    test_questions: list[TestQuestion],
+    topic_name_map: dict[int, tuple[str, str]],
+    *,
+    challenge_mode: bool = False,
+    include_saved_answers: bool = False,
+    remaining_ms: int | None = None,
+) -> TestOut:
     return TestOut(
         id=test.id,
         mode=test.mode,
         duration_seconds=test.duration_seconds,
         started_at=test.started_at,
+        challenge_mode=challenge_mode,
+        remaining_ms=remaining_ms,
+        current_position=test.current_position if include_saved_answers else 1,
         questions=[
             TestQuestionOut(
                 position=tq.position,
+                saved_answer_index=tq.user_answer_index if include_saved_answers else None,
                 question=QuestionOut(
                     id=q.id,
                     stem=q.stem,
@@ -112,7 +125,14 @@ async def _start_adaptive_test(req: TestStartRequest, db: AsyncSession) -> TestO
     Generated questions are stored in DB and enter the normal rotation for future tests.
     This endpoint is intentionally slow (30–60s) — the frontend shows a loading screen.
     """
-    from app.workers.adaptive_prep import build_adaptive_questions
+    from app.workers.adaptive_prep import build_adaptive_questions, is_high_performer
+    from app.models import UserSkill
+
+    # Determine if user is a high performer (needed for mode label + composition)
+    skills_stmt = select(UserSkill).where(UserSkill.user_id == req.user_id)
+    skills_result = await db.execute(skills_stmt)
+    skills = skills_result.scalars().all()
+    challenge = is_high_performer(list(skills))
 
     questions = await build_adaptive_questions(
         user_id=req.user_id,
@@ -134,9 +154,10 @@ async def _start_adaptive_test(req: TestStartRequest, db: AsyncSession) -> TestO
     if not questions:
         raise HTTPException(404, "No questions available. Please seed the database first.")
 
-    test, tqs = await _create_test_record(db, req.user_id, "adaptive", questions, req.duration_seconds)
+    mode = "adaptive_challenge" if challenge else "adaptive"
+    test, tqs = await _create_test_record(db, req.user_id, mode, questions, req.duration_seconds)
     topic_name_map = await _build_topic_name_map(questions, db)
-    return _make_test_out(test, questions, tqs, topic_name_map)
+    return _make_test_out(test, questions, tqs, topic_name_map, challenge_mode=challenge)
 
 
 # ── Routes ────────────────────────────────────────────────────────────────────
@@ -272,6 +293,106 @@ async def submit_test(test_id: int, req: TestSubmitRequest, db: AsyncSession = D
         ],
         questions=question_results,
     )
+
+
+@router.get("/in-progress", response_model=InProgressTestResponse)
+async def get_in_progress_test(user_id: int = Query(...), db: AsyncSession = Depends(get_db)):
+    """Return the most recent unsubmitted test for a user (for session recovery)."""
+    stmt = (
+        select(Test)
+        .where(Test.user_id == user_id, Test.submitted_at.is_(None))
+        .order_by(Test.started_at.desc())
+        .limit(1)
+    )
+    result = await db.execute(stmt)
+    test = result.scalar_one_or_none()
+
+    if not test:
+        return InProgressTestResponse(has_test=False)
+
+    now = datetime.now(timezone.utc)
+    started = test.started_at.replace(tzinfo=timezone.utc) if test.started_at.tzinfo is None else test.started_at
+    elapsed_ms = int((now - started).total_seconds() * 1000)
+    remaining_ms = max(0, test.duration_seconds * 1000 - elapsed_ms)
+
+    # Count saved answers
+    tq_stmt = select(TestQuestion).where(TestQuestion.test_id == test.id)
+    tq_result = await db.execute(tq_stmt)
+    tqs = tq_result.scalars().all()
+    answers_saved = sum(1 for tq in tqs if tq.user_answer_index is not None)
+
+    return InProgressTestResponse(
+        has_test=True,
+        test_id=test.id,
+        started_at=test.started_at.isoformat(),
+        remaining_ms=remaining_ms,
+        answers_saved=answers_saved,
+        total_questions=len(tqs),
+        last_position=test.current_position or 1,
+    )
+
+
+@router.get("/{test_id}", response_model=TestOut)
+async def get_test(test_id: int, db: AsyncSession = Depends(get_db)):
+    """Fetch a test by ID with saved answers — used for session recovery."""
+    test = await db.get(Test, test_id)
+    if not test:
+        raise HTTPException(404, "Test not found.")
+
+    # Compute remaining time
+    now = datetime.now(timezone.utc)
+    started = test.started_at.replace(tzinfo=timezone.utc) if test.started_at.tzinfo is None else test.started_at
+    elapsed_ms = int((now - started).total_seconds() * 1000)
+    remaining_ms = max(0, test.duration_seconds * 1000 - elapsed_ms)
+
+    stmt = (
+        select(TestQuestion)
+        .where(TestQuestion.test_id == test_id)
+        .order_by(TestQuestion.position)
+    )
+    result = await db.execute(stmt)
+    tqs = list(result.scalars().all())
+
+    questions = []
+    for tq in tqs:
+        q = await db.get(Question, tq.question_id)
+        if q:
+            questions.append(q)
+
+    topic_name_map = await _build_topic_name_map(questions, db)
+    challenge = test.mode == "adaptive_challenge"
+    return _make_test_out(
+        test, questions, tqs, topic_name_map,
+        challenge_mode=challenge,
+        include_saved_answers=True,
+        remaining_ms=remaining_ms,
+    )
+
+
+@router.patch("/{test_id}/progress")
+async def save_progress(test_id: int, req: SaveProgressRequest, db: AsyncSession = Depends(get_db)):
+    """Save mid-test progress (answers + current position) to the DB."""
+    test = await db.get(Test, test_id)
+    if not test:
+        raise HTTPException(404, "Test not found.")
+    if test.submitted_at:
+        raise HTTPException(400, "Test already submitted.")
+
+    test.current_position = req.position
+
+    answer_map = {a.question_id: a for a in req.answers}
+    stmt = select(TestQuestion).where(TestQuestion.test_id == test_id)
+    result = await db.execute(stmt)
+    tqs = result.scalars().all()
+
+    for tq in tqs:
+        if tq.question_id in answer_map:
+            a = answer_map[tq.question_id]
+            tq.user_answer_index = a.answer_index
+            tq.time_spent_ms = a.time_spent_ms
+
+    await db.commit()
+    return {"ok": True}
 
 
 async def _update_skills_bg(test_id: int, user_id: int):

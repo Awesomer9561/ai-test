@@ -55,6 +55,7 @@ class TestStartRequest(BaseModel):
 class TestQuestionOut(BaseModel):
     position: int
     question: QuestionOut
+    saved_answer_index: int | None = None  # populated on session recovery
 
     model_config = {"from_attributes": True}
 
@@ -65,6 +66,9 @@ class TestOut(BaseModel):
     duration_seconds: int
     started_at: datetime
     questions: list[TestQuestionOut] = []
+    remaining_ms: int | None = None     # populated on session recovery
+    current_position: int = 1           # populated on session recovery
+    challenge_mode: bool = False        # True for adaptive_challenge (HP) tests
 
     model_config = {"from_attributes": True}
 
@@ -77,6 +81,21 @@ class AnswerSubmission(BaseModel):
 
 class TestSubmitRequest(BaseModel):
     answers: list[AnswerSubmission]
+
+
+class SaveProgressRequest(BaseModel):
+    position: int
+    answers: list[AnswerSubmission]
+
+
+class InProgressTestResponse(BaseModel):
+    has_test: bool
+    test_id: int | None = None
+    started_at: str | None = None
+    remaining_ms: int = 0
+    answers_saved: int = 0
+    total_questions: int = 0
+    last_position: int = 1
 
 
 # ── Results ──

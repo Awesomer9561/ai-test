@@ -27,13 +27,16 @@ UG_QUESTION_FILES = {
 
 
 async def _run_migration(db: AsyncSession):
-    """Add exam_category column to subjects table if it doesn't already exist (PostgreSQL)."""
+    """Idempotent schema migrations — safe to run on every startup."""
     try:
         await db.execute(text(
             "ALTER TABLE subjects ADD COLUMN IF NOT EXISTS exam_category VARCHAR(20) NOT NULL DEFAULT 'banking'"
         ))
         await db.execute(text(
             "UPDATE subjects SET exam_category = 'banking' WHERE exam_category IS NULL OR exam_category = ''"
+        ))
+        await db.execute(text(
+            "ALTER TABLE tests ADD COLUMN IF NOT EXISTS current_position INTEGER NOT NULL DEFAULT 1"
         ))
         await db.commit()
     except Exception:

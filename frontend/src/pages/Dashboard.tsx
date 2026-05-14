@@ -1,9 +1,9 @@
 import { useQuery, useQueryClient } from '@tanstack/react-query'
 import { useNavigate } from 'react-router-dom'
-import { fetchHealth, pingOllama, fetchSkills, startTest, type UserSkill } from '@/api/client'
+import { fetchHealth, pingOllama, fetchSkills, startTest, fetchInProgressTest, type UserSkill } from '@/api/client'
 import { useTestStore } from '@/store/testStore'
 import { useUserStore } from '@/store/userStore'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export default function Dashboard() {
   const navigate = useNavigate()
@@ -25,6 +25,31 @@ export default function Dashboard() {
     queryFn: () => fetchSkills(user!.id),
     enabled: !!user,
   })
+
+  const { data: inProgress } = useQuery({
+    queryKey: ['inProgress', user?.id],
+    queryFn: () => fetchInProgressTest(user!.id),
+    enabled: !!user,
+    refetchOnWindowFocus: true,
+    staleTime: 30_000,
+  })
+
+  // Auto-redirect to very recent in-progress test (< 5 min ago)
+  useEffect(() => {
+    if (!inProgress?.has_test || !inProgress.test_id) return
+    if (inProgress.remaining_ms <= 0) return
+    const elapsed = (inProgress.remaining_ms > 0 && inProgress.total_questions > 0)
+      ? (inProgress.total_questions > 0 ? true : false)
+      : false
+    // Redirect if < 5 min of session time has elapsed (remaining ≈ full duration)
+    // We detect "< 5 min ago" by checking if remaining_ms is close to a typical test duration
+    // The simplest proxy: if remaining_ms implies the test started less than 5 min ago
+    const startedAt = inProgress.started_at ? new Date(inProgress.started_at).getTime() : 0
+    const elapsedSinceStart = Date.now() - startedAt
+    if (elapsedSinceStart < 5 * 60 * 1000) {
+      navigate(`/test/${inProgress.test_id}`)
+    }
+  }, [inProgress])  // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleRefreshAll = async () => {
     setRefreshing(true)
@@ -71,6 +96,11 @@ export default function Dashboard() {
   const slowTopics = skills?.filter(s => s.avg_time_ms > 45_000) ?? []
   const lowAccuracyTopics = skills?.filter(s => s.accuracy < 0.5) ?? []
 
+  // High-performer detection (mirrors backend threshold)
+  const isHighPerformer = skills && skills.length >= 3
+    ? (skills.filter(s => s.mastery_score >= 0.7).length / skills.length) >= 0.6
+    : false
+
   const studyNext = skills
     ? [...skills]
         .sort((a, b) => a.mastery_score - b.mastery_score || a.accuracy - b.accuracy)
@@ -96,6 +126,43 @@ export default function Dashboard() {
         </div>
       )}
 
+      {/* ── In-progress test banner ── */}
+      {inProgress?.has_test && inProgress.test_id && inProgress.remaining_ms > 0 && (() => {
+        const startedAt = inProgress.started_at ? new Date(inProgress.started_at).getTime() : 0
+        const elapsedSinceStart = Date.now() - startedAt
+        // Only show banner if > 5 min since start (< 5 min triggers auto-redirect above)
+        if (elapsedSinceStart < 5 * 60 * 1000) return null
+        const remMin = Math.ceil(inProgress.remaining_ms / 60000)
+        return (
+          <div className="bg-indigo-50 border border-indigo-300 rounded-xl p-4 mb-6 flex items-center justify-between gap-4 flex-wrap">
+            <div>
+              <p className="font-semibold text-indigo-800">You have an unfinished test</p>
+              <p className="text-sm text-indigo-600 mt-0.5">
+                {inProgress.answers_saved}/{inProgress.total_questions} answered · {remMin} min remaining
+              </p>
+            </div>
+            <button
+              onClick={() => navigate(`/test/${inProgress.test_id}`)}
+              className="shrink-0 px-4 py-2 rounded-lg bg-indigo-600 text-white font-semibold text-sm hover:bg-indigo-700"
+            >
+              Resume
+            </button>
+          </div>
+        )
+      })()}
+
+      {inProgress?.has_test && inProgress.test_id && inProgress.remaining_ms <= 0 && (
+        <div className="bg-gray-100 border border-gray-300 rounded-xl p-4 mb-6 flex items-center justify-between gap-4 flex-wrap">
+          <p className="text-sm text-gray-600">Your previous test session expired.</p>
+          <button
+            onClick={() => navigate(`/result/${inProgress.test_id}`)}
+            className="shrink-0 px-4 py-2 rounded-lg bg-gray-700 text-white text-sm hover:bg-gray-800"
+          >
+            View Results
+          </button>
+        </div>
+      )}
+
       <div className="flex items-center justify-between mb-6">
         <h1 className="text-2xl font-bold">Dashboard</h1>
         <button
@@ -109,23 +176,36 @@ export default function Dashboard() {
       </div>
 
       {/* ── Adaptive test CTA ── */}
-      <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-xl p-5 mb-6">
+      <div className={`bg-gradient-to-r ${isHighPerformer ? 'from-orange-50 to-amber-50 border-orange-200' : 'from-blue-50 to-indigo-50 border-blue-200'} border rounded-xl p-5 mb-6`}>
         <div className="flex items-center justify-between gap-4 flex-wrap">
           <div>
-            <h2 className="text-lg font-semibold text-blue-800">Adaptive Test</h2>
+            <div className="flex items-center gap-2">
+              <h2 className={`text-lg font-semibold ${isHighPerformer ? 'text-orange-800' : 'text-blue-800'}`}>
+                Adaptive Test
+              </h2>
+              {isHighPerformer && (
+                <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-orange-100 text-orange-700 border border-orange-300">
+                  🔥 Challenge Mode
+                </span>
+              )}
+            </div>
             <p className="text-sm text-gray-600 mt-0.5">
-              {skills && skills.length > 0
-                ? `AI analyses your ${weakTopics.length > 0 ? weakTopics.length + ' weak area(s)' : 'skills'} and generates a personalised 10-question test.`
-                : 'Complete a regular test first to unlock personalised generation.'}
+              {!skills || skills.length === 0
+                ? 'Complete a regular test first to unlock personalised generation.'
+                : isHighPerformer
+                  ? "You're performing at an advanced level. Your test will focus on pushing your strongest topics harder with difficulty 4–5 questions."
+                  : `AI analyses your ${weakTopics.length > 0 ? weakTopics.length + ' weak area(s)' : 'skills'} and generates a personalised 10-question test.`}
             </p>
             {adaptiveError && <p className="text-sm text-red-600 mt-1">{adaptiveError}</p>}
           </div>
           <button
             onClick={handleStartAdaptive}
             disabled={adaptiveLoading}
-            className="shrink-0 px-5 py-2.5 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 disabled:opacity-50 transition"
+            className={`shrink-0 px-5 py-2.5 rounded-lg text-white font-semibold disabled:opacity-50 transition ${
+              isHighPerformer ? 'bg-orange-600 hover:bg-orange-700' : 'bg-blue-600 hover:bg-blue-700'
+            }`}
           >
-            {adaptiveLoading ? 'Generating…' : 'Start Adaptive Test'}
+            {adaptiveLoading ? 'Generating…' : isHighPerformer ? 'Start Challenge Test' : 'Start Adaptive Test'}
           </button>
         </div>
       </div>

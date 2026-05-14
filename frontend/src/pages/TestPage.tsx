@@ -1,34 +1,88 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import { useNavigate, useLocation, useParams } from 'react-router-dom'
 import { useMutation } from '@tanstack/react-query'
-import { submitTest, type TestSession } from '@/api/client'
+import { submitTest, fetchTestById, type TestSession } from '@/api/client'
 import { useTestStore } from '@/store/testStore'
 
 export default function TestPage() {
   const { testId } = useParams<{ testId: string }>()
   const navigate = useNavigate()
   const location = useLocation()
-  const test = location.state?.test as TestSession | undefined
 
   const {
     currentPosition, setPosition, setAnswer, answers,
-    startQuestionTimer, getAllAnswers,
+    startQuestionTimer, getAllAnswers, initTest,
+    scheduleAutoSave, cancelAutoSave, triggerSave,
   } = useTestStore()
 
-  const [timeLeft, setTimeLeft] = useState(test?.duration_seconds ?? 600)
+  const [test, setTest] = useState<TestSession | undefined>(location.state?.test as TestSession | undefined)
+  const [timeLeft, setTimeLeft] = useState<number>(test?.duration_seconds ?? 600)
   const [selectedOption, setSelectedOption] = useState<number | null>(null)
+  const [recovering, setRecovering] = useState(!location.state?.test)
+  const [resumedToast, setResumedToast] = useState(false)
+  const submitCalledRef = useRef(false)
 
-  // Timer countdown
+  // ── Session recovery: fetch test from DB if we have no location.state ──────
   useEffect(() => {
+    if (!recovering || !testId) return
+
+    fetchTestById(Number(testId))
+      .then(recovered => {
+        if (recovered.remaining_ms !== undefined && recovered.remaining_ms !== null) {
+          if (recovered.remaining_ms <= 0) {
+            // Timer already expired — submit saved answers and redirect to result
+            submitTest(Number(testId), []).then(result => {
+              navigate(`/result/${testId}`, { state: { result } })
+            }).catch(() => navigate('/'))
+            return
+          }
+          setTimeLeft(Math.ceil(recovered.remaining_ms / 1000))
+        }
+
+        // Restore answers from saved_answer_index fields
+        initTest(Number(testId))
+        for (const tq of recovered.questions) {
+          if (tq.saved_answer_index !== null && tq.saved_answer_index !== undefined) {
+            setAnswer(tq.question.id, tq.saved_answer_index)
+          }
+        }
+
+        // Restore position
+        const savedPos = recovered.current_position ?? 1
+        setPosition(savedPos)
+
+        setTest(recovered)
+        setRecovering(false)
+        setResumedToast(true)
+        setTimeout(() => setResumedToast(false), 4000)
+      })
+      .catch(() => {
+        setRecovering(false)
+        // Will fall through to "Test data not found" UI
+      })
+  }, [])  // eslint-disable-line react-hooks/exhaustive-deps
+
+  // ── Start auto-save once test is loaded ───────────────────────────────────
+  useEffect(() => {
+    if (!test || !testId) return
+    scheduleAutoSave(Number(testId))
+    return () => {
+      cancelAutoSave()
+    }
+  }, [test?.id])  // eslint-disable-line react-hooks/exhaustive-deps
+
+  // ── Timer countdown ───────────────────────────────────────────────────────
+  useEffect(() => {
+    if (recovering || !test) return
     if (timeLeft <= 0) {
       handleSubmit()
       return
     }
     const interval = setInterval(() => setTimeLeft(t => t - 1), 1000)
     return () => clearInterval(interval)
-  }, [timeLeft])
+  }, [timeLeft, recovering, test])  // eslint-disable-line react-hooks/exhaustive-deps
 
-  // Sync selected option when navigating questions
+  // ── Sync selected option when navigating questions ────────────────────────
   useEffect(() => {
     if (!test) return
     const q = test.questions.find(tq => tq.position === currentPosition)
@@ -37,21 +91,39 @@ export default function TestPage() {
       setSelectedOption(existing?.answer_index ?? null)
     }
     startQuestionTimer()
-  }, [currentPosition, test])
+  }, [currentPosition, test])  // eslint-disable-line react-hooks/exhaustive-deps
 
   const submitMutation = useMutation({
     mutationFn: () => submitTest(Number(testId), getAllAnswers()),
     onSuccess: (result) => {
+      cancelAutoSave()
       navigate(`/result/${testId}`, { state: { result } })
     },
   })
 
   const handleSubmit = useCallback(() => {
+    if (submitCalledRef.current) return
+    submitCalledRef.current = true
     // Save current answer before submitting
     const q = test?.questions.find(tq => tq.position === currentPosition)
     if (q) setAnswer(q.question.id, selectedOption)
-    submitMutation.mutate()
-  }, [selectedOption, currentPosition, test])
+    // Do a final save then submit
+    triggerSave().finally(() => {
+      cancelAutoSave()
+      submitMutation.mutate()
+    })
+  }, [selectedOption, currentPosition, test])  // eslint-disable-line react-hooks/exhaustive-deps
+
+  if (recovering) {
+    return (
+      <div className="flex items-center justify-center min-h-[60vh]">
+        <div className="text-center">
+          <div className="w-10 h-10 border-4 border-brand-200 border-t-brand-600 rounded-full animate-spin mx-auto mb-4" />
+          <p className="text-gray-500">Resuming your test…</p>
+        </div>
+      </div>
+    )
+  }
 
   if (!test) {
     return (
@@ -70,6 +142,7 @@ export default function TestPage() {
   const seconds = timeLeft % 60
   const isWarning = timeLeft <= 60
   const isUrgent = timeLeft <= 300
+  const challengeMode = test.challenge_mode === true
 
   const saveAndNavigate = (newPos: number) => {
     if (currentQ) setAnswer(currentQ.question.id, selectedOption)
@@ -78,15 +151,29 @@ export default function TestPage() {
 
   return (
     <div className="flex gap-6">
+      {/* Resume toast */}
+      {resumedToast && (
+        <div className="fixed top-4 right-4 z-50 bg-indigo-600 text-white px-4 py-2.5 rounded-lg shadow-lg text-sm font-medium animate-fade-in">
+          ✓ Test resumed — your progress was saved
+        </div>
+      )}
+
       {/* Main question area */}
       <div className="flex-1">
         {/* Timer bar */}
-        <div className={`flex items-center justify-between mb-6 p-3 rounded-lg ${
+        <div className={`flex items-center justify-between mb-4 p-3 rounded-lg ${
           isWarning ? 'bg-red-50 text-red-700' : isUrgent ? 'bg-yellow-50 text-yellow-700' : 'bg-gray-100 text-gray-700'
         }`}>
-          <span className="text-sm font-medium">
-            Question {currentPosition} of {totalQuestions}
-          </span>
+          <div className="flex items-center gap-3">
+            <span className="text-sm font-medium">
+              Question {currentPosition} of {totalQuestions}
+            </span>
+            {challengeMode && (
+              <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-orange-100 text-orange-700 border border-orange-300">
+                🔥 Challenge Mode
+              </span>
+            )}
+          </div>
           <span className="font-mono font-bold text-lg">
             {String(minutes).padStart(2, '0')}:{String(seconds).padStart(2, '0')}
           </span>

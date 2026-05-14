@@ -35,6 +35,7 @@ export interface Question {
 export interface TestQuestion {
   position: number
   question: Question
+  saved_answer_index?: number | null
 }
 
 export interface TestSession {
@@ -43,6 +44,19 @@ export interface TestSession {
   duration_seconds: number
   started_at: string
   questions: TestQuestion[]
+  remaining_ms?: number | null
+  current_position?: number
+  challenge_mode?: boolean
+}
+
+export interface InProgressTestResponse {
+  has_test: boolean
+  test_id: number | null
+  started_at: string | null
+  remaining_ms: number
+  answers_saved: number
+  total_questions: number
+  last_position: number
 }
 
 export interface QuestionWithAnswer extends Question {
@@ -151,3 +165,18 @@ export const loginOrCreate = (name: string, examTarget: string = 'IBPS PO') =>
 
 export const listUsers = () =>
   api.get<UserProfile[]>('/api/profile/users').then(r => r.data)
+
+// ── Test session ──
+
+export const fetchTestById = (testId: number) =>
+  api.get<TestSession>(`/api/tests/${testId}`).then(r => r.data)
+
+export const fetchInProgressTest = (userId: number) =>
+  api.get<InProgressTestResponse>('/api/tests/in-progress', { params: { user_id: userId } }).then(r => r.data)
+
+export const saveProgress = (
+  testId: number,
+  position: number,
+  answers: { question_id: number; answer_index: number | null; time_spent_ms: number }[],
+) =>
+  api.patch(`/api/tests/${testId}/progress`, { position, answers }).then(r => r.data)

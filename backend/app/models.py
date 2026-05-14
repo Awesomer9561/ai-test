@@ -70,6 +70,7 @@ class Test(Base):
     duration_seconds = Column(Integer, default=600)
     started_at = Column(DateTime, default=datetime.utcnow)
     submitted_at = Column(DateTime, nullable=True)
+    current_position = Column(Integer, default=1)  # last viewed question (for session restore)
 
     user = relationship("User", back_populates="tests")
     test_questions = relationship("TestQuestion", back_populates="test")
